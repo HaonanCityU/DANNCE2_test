@@ -1,0 +1,427 @@
+11/02/2025 12:00:37 AM INFO:com_train_dir set to: ./COM/train_results/
+11/02/2025 12:00:37 AM INFO:com_predict_dir set to: ./COM/predict_results/
+11/02/2025 12:00:37 AM INFO:com_file set to: ./COM/predict_results/com3d.mat
+11/02/2025 12:00:37 AM INFO:com_predict_weights set to: ./COM/weights/weights.250-0.00036.hdf5
+11/02/2025 12:00:37 AM INFO:dannce_train_dir set to: ./DANNCE/train_results/AVG/
+11/02/2025 12:00:37 AM INFO:dannce_predict_dir set to: ./DANNCE/predict_results/
+11/02/2025 12:00:37 AM INFO:gpu_id set to: 2,3
+11/02/2025 12:00:37 AM INFO:verbose set to: 1
+11/02/2025 12:00:37 AM INFO:exp set to: [{'label3d_file': './com+sum-07-Sep-2023_dannce.mat'}]
+11/02/2025 12:00:37 AM INFO:io_config set to: io.yaml
+11/02/2025 12:00:37 AM INFO:new_n_channels_out set to: 22
+11/02/2025 12:00:37 AM INFO:batch_size set to: 4
+11/02/2025 12:00:37 AM INFO:epochs set to: 500
+11/02/2025 12:00:37 AM INFO:net_type set to: AVG
+11/02/2025 12:00:37 AM INFO:train_mode set to: finetune
+11/02/2025 12:00:37 AM INFO:num_validation_per_exp set to: 30
+11/02/2025 12:00:37 AM INFO:vol_size set to: 180
+11/02/2025 12:00:37 AM INFO:nvox set to: 112
+11/02/2025 12:00:37 AM INFO:max_num_samples set to: 1000
+11/02/2025 12:00:37 AM INFO:dannce_finetune_weights set to: ./DANNCE/weights/weights.rat.MAX/
+11/02/2025 12:00:37 AM INFO:log_level set to: DEBUG
+11/02/2025 12:00:37 AM INFO:base_config set to: /home/haonan/proj/dannce-release_dev2/configs/dannce_mouse_config.yaml
+11/02/2025 12:00:37 AM INFO:viddir set to: videos
+11/02/2025 12:00:37 AM INFO:crop_height set to: None
+11/02/2025 12:00:37 AM INFO:crop_width set to: None
+11/02/2025 12:00:37 AM INFO:camnames set to: None
+11/02/2025 12:00:37 AM INFO:n_channels_out set to: 20
+11/02/2025 12:00:37 AM INFO:sigma set to: 10
+11/02/2025 12:00:37 AM INFO:net set to: None
+11/02/2025 12:00:37 AM INFO:immode set to: vid
+11/02/2025 12:00:37 AM INFO:mono set to: False
+11/02/2025 12:00:37 AM INFO:mirror set to: False
+11/02/2025 12:00:37 AM INFO:norm_method set to: layer
+11/02/2025 12:00:37 AM INFO:log_dest set to: ../../logs/dannce_Nov02_2025.log
+11/02/2025 12:00:37 AM INFO:start_batch set to: 0
+11/02/2025 12:00:37 AM INFO:start_sample set to: None
+11/02/2025 12:00:37 AM INFO:com_fromlabels set to: False
+11/02/2025 12:00:37 AM INFO:medfilt_window set to: None
+11/02/2025 12:00:37 AM INFO:new_last_kernel_size set to: [3, 3, 3]
+11/02/2025 12:00:37 AM INFO:n_layers_locked set to: 2
+11/02/2025 12:00:37 AM INFO:vmin set to: None
+11/02/2025 12:00:37 AM INFO:vmax set to: None
+11/02/2025 12:00:37 AM INFO:interp set to: nearest
+11/02/2025 12:00:37 AM INFO:depth set to: False
+11/02/2025 12:00:37 AM INFO:comthresh set to: 0
+11/02/2025 12:00:37 AM INFO:weighted set to: False
+11/02/2025 12:00:37 AM INFO:com_method set to: median
+11/02/2025 12:00:37 AM INFO:cthresh set to: None
+11/02/2025 12:00:37 AM INFO:channel_combo set to: None
+11/02/2025 12:00:37 AM INFO:predict_mode set to: torch
+11/02/2025 12:00:37 AM INFO:n_views set to: 6
+11/02/2025 12:00:37 AM INFO:dannce_predict_model set to: None
+11/02/2025 12:00:37 AM INFO:expval set to: None
+11/02/2025 12:00:37 AM INFO:from_weights set to: None
+11/02/2025 12:00:37 AM INFO:write_npy set to: None
+11/02/2025 12:00:37 AM INFO:loss set to: mask_nan_keep_loss
+11/02/2025 12:00:37 AM INFO:n_channels_in set to: None
+11/02/2025 12:00:37 AM INFO:extension set to: None
+11/02/2025 12:00:37 AM INFO:vid_dir_flag set to: None
+11/02/2025 12:00:37 AM INFO:num_train_per_exp set to: None
+11/02/2025 12:00:37 AM INFO:chunks set to: None
+11/02/2025 12:00:37 AM INFO:lockfirst set to: None
+11/02/2025 12:00:37 AM INFO:load_valid set to: None
+11/02/2025 12:00:37 AM INFO:augment_hue set to: False
+11/02/2025 12:00:37 AM INFO:augment_brightness set to: False
+11/02/2025 12:00:37 AM INFO:augment_hue_val set to: 0.05
+11/02/2025 12:00:37 AM INFO:augment_bright_val set to: 0.05
+11/02/2025 12:00:37 AM INFO:augment_rotation_val set to: 5
+11/02/2025 12:00:37 AM INFO:mirror_augmentation set to: False
+11/02/2025 12:00:37 AM INFO:right_keypoints set to: None
+11/02/2025 12:00:37 AM INFO:left_keypoints set to: None
+11/02/2025 12:00:37 AM INFO:drop_landmark set to: None
+11/02/2025 12:00:37 AM INFO:raw_im_h set to: None
+11/02/2025 12:00:37 AM INFO:raw_im_w set to: None
+11/02/2025 12:00:37 AM INFO:n_instances set to: 1
+11/02/2025 12:00:37 AM INFO:use_npy set to: False
+11/02/2025 12:00:37 AM INFO:data_split_seed set to: None
+11/02/2025 12:00:37 AM INFO:valid_exp set to: None
+11/02/2025 12:00:37 AM INFO:slurm_config set to: None
+11/02/2025 12:00:37 AM INFO:metric set to: ['euclidean_distance_3D']
+11/02/2025 12:00:37 AM INFO:lr set to: 0.001
+11/02/2025 12:00:37 AM INFO:rotate set to: True
+11/02/2025 12:00:37 AM INFO:augment_continuous_rotation set to: False
+11/02/2025 12:00:37 AM INFO:com_thresh set to: None
+11/02/2025 12:00:37 AM INFO:cam3_train set to: None
+11/02/2025 12:00:37 AM INFO:debug_volume_tifdir set to: None
+11/02/2025 12:00:37 AM INFO:downfac set to: None
+11/02/2025 12:00:37 AM INFO:dannce_predict_vol_tifdir set to: None
+11/02/2025 12:00:37 AM INFO:n_rand_views set to: 0
+11/02/2025 12:00:37 AM INFO:rand_view_replace set to: True
+11/02/2025 12:00:37 AM INFO:multi_gpu_train set to: False
+11/02/2025 12:00:37 AM INFO:heatmap_reg set to: False
+11/02/2025 12:00:37 AM INFO:heatmap_reg_coeff set to: 0.01
+11/02/2025 12:00:37 AM INFO:save_pred_targets set to: False
+11/02/2025 12:00:37 AM INFO:huber-delta set to: 1.35
+11/02/2025 12:00:37 AM INFO:avg+max set to: None
+11/02/2025 12:00:37 AM DEBUG:dannce.engine.preprocessing.py.grab_predict_label3d_file Using the following *dannce.mat files: ./com+sum-07-Sep-2023_dannce.mat
+11/02/2025 12:00:38 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting vid_dir_flag to True.
+11/02/2025 12:00:38 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting extension to .mp4.
+11/02/2025 12:00:38 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting chunks to {'Camera1': array([0]), 'Camera2': array([0]), 'Camera3': array([0]), 'Camera4': array([0]), 'Camera5': array([0]), 'Camera6': array([0])}.
+11/02/2025 12:00:38 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting n_channels_in to 3.
+11/02/2025 12:00:38 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting raw_im_h to 1024.
+11/02/2025 12:00:38 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting raw_im_w to 1280.
+11/02/2025 12:00:38 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting expval to True.
+11/02/2025 12:00:38 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting net to finetune_AVG.
+11/02/2025 12:00:38 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting crop_height to [0, 1024].
+11/02/2025 12:00:38 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting crop_width to [0, 1280].
+11/02/2025 12:00:38 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting maxbatch to 250.
+11/02/2025 12:00:38 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting start_batch to 0.
+11/02/2025 12:00:38 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting vmin to -90.0.
+11/02/2025 12:00:38 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting vmax to 90.0.
+11/02/2025 12:00:38 AM DEBUG:dannce.engine.preprocessing.py.grab_predict_label3d_file Using the following *dannce.mat files: ./com+sum-07-Sep-2023_dannce.mat
+11/02/2025 12:00:38 AM INFO:dannce.interface.setup_dannce_predict Using torch predict mode
+11/02/2025 12:00:38 AM INFO:dannce.interface.setup_dannce_predict Using camnames: ['Camera1', 'Camera2', 'Camera3', 'Camera4', 'Camera5', 'Camera6']
+11/02/2025 12:00:43 AM INFO:dannce.interface.do_COM_load Experiment 0 using com3d: ./COM/predict_results/com3d.mat
+11/02/2025 12:00:43 AM INFO:dannce.interface.do_COM_load Removed 0 samples from the dataset because they either had COM positions over cthresh, or did not have matching sampleIDs in the COM file
+11/02/2025 12:00:43 AM INFO:dannce.interface.write_com_file Saving 3D COM to ./DANNCE/predict_results/com3d_used.mat
+11/02/2025 12:00:43 AM INFO:None
+11/02/2025 12:00:48 AM INFO:dannce.engine.generator.DataGenerator_3Dconv_torch.__init__Executing eagerly: True
+11/02/2025 12:00:48 AM INFO:dannce.engine.generator.DataGenerator_3Dconv_torch.__init__Init took 5.110385179519653 sec.
+11/02/2025 12:00:48 AM INFO:dannce.interface.build_model Initializing Network...
+11/02/2025 12:00:48 AM INFO:dannce.interface.build_model Loading model from ./DANNCE/train_results/AVG/weights.435-11.37214.hdf5
+11/02/2025 12:00:48 AM DEBUG:Creating converter from 3 to 5
+11/02/2025 12:00:49 AM DEBUG:Predicting on batch 0
+11/02/2025 12:00:49 AM INFO:dannce.engine.video.LoadVideoFrame.load_vid_frame Loading new video: 0.mp4 for 0_Camera3
+11/02/2025 12:00:49 AM INFO:dannce.engine.video.LoadVideoFrame.load_vid_frame Loading new video: 0.mp4 for 0_Camera2
+11/02/2025 12:00:49 AM INFO:dannce.engine.video.LoadVideoFrame.load_vid_frame Loading new video: 0.mp4 for 0_Camera6
+11/02/2025 12:00:49 AM INFO:dannce.engine.video.LoadVideoFrame.load_vid_frame Loading new video: 0.mp4 for 0_Camera5
+11/02/2025 12:00:49 AM INFO:dannce.engine.video.LoadVideoFrame.load_vid_frame Loading new video: 0.mp4 for 0_Camera4
+11/02/2025 12:00:50 AM INFO:dannce.engine.video.LoadVideoFrame.load_vid_frame Loading new video: 0.mp4 for 0_Camera1
+11/02/2025 12:01:12 AM DEBUG:Predicting on batch 1
+11/02/2025 12:01:15 AM DEBUG:Predicting on batch 2
+11/02/2025 12:01:19 AM DEBUG:Predicting on batch 3
+11/02/2025 12:01:22 AM DEBUG:Predicting on batch 4
+11/02/2025 12:01:26 AM DEBUG:Predicting on batch 5
+11/02/2025 12:01:29 AM DEBUG:Predicting on batch 6
+11/02/2025 12:01:33 AM DEBUG:Predicting on batch 7
+11/02/2025 12:01:36 AM DEBUG:Predicting on batch 8
+11/02/2025 12:01:40 AM DEBUG:Predicting on batch 9
+11/02/2025 12:01:43 AM DEBUG:Predicting on batch 10
+11/02/2025 12:01:43 AM DEBUG:10
+11/02/2025 12:01:43 AM DEBUG:10 batches took 54.37671685218811 seconds
+11/02/2025 12:01:47 AM DEBUG:Predicting on batch 11
+11/02/2025 12:01:51 AM DEBUG:Predicting on batch 12
+11/02/2025 12:01:54 AM DEBUG:Predicting on batch 13
+11/02/2025 12:01:58 AM DEBUG:Predicting on batch 14
+11/02/2025 12:02:01 AM DEBUG:Predicting on batch 15
+11/02/2025 12:02:05 AM DEBUG:Predicting on batch 16
+11/02/2025 12:02:08 AM DEBUG:Predicting on batch 17
+11/02/2025 12:02:12 AM DEBUG:Predicting on batch 18
+11/02/2025 12:02:15 AM DEBUG:Predicting on batch 19
+11/02/2025 12:02:19 AM DEBUG:Predicting on batch 20
+11/02/2025 12:02:19 AM DEBUG:20
+11/02/2025 12:02:19 AM DEBUG:10 batches took 35.700291872024536 seconds
+11/02/2025 12:02:22 AM DEBUG:Predicting on batch 21
+11/02/2025 12:02:26 AM DEBUG:Predicting on batch 22
+11/02/2025 12:02:29 AM DEBUG:Predicting on batch 23
+11/02/2025 12:02:33 AM DEBUG:Predicting on batch 24
+11/02/2025 12:02:36 AM DEBUG:Predicting on batch 25
+11/02/2025 12:02:40 AM DEBUG:Predicting on batch 26
+11/02/2025 12:02:44 AM DEBUG:Predicting on batch 27
+11/02/2025 12:02:47 AM DEBUG:Predicting on batch 28
+11/02/2025 12:02:51 AM DEBUG:Predicting on batch 29
+11/02/2025 12:02:55 AM DEBUG:Predicting on batch 30
+11/02/2025 12:02:55 AM DEBUG:30
+11/02/2025 12:02:55 AM DEBUG:10 batches took 35.66338849067688 seconds
+11/02/2025 12:02:58 AM DEBUG:Predicting on batch 31
+11/02/2025 12:03:02 AM DEBUG:Predicting on batch 32
+11/02/2025 12:03:05 AM DEBUG:Predicting on batch 33
+11/02/2025 12:03:09 AM DEBUG:Predicting on batch 34
+11/02/2025 12:03:12 AM DEBUG:Predicting on batch 35
+11/02/2025 12:03:16 AM DEBUG:Predicting on batch 36
+11/02/2025 12:03:19 AM DEBUG:Predicting on batch 37
+11/02/2025 12:03:23 AM DEBUG:Predicting on batch 38
+11/02/2025 12:03:27 AM DEBUG:Predicting on batch 39
+11/02/2025 12:03:30 AM DEBUG:Predicting on batch 40
+11/02/2025 12:03:30 AM DEBUG:40
+11/02/2025 12:03:30 AM DEBUG:10 batches took 35.56394410133362 seconds
+11/02/2025 12:03:34 AM DEBUG:Predicting on batch 41
+11/02/2025 12:03:37 AM DEBUG:Predicting on batch 42
+11/02/2025 12:03:41 AM DEBUG:Predicting on batch 43
+11/02/2025 12:03:45 AM DEBUG:Predicting on batch 44
+11/02/2025 12:03:49 AM DEBUG:Predicting on batch 45
+11/02/2025 12:03:52 AM DEBUG:Predicting on batch 46
+11/02/2025 12:03:56 AM DEBUG:Predicting on batch 47
+11/02/2025 12:03:59 AM DEBUG:Predicting on batch 48
+11/02/2025 12:04:03 AM DEBUG:Predicting on batch 49
+11/02/2025 12:04:06 AM DEBUG:Predicting on batch 50
+11/02/2025 12:04:06 AM DEBUG:50
+11/02/2025 12:04:06 AM DEBUG:10 batches took 36.213637828826904 seconds
+11/02/2025 12:04:10 AM DEBUG:Predicting on batch 51
+11/02/2025 12:04:13 AM DEBUG:Predicting on batch 52
+11/02/2025 12:04:17 AM DEBUG:Predicting on batch 53
+11/02/2025 12:04:20 AM DEBUG:Predicting on batch 54
+11/02/2025 12:04:24 AM DEBUG:Predicting on batch 55
+11/02/2025 12:04:27 AM DEBUG:Predicting on batch 56
+11/02/2025 12:04:31 AM DEBUG:Predicting on batch 57
+11/02/2025 12:04:34 AM DEBUG:Predicting on batch 58
+11/02/2025 12:04:38 AM DEBUG:Predicting on batch 59
+11/02/2025 12:04:41 AM DEBUG:Predicting on batch 60
+11/02/2025 12:04:41 AM DEBUG:60
+11/02/2025 12:04:41 AM DEBUG:10 batches took 35.071141719818115 seconds
+11/02/2025 12:04:45 AM DEBUG:Predicting on batch 61
+11/02/2025 12:04:48 AM DEBUG:Predicting on batch 62
+11/02/2025 12:04:52 AM DEBUG:Predicting on batch 63
+11/02/2025 12:04:55 AM DEBUG:Predicting on batch 64
+11/02/2025 12:04:59 AM DEBUG:Predicting on batch 65
+11/02/2025 12:05:03 AM DEBUG:Predicting on batch 66
+11/02/2025 12:05:06 AM DEBUG:Predicting on batch 67
+11/02/2025 12:05:10 AM DEBUG:Predicting on batch 68
+11/02/2025 12:05:14 AM DEBUG:Predicting on batch 69
+11/02/2025 12:05:17 AM DEBUG:Predicting on batch 70
+11/02/2025 12:05:17 AM DEBUG:70
+11/02/2025 12:05:17 AM DEBUG:10 batches took 35.911147356033325 seconds
+11/02/2025 12:05:21 AM DEBUG:Predicting on batch 71
+11/02/2025 12:05:25 AM DEBUG:Predicting on batch 72
+11/02/2025 12:05:28 AM DEBUG:Predicting on batch 73
+11/02/2025 12:05:32 AM DEBUG:Predicting on batch 74
+11/02/2025 12:05:36 AM DEBUG:Predicting on batch 75
+11/02/2025 12:05:39 AM DEBUG:Predicting on batch 76
+11/02/2025 12:05:43 AM DEBUG:Predicting on batch 77
+11/02/2025 12:05:47 AM DEBUG:Predicting on batch 78
+11/02/2025 12:05:50 AM DEBUG:Predicting on batch 79
+11/02/2025 12:05:54 AM DEBUG:Predicting on batch 80
+11/02/2025 12:05:54 AM DEBUG:80
+11/02/2025 12:05:54 AM DEBUG:10 batches took 36.607792139053345 seconds
+11/02/2025 12:05:58 AM DEBUG:Predicting on batch 81
+11/02/2025 12:06:01 AM DEBUG:Predicting on batch 82
+11/02/2025 12:06:05 AM DEBUG:Predicting on batch 83
+11/02/2025 12:06:09 AM DEBUG:Predicting on batch 84
+11/02/2025 12:06:12 AM DEBUG:Predicting on batch 85
+11/02/2025 12:06:16 AM DEBUG:Predicting on batch 86
+11/02/2025 12:06:20 AM DEBUG:Predicting on batch 87
+11/02/2025 12:06:23 AM DEBUG:Predicting on batch 88
+11/02/2025 12:06:27 AM DEBUG:Predicting on batch 89
+11/02/2025 12:06:30 AM DEBUG:Predicting on batch 90
+11/02/2025 12:06:30 AM DEBUG:90
+11/02/2025 12:06:30 AM DEBUG:10 batches took 36.44392490386963 seconds
+11/02/2025 12:06:34 AM DEBUG:Predicting on batch 91
+11/02/2025 12:06:38 AM DEBUG:Predicting on batch 92
+11/02/2025 12:06:41 AM DEBUG:Predicting on batch 93
+11/02/2025 12:06:45 AM DEBUG:Predicting on batch 94
+11/02/2025 12:06:49 AM DEBUG:Predicting on batch 95
+11/02/2025 12:06:52 AM DEBUG:Predicting on batch 96
+11/02/2025 12:06:56 AM DEBUG:Predicting on batch 97
+11/02/2025 12:07:00 AM DEBUG:Predicting on batch 98
+11/02/2025 12:07:03 AM DEBUG:Predicting on batch 99
+11/02/2025 12:07:07 AM DEBUG:Predicting on batch 100
+11/02/2025 12:07:07 AM DEBUG:100
+11/02/2025 12:07:07 AM DEBUG:10 batches took 36.647496938705444 seconds
+11/02/2025 12:07:11 AM DEBUG:Predicting on batch 101
+11/02/2025 12:07:14 AM DEBUG:Predicting on batch 102
+11/02/2025 12:07:18 AM DEBUG:Predicting on batch 103
+11/02/2025 12:07:21 AM DEBUG:Predicting on batch 104
+11/02/2025 12:07:25 AM DEBUG:Predicting on batch 105
+11/02/2025 12:07:28 AM DEBUG:Predicting on batch 106
+11/02/2025 12:07:33 AM DEBUG:Predicting on batch 107
+11/02/2025 12:07:36 AM DEBUG:Predicting on batch 108
+11/02/2025 12:07:40 AM DEBUG:Predicting on batch 109
+11/02/2025 12:07:44 AM DEBUG:Predicting on batch 110
+11/02/2025 12:07:44 AM DEBUG:110
+11/02/2025 12:07:44 AM DEBUG:10 batches took 36.56855535507202 seconds
+11/02/2025 12:07:47 AM DEBUG:Predicting on batch 111
+11/02/2025 12:07:51 AM DEBUG:Predicting on batch 112
+11/02/2025 12:07:54 AM DEBUG:Predicting on batch 113
+11/02/2025 12:07:58 AM DEBUG:Predicting on batch 114
+11/02/2025 12:08:02 AM DEBUG:Predicting on batch 115
+11/02/2025 12:08:05 AM DEBUG:Predicting on batch 116
+11/02/2025 12:08:09 AM DEBUG:Predicting on batch 117
+11/02/2025 12:08:12 AM DEBUG:Predicting on batch 118
+11/02/2025 12:08:16 AM DEBUG:Predicting on batch 119
+11/02/2025 12:08:20 AM DEBUG:Predicting on batch 120
+11/02/2025 12:08:20 AM DEBUG:120
+11/02/2025 12:08:20 AM DEBUG:10 batches took 36.1420624256134 seconds
+11/02/2025 12:08:23 AM DEBUG:Predicting on batch 121
+11/02/2025 12:08:27 AM DEBUG:Predicting on batch 122
+11/02/2025 12:08:31 AM DEBUG:Predicting on batch 123
+11/02/2025 12:08:34 AM DEBUG:Predicting on batch 124
+11/02/2025 12:08:38 AM DEBUG:Predicting on batch 125
+11/02/2025 12:08:42 AM DEBUG:Predicting on batch 126
+11/02/2025 12:08:45 AM DEBUG:Predicting on batch 127
+11/02/2025 12:08:49 AM DEBUG:Predicting on batch 128
+11/02/2025 12:08:53 AM DEBUG:Predicting on batch 129
+11/02/2025 12:08:56 AM DEBUG:Predicting on batch 130
+11/02/2025 12:08:56 AM DEBUG:130
+11/02/2025 12:08:56 AM DEBUG:10 batches took 36.5744423866272 seconds
+11/02/2025 12:09:00 AM DEBUG:Predicting on batch 131
+11/02/2025 12:09:04 AM DEBUG:Predicting on batch 132
+11/02/2025 12:09:07 AM DEBUG:Predicting on batch 133
+11/02/2025 12:09:11 AM DEBUG:Predicting on batch 134
+11/02/2025 12:09:14 AM DEBUG:Predicting on batch 135
+11/02/2025 12:09:18 AM DEBUG:Predicting on batch 136
+11/02/2025 12:09:22 AM DEBUG:Predicting on batch 137
+11/02/2025 12:09:25 AM DEBUG:Predicting on batch 138
+11/02/2025 12:09:29 AM DEBUG:Predicting on batch 139
+11/02/2025 12:09:33 AM DEBUG:Predicting on batch 140
+11/02/2025 12:09:33 AM DEBUG:140
+11/02/2025 12:09:33 AM DEBUG:10 batches took 36.38719606399536 seconds
+11/02/2025 12:09:36 AM DEBUG:Predicting on batch 141
+11/02/2025 12:09:40 AM DEBUG:Predicting on batch 142
+11/02/2025 12:09:44 AM DEBUG:Predicting on batch 143
+11/02/2025 12:09:47 AM DEBUG:Predicting on batch 144
+11/02/2025 12:09:51 AM DEBUG:Predicting on batch 145
+11/02/2025 12:09:55 AM DEBUG:Predicting on batch 146
+11/02/2025 12:09:58 AM DEBUG:Predicting on batch 147
+11/02/2025 12:10:02 AM DEBUG:Predicting on batch 148
+11/02/2025 12:10:05 AM DEBUG:Predicting on batch 149
+11/02/2025 12:10:09 AM DEBUG:Predicting on batch 150
+11/02/2025 12:10:09 AM DEBUG:150
+11/02/2025 12:10:09 AM DEBUG:10 batches took 36.39059138298035 seconds
+11/02/2025 12:10:13 AM DEBUG:Predicting on batch 151
+11/02/2025 12:10:17 AM DEBUG:Predicting on batch 152
+11/02/2025 12:10:20 AM DEBUG:Predicting on batch 153
+11/02/2025 12:10:24 AM DEBUG:Predicting on batch 154
+11/02/2025 12:10:27 AM DEBUG:Predicting on batch 155
+11/02/2025 12:10:31 AM DEBUG:Predicting on batch 156
+11/02/2025 12:10:34 AM DEBUG:Predicting on batch 157
+11/02/2025 12:10:38 AM DEBUG:Predicting on batch 158
+11/02/2025 12:10:41 AM DEBUG:Predicting on batch 159
+11/02/2025 12:10:45 AM DEBUG:Predicting on batch 160
+11/02/2025 12:10:45 AM DEBUG:160
+11/02/2025 12:10:45 AM DEBUG:10 batches took 35.810112714767456 seconds
+11/02/2025 12:10:48 AM DEBUG:Predicting on batch 161
+11/02/2025 12:10:52 AM DEBUG:Predicting on batch 162
+11/02/2025 12:10:55 AM DEBUG:Predicting on batch 163
+11/02/2025 12:10:59 AM DEBUG:Predicting on batch 164
+11/02/2025 12:11:02 AM DEBUG:Predicting on batch 165
+11/02/2025 12:11:06 AM DEBUG:Predicting on batch 166
+11/02/2025 12:11:10 AM DEBUG:Predicting on batch 167
+11/02/2025 12:11:13 AM DEBUG:Predicting on batch 168
+11/02/2025 12:11:17 AM DEBUG:Predicting on batch 169
+11/02/2025 12:11:20 AM DEBUG:Predicting on batch 170
+11/02/2025 12:11:20 AM DEBUG:170
+11/02/2025 12:11:20 AM DEBUG:10 batches took 35.3305778503418 seconds
+11/02/2025 12:11:24 AM DEBUG:Predicting on batch 171
+11/02/2025 12:11:27 AM DEBUG:Predicting on batch 172
+11/02/2025 12:11:31 AM DEBUG:Predicting on batch 173
+11/02/2025 12:11:35 AM DEBUG:Predicting on batch 174
+11/02/2025 12:11:38 AM DEBUG:Predicting on batch 175
+11/02/2025 12:11:42 AM DEBUG:Predicting on batch 176
+11/02/2025 12:11:46 AM DEBUG:Predicting on batch 177
+11/02/2025 12:11:49 AM DEBUG:Predicting on batch 178
+11/02/2025 12:11:53 AM DEBUG:Predicting on batch 179
+11/02/2025 12:11:57 AM DEBUG:Predicting on batch 180
+11/02/2025 12:11:57 AM DEBUG:180
+11/02/2025 12:11:57 AM DEBUG:10 batches took 36.408366680145264 seconds
+11/02/2025 12:12:00 AM DEBUG:Predicting on batch 181
+11/02/2025 12:12:04 AM DEBUG:Predicting on batch 182
+11/02/2025 12:12:08 AM DEBUG:Predicting on batch 183
+11/02/2025 12:12:11 AM DEBUG:Predicting on batch 184
+11/02/2025 12:12:15 AM DEBUG:Predicting on batch 185
+11/02/2025 12:12:19 AM DEBUG:Predicting on batch 186
+11/02/2025 12:12:22 AM DEBUG:Predicting on batch 187
+11/02/2025 12:12:26 AM DEBUG:Predicting on batch 188
+11/02/2025 12:12:29 AM DEBUG:Predicting on batch 189
+11/02/2025 12:12:33 AM DEBUG:Predicting on batch 190
+11/02/2025 12:12:33 AM DEBUG:190
+11/02/2025 12:12:33 AM DEBUG:10 batches took 36.38237476348877 seconds
+11/02/2025 12:12:37 AM DEBUG:Predicting on batch 191
+11/02/2025 12:12:40 AM DEBUG:Predicting on batch 192
+11/02/2025 12:12:44 AM DEBUG:Predicting on batch 193
+11/02/2025 12:12:48 AM DEBUG:Predicting on batch 194
+11/02/2025 12:12:51 AM DEBUG:Predicting on batch 195
+11/02/2025 12:12:55 AM DEBUG:Predicting on batch 196
+11/02/2025 12:12:58 AM DEBUG:Predicting on batch 197
+11/02/2025 12:13:02 AM DEBUG:Predicting on batch 198
+11/02/2025 12:13:06 AM DEBUG:Predicting on batch 199
+11/02/2025 12:13:09 AM DEBUG:Predicting on batch 200
+11/02/2025 12:13:09 AM DEBUG:200
+11/02/2025 12:13:09 AM DEBUG:10 batches took 36.459166049957275 seconds
+11/02/2025 12:13:13 AM DEBUG:Predicting on batch 201
+11/02/2025 12:13:17 AM DEBUG:Predicting on batch 202
+11/02/2025 12:13:20 AM DEBUG:Predicting on batch 203
+11/02/2025 12:13:24 AM DEBUG:Predicting on batch 204
+11/02/2025 12:13:28 AM DEBUG:Predicting on batch 205
+11/02/2025 12:13:31 AM DEBUG:Predicting on batch 206
+11/02/2025 12:13:35 AM DEBUG:Predicting on batch 207
+11/02/2025 12:13:39 AM DEBUG:Predicting on batch 208
+11/02/2025 12:13:42 AM DEBUG:Predicting on batch 209
+11/02/2025 12:13:46 AM DEBUG:Predicting on batch 210
+11/02/2025 12:13:46 AM DEBUG:210
+11/02/2025 12:13:46 AM DEBUG:10 batches took 36.53307771682739 seconds
+11/02/2025 12:13:50 AM DEBUG:Predicting on batch 211
+11/02/2025 12:13:53 AM DEBUG:Predicting on batch 212
+11/02/2025 12:13:57 AM DEBUG:Predicting on batch 213
+11/02/2025 12:14:01 AM DEBUG:Predicting on batch 214
+11/02/2025 12:14:04 AM DEBUG:Predicting on batch 215
+11/02/2025 12:14:08 AM DEBUG:Predicting on batch 216
+11/02/2025 12:14:12 AM DEBUG:Predicting on batch 217
+11/02/2025 12:14:15 AM DEBUG:Predicting on batch 218
+11/02/2025 12:14:19 AM DEBUG:Predicting on batch 219
+11/02/2025 12:14:22 AM DEBUG:Predicting on batch 220
+11/02/2025 12:14:22 AM DEBUG:220
+11/02/2025 12:14:22 AM DEBUG:10 batches took 36.460384130477905 seconds
+11/02/2025 12:14:26 AM DEBUG:Predicting on batch 221
+11/02/2025 12:14:30 AM DEBUG:Predicting on batch 222
+11/02/2025 12:14:34 AM DEBUG:Predicting on batch 223
+11/02/2025 12:14:37 AM DEBUG:Predicting on batch 224
+11/02/2025 12:14:41 AM DEBUG:Predicting on batch 225
+11/02/2025 12:14:44 AM DEBUG:Predicting on batch 226
+11/02/2025 12:14:48 AM DEBUG:Predicting on batch 227
+11/02/2025 12:14:52 AM DEBUG:Predicting on batch 228
+11/02/2025 12:14:55 AM DEBUG:Predicting on batch 229
+11/02/2025 12:14:59 AM DEBUG:Predicting on batch 230
+11/02/2025 12:14:59 AM DEBUG:230
+11/02/2025 12:14:59 AM DEBUG:10 batches took 36.427006244659424 seconds
+11/02/2025 12:15:03 AM DEBUG:Predicting on batch 231
+11/02/2025 12:15:06 AM DEBUG:Predicting on batch 232
+11/02/2025 12:15:10 AM DEBUG:Predicting on batch 233
+11/02/2025 12:15:14 AM DEBUG:Predicting on batch 234
+11/02/2025 12:15:17 AM DEBUG:Predicting on batch 235
+11/02/2025 12:15:21 AM DEBUG:Predicting on batch 236
+11/02/2025 12:15:24 AM DEBUG:Predicting on batch 237
+11/02/2025 12:15:28 AM DEBUG:Predicting on batch 238
+11/02/2025 12:15:32 AM DEBUG:Predicting on batch 239
+11/02/2025 12:15:35 AM DEBUG:Predicting on batch 240
+11/02/2025 12:15:35 AM DEBUG:240
+11/02/2025 12:15:35 AM DEBUG:10 batches took 36.5490026473999 seconds
+11/02/2025 12:15:39 AM DEBUG:Predicting on batch 241
+11/02/2025 12:15:43 AM DEBUG:Predicting on batch 242
+11/02/2025 12:15:46 AM DEBUG:Predicting on batch 243
+11/02/2025 12:15:50 AM DEBUG:Predicting on batch 244
+11/02/2025 12:15:54 AM DEBUG:Predicting on batch 245
+11/02/2025 12:15:57 AM DEBUG:Predicting on batch 246
+11/02/2025 12:16:01 AM DEBUG:Predicting on batch 247
+11/02/2025 12:16:05 AM DEBUG:Predicting on batch 248
+11/02/2025 12:16:08 AM DEBUG:Predicting on batch 249

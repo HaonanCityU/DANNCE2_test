@@ -1,0 +1,15 @@
+six
+pyyaml
+imageio==2.8.0
+imageio-ffmpeg
+numpy>1.19.0
+scikit-image
+matplotlib
+attr
+attrs
+multiprocess
+opencv-python
+tensorflow==2.6
+keras==2.6.*
+psutil
+mat73
