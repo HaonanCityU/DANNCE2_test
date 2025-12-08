@@ -1,0 +1,102 @@
+11/15/2025 10:19:00 AM INFO:com_train_dir set to: ./COM/train_results/
+11/15/2025 10:19:00 AM INFO:com_predict_dir set to: ./COM/predict_results/
+11/15/2025 10:19:00 AM INFO:com_file set to: ./COM/predict_results/com3d.mat
+11/15/2025 10:19:00 AM INFO:com_predict_weights set to: /home/haonan/proj/dannce-release_dev2/demo/sh_test/COM/train_results/weights.170-0.00036.hdf5
+11/15/2025 10:19:00 AM INFO:dannce_train_dir set to: ./DANNCE/train_results/AVG/
+11/15/2025 10:19:00 AM INFO:dannce_predict_dir set to: ./DANNCE/predict_results/
+11/15/2025 10:19:00 AM INFO:gpu_id set to: 2,3
+11/15/2025 10:19:00 AM INFO:verbose set to: 1
+11/15/2025 10:19:00 AM INFO:exp set to: [{'label3d_file': '/home/haonan/proj/dannce-release_dev2/demo/sh_test/com_dannce.mat'}]
+11/15/2025 10:19:00 AM INFO:io_config set to: io.yaml
+11/15/2025 10:19:00 AM INFO:batch_size set to: 2
+11/15/2025 10:19:00 AM INFO:epochs set to: 200
+11/15/2025 10:19:00 AM INFO:downfac set to: 2
+11/15/2025 10:19:00 AM INFO:lr set to: 5e-5
+11/15/2025 10:19:00 AM INFO:num_validation_per_exp set to: 2
+11/15/2025 10:19:00 AM INFO:max_num_samples set to: 20000
+11/15/2025 10:19:00 AM INFO:com_finetune_weights set to: ./COM/weights/
+11/15/2025 10:19:00 AM INFO:crop_height set to: [0, 1024]
+11/15/2025 10:19:00 AM INFO:crop_width set to: [0, 1152]
+11/15/2025 10:19:00 AM INFO:base_config set to: /home/haonan/proj/dannce-release_dev2/configs/com_mouse_config.yaml
+11/15/2025 10:19:00 AM INFO:viddir set to: videos
+11/15/2025 10:19:00 AM INFO:camnames set to: None
+11/15/2025 10:19:00 AM INFO:n_channels_out set to: 1
+11/15/2025 10:19:00 AM INFO:sigma set to: 30
+11/15/2025 10:19:00 AM INFO:net set to: unet2d_fullbn
+11/15/2025 10:19:00 AM INFO:immode set to: vid
+11/15/2025 10:19:00 AM INFO:mono set to: False
+11/15/2025 10:19:00 AM INFO:mirror set to: False
+11/15/2025 10:19:00 AM INFO:norm_method set to: layer
+11/15/2025 10:19:00 AM INFO:log_level set to: INFO
+11/15/2025 10:19:00 AM INFO:log_dest set to: ../../logs/dannce_Nov15_2025.log
+11/15/2025 10:19:00 AM INFO:start_batch set to: 0
+11/15/2025 10:19:00 AM INFO:start_sample set to: 0
+11/15/2025 10:19:00 AM INFO:dsmode set to: nn
+11/15/2025 10:19:00 AM INFO:debug set to: False
+11/15/2025 10:19:00 AM INFO:loss set to: mask_nan_keep_loss
+11/15/2025 10:19:00 AM INFO:n_channels_in set to: None
+11/15/2025 10:19:00 AM INFO:extension set to: None
+11/15/2025 10:19:00 AM INFO:n_views set to: 6
+11/15/2025 10:19:00 AM INFO:vid_dir_flag set to: None
+11/15/2025 10:19:00 AM INFO:num_train_per_exp set to: None
+11/15/2025 10:19:00 AM INFO:chunks set to: None
+11/15/2025 10:19:00 AM INFO:lockfirst set to: None
+11/15/2025 10:19:00 AM INFO:load_valid set to: None
+11/15/2025 10:19:00 AM INFO:augment_hue set to: False
+11/15/2025 10:19:00 AM INFO:augment_brightness set to: False
+11/15/2025 10:19:00 AM INFO:augment_hue_val set to: 0.05
+11/15/2025 10:19:00 AM INFO:augment_bright_val set to: 0.05
+11/15/2025 10:19:00 AM INFO:augment_rotation_val set to: 5
+11/15/2025 10:19:00 AM INFO:mirror_augmentation set to: False
+11/15/2025 10:19:00 AM INFO:right_keypoints set to: None
+11/15/2025 10:19:00 AM INFO:left_keypoints set to: None
+11/15/2025 10:19:00 AM INFO:drop_landmark set to: None
+11/15/2025 10:19:00 AM INFO:raw_im_h set to: None
+11/15/2025 10:19:00 AM INFO:raw_im_w set to: None
+11/15/2025 10:19:00 AM INFO:n_instances set to: 1
+11/15/2025 10:19:00 AM INFO:write_npy set to: None
+11/15/2025 10:19:00 AM INFO:use_npy set to: False
+11/15/2025 10:19:00 AM INFO:data_split_seed set to: None
+11/15/2025 10:19:00 AM INFO:valid_exp set to: None
+11/15/2025 10:19:00 AM INFO:slurm_config set to: None
+11/15/2025 10:19:00 AM INFO:com_debug set to: None
+11/15/2025 10:19:00 AM INFO:com_exp set to: None
+11/15/2025 10:19:00 AM INFO:augment_rotation set to: False
+11/15/2025 10:19:00 AM INFO:augment_shear set to: False
+11/15/2025 10:19:00 AM INFO:augment_zoom set to: False
+11/15/2025 10:19:00 AM INFO:augment_shift set to: False
+11/15/2025 10:19:00 AM INFO:augment_shear_val set to: 5
+11/15/2025 10:19:00 AM INFO:augment_zoom_val set to: 0.05
+11/15/2025 10:19:00 AM INFO:augment_shift_val set to: 0.05
+11/15/2025 10:19:14 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting vid_dir_flag to True.
+11/15/2025 10:19:14 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting extension to .mp4.
+11/15/2025 10:19:14 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting chunks to {'Camera1': array([0]), 'Camera2': array([0]), 'Camera3': array([0]), 'Camera4': array([0]), 'Camera5': array([0]), 'Camera6': array([0])}.
+11/15/2025 10:19:14 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting n_channels_in to 3.
+11/15/2025 10:19:14 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting raw_im_h to 1080.
+11/15/2025 10:19:14 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting raw_im_w to 1920.
+11/15/2025 10:19:14 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting norm_method to batch.
+11/15/2025 10:19:14 AM INFO:dannce.engine.preprocessing.py.print_and_set Setting net to unet2d_full.
+11/15/2025 10:19:14 AM INFO:dannce.interface.setup_com_predict Using camnames: ['Camera1', 'Camera2', 'Camera3', 'Camera4', 'Camera5', 'Camera6']
+11/15/2025 10:19:14 AM INFO:Initializing Network...
+11/15/2025 10:19:14 AM INFO:dannce.engine.nets.norm_fun using batch normalization
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.engine.nets.norm_fun calling batch norm fun
+11/15/2025 10:19:20 AM INFO:dannce.interface.build_com_network Loading weights from /home/haonan/proj/dannce-release_dev2/demo/sh_test/COM/train_results/weights.170-0.00036.hdf5
+11/15/2025 10:19:20 AM INFO:dannce.interface.build_com_network COMPLETE
+

@@ -6,7 +6,7 @@ io_config: io.yaml
 batch_size: 2
 
 # COM training option. Sets the number of epochs during training
-epochs: 3
+epochs: 200
 
 # Degree of downsampling applied to image input. The demo COMfinder was trained
 # with downfac:2, but when fine-tuning your own COMfinder, we suggest using 
@@ -28,10 +28,12 @@ num_validation_per_exp: 2
 #com_debug: Camera5
 
 # How many frames to you want to predict over? Set to 'max' for all video frames.
-max_num_samples: 100
+max_num_samples: 20000
 
 com_finetune_weights: ./COM/weights/
 
 # How to crop the input images. The U-Net expects each dimension size to be a multiple of 32.
 crop_height: [0, 1024]
 crop_width: [0, 1152]
+# crop_height: [0, 1080]
+#crop_width: [0, 1920]

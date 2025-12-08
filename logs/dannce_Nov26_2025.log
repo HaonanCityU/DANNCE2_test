@@ -1,0 +1,3243 @@
+11/26/2025 09:11:46 PM INFO:com_train_dir set to: ./COM/train_results/
+11/26/2025 09:11:46 PM INFO:com_predict_dir set to: ./COM/predict_results/
+11/26/2025 09:11:46 PM INFO:com_file set to: ./COM/predict_results/com3d.mat
+11/26/2025 09:11:46 PM INFO:com_predict_weights set to: /home/haonan/proj/dannce-release_dev2/demo/sh_test/COM/train_results/weights.170-0.00036.hdf5
+11/26/2025 09:11:46 PM INFO:dannce_train_dir set to: ./DANNCE/train_results/AVG/
+11/26/2025 09:11:46 PM INFO:dannce_predict_dir set to: ./DANNCE/predict_results/
+11/26/2025 09:11:46 PM INFO:gpu_id set to: 2,3
+11/26/2025 09:11:46 PM INFO:verbose set to: 1
+11/26/2025 09:11:46 PM INFO:exp set to: [{'label3d_file': '/home/haonan/proj/dannce-release_dev2/demo/sh_test/sh_dannce.mat'}]
+11/26/2025 09:11:46 PM INFO:io_config set to: io.yaml
+11/26/2025 09:11:46 PM INFO:new_n_channels_out set to: 22
+11/26/2025 09:11:46 PM INFO:batch_size set to: 4
+11/26/2025 09:11:46 PM INFO:epochs set to: 500
+11/26/2025 09:11:46 PM INFO:net_type set to: AVG
+11/26/2025 09:11:46 PM INFO:train_mode set to: finetune
+11/26/2025 09:11:46 PM INFO:num_validation_per_exp set to: 30
+11/26/2025 09:11:46 PM INFO:vol_size set to: 180
+11/26/2025 09:11:46 PM INFO:nvox set to: 112
+11/26/2025 09:11:46 PM INFO:max_num_samples set to: max
+11/26/2025 09:11:46 PM INFO:dannce_finetune_weights set to: ./DANNCE/weights/weights.rat.MAX/
+11/26/2025 09:11:46 PM INFO:log_level set to: DEBUG
+11/26/2025 09:11:46 PM INFO:base_config set to: /home/haonan/proj/dannce-release_dev2/configs/dannce_mouse_config.yaml
+11/26/2025 09:11:46 PM INFO:viddir set to: videos
+11/26/2025 09:11:46 PM INFO:crop_height set to: None
+11/26/2025 09:11:46 PM INFO:crop_width set to: None
+11/26/2025 09:11:46 PM INFO:camnames set to: None
+11/26/2025 09:11:46 PM INFO:n_channels_out set to: 20
+11/26/2025 09:11:46 PM INFO:sigma set to: 10
+11/26/2025 09:11:46 PM INFO:net set to: None
+11/26/2025 09:11:46 PM INFO:immode set to: vid
+11/26/2025 09:11:46 PM INFO:mono set to: False
+11/26/2025 09:11:46 PM INFO:mirror set to: False
+11/26/2025 09:11:46 PM INFO:norm_method set to: layer
+11/26/2025 09:11:46 PM INFO:log_dest set to: ../../logs/dannce_Nov26_2025.log
+11/26/2025 09:11:46 PM INFO:start_batch set to: 0
+11/26/2025 09:11:46 PM INFO:start_sample set to: None
+11/26/2025 09:11:46 PM INFO:com_fromlabels set to: False
+11/26/2025 09:11:46 PM INFO:medfilt_window set to: None
+11/26/2025 09:11:46 PM INFO:new_last_kernel_size set to: [3, 3, 3]
+11/26/2025 09:11:46 PM INFO:n_layers_locked set to: 2
+11/26/2025 09:11:46 PM INFO:vmin set to: None
+11/26/2025 09:11:46 PM INFO:vmax set to: None
+11/26/2025 09:11:46 PM INFO:interp set to: nearest
+11/26/2025 09:11:46 PM INFO:depth set to: False
+11/26/2025 09:11:46 PM INFO:comthresh set to: 0
+11/26/2025 09:11:46 PM INFO:weighted set to: False
+11/26/2025 09:11:46 PM INFO:com_method set to: median
+11/26/2025 09:11:46 PM INFO:cthresh set to: None
+11/26/2025 09:11:46 PM INFO:channel_combo set to: None
+11/26/2025 09:11:46 PM INFO:predict_mode set to: torch
+11/26/2025 09:11:46 PM INFO:n_views set to: 6
+11/26/2025 09:11:46 PM INFO:dannce_predict_model set to: None
+11/26/2025 09:11:46 PM INFO:expval set to: None
+11/26/2025 09:11:46 PM INFO:from_weights set to: None
+11/26/2025 09:11:46 PM INFO:write_npy set to: None
+11/26/2025 09:11:46 PM INFO:loss set to: mask_nan_keep_loss
+11/26/2025 09:11:46 PM INFO:n_channels_in set to: None
+11/26/2025 09:11:46 PM INFO:extension set to: None
+11/26/2025 09:11:46 PM INFO:vid_dir_flag set to: None
+11/26/2025 09:11:46 PM INFO:num_train_per_exp set to: None
+11/26/2025 09:11:46 PM INFO:chunks set to: None
+11/26/2025 09:11:46 PM INFO:lockfirst set to: None
+11/26/2025 09:11:46 PM INFO:load_valid set to: None
+11/26/2025 09:11:46 PM INFO:augment_hue set to: False
+11/26/2025 09:11:46 PM INFO:augment_brightness set to: False
+11/26/2025 09:11:46 PM INFO:augment_hue_val set to: 0.05
+11/26/2025 09:11:46 PM INFO:augment_bright_val set to: 0.05
+11/26/2025 09:11:46 PM INFO:augment_rotation_val set to: 5
+11/26/2025 09:11:46 PM INFO:mirror_augmentation set to: False
+11/26/2025 09:11:46 PM INFO:right_keypoints set to: None
+11/26/2025 09:11:46 PM INFO:left_keypoints set to: None
+11/26/2025 09:11:46 PM INFO:drop_landmark set to: None
+11/26/2025 09:11:46 PM INFO:raw_im_h set to: None
+11/26/2025 09:11:46 PM INFO:raw_im_w set to: None
+11/26/2025 09:11:46 PM INFO:n_instances set to: 1
+11/26/2025 09:11:46 PM INFO:use_npy set to: False
+11/26/2025 09:11:46 PM INFO:data_split_seed set to: None
+11/26/2025 09:11:46 PM INFO:valid_exp set to: None
+11/26/2025 09:11:46 PM INFO:slurm_config set to: None
+11/26/2025 09:11:46 PM INFO:metric set to: ['euclidean_distance_3D']
+11/26/2025 09:11:46 PM INFO:lr set to: 0.001
+11/26/2025 09:11:46 PM INFO:rotate set to: True
+11/26/2025 09:11:46 PM INFO:augment_continuous_rotation set to: False
+11/26/2025 09:11:46 PM INFO:com_thresh set to: None
+11/26/2025 09:11:46 PM INFO:cam3_train set to: None
+11/26/2025 09:11:46 PM INFO:debug_volume_tifdir set to: None
+11/26/2025 09:11:46 PM INFO:downfac set to: None
+11/26/2025 09:11:46 PM INFO:dannce_predict_vol_tifdir set to: None
+11/26/2025 09:11:46 PM INFO:n_rand_views set to: 0
+11/26/2025 09:11:46 PM INFO:rand_view_replace set to: True
+11/26/2025 09:11:46 PM INFO:multi_gpu_train set to: False
+11/26/2025 09:11:46 PM INFO:heatmap_reg set to: False
+11/26/2025 09:11:46 PM INFO:heatmap_reg_coeff set to: 0.01
+11/26/2025 09:11:46 PM INFO:save_pred_targets set to: False
+11/26/2025 09:11:46 PM INFO:huber-delta set to: 1.35
+11/26/2025 09:11:46 PM INFO:avg+max set to: None
+11/26/2025 09:11:46 PM DEBUG:dannce.engine.preprocessing.py.grab_predict_label3d_file Using the following *dannce.mat files: ./mouse_val_sh_dannce.mat
+11/26/2025 09:11:53 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting vid_dir_flag to True.
+11/26/2025 09:11:53 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting extension to .mp4.
+11/26/2025 09:11:53 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting chunks to {'Camera1': array([0]), 'Camera2': array([0]), 'Camera3': array([0]), 'Camera4': array([0]), 'Camera5': array([0]), 'Camera6': array([0])}.
+11/26/2025 09:11:53 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting n_channels_in to 3.
+11/26/2025 09:11:53 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting raw_im_h to 1080.
+11/26/2025 09:11:53 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting raw_im_w to 1920.
+11/26/2025 09:11:53 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting expval to True.
+11/26/2025 09:11:53 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting net to finetune_AVG.
+11/26/2025 09:11:53 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting crop_height to [0, 1080].
+11/26/2025 09:11:53 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting crop_width to [0, 1920].
+11/26/2025 09:11:53 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting maxbatch to max.
+11/26/2025 09:11:53 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting start_batch to 0.
+11/26/2025 09:11:53 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting vmin to -90.0.
+11/26/2025 09:11:53 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting vmax to 90.0.
+11/26/2025 09:11:53 PM DEBUG:dannce.engine.preprocessing.py.grab_predict_label3d_file Using the following *dannce.mat files: ./mouse_val_sh_dannce.mat
+11/26/2025 09:11:53 PM INFO:dannce.interface.setup_dannce_predict Using torch predict mode
+11/26/2025 09:11:53 PM INFO:dannce.interface.setup_dannce_predict Using camnames: ['Camera1', 'Camera2', 'Camera3', 'Camera4', 'Camera5', 'Camera6']
+11/26/2025 09:12:45 PM INFO:com_train_dir set to: ./COM/train_results/
+11/26/2025 09:12:45 PM INFO:com_predict_dir set to: ./COM/predict_results/
+11/26/2025 09:12:45 PM INFO:com_file set to: ./COM/predict_results/com3d.mat
+11/26/2025 09:12:45 PM INFO:com_predict_weights set to: /home/haonan/proj/dannce-release_dev2/demo/sh_test/COM/train_results/weights.170-0.00036.hdf5
+11/26/2025 09:12:45 PM INFO:dannce_train_dir set to: ./DANNCE/train_results/AVG/
+11/26/2025 09:12:45 PM INFO:dannce_predict_dir set to: ./DANNCE/predict_results/
+11/26/2025 09:12:45 PM INFO:gpu_id set to: 2,3
+11/26/2025 09:12:45 PM INFO:verbose set to: 1
+11/26/2025 09:12:45 PM INFO:exp set to: [{'label3d_file': '/home/haonan/proj/dannce-release_dev2/demo/sh_test/sh_dannce.mat'}]
+11/26/2025 09:12:45 PM INFO:io_config set to: io.yaml
+11/26/2025 09:12:45 PM INFO:new_n_channels_out set to: 22
+11/26/2025 09:12:45 PM INFO:batch_size set to: 4
+11/26/2025 09:12:45 PM INFO:epochs set to: 500
+11/26/2025 09:12:45 PM INFO:net_type set to: AVG
+11/26/2025 09:12:45 PM INFO:train_mode set to: finetune
+11/26/2025 09:12:45 PM INFO:num_validation_per_exp set to: 30
+11/26/2025 09:12:45 PM INFO:vol_size set to: 180
+11/26/2025 09:12:45 PM INFO:nvox set to: 112
+11/26/2025 09:12:45 PM INFO:max_num_samples set to: 10000
+11/26/2025 09:12:45 PM INFO:dannce_finetune_weights set to: ./DANNCE/weights/weights.rat.MAX/
+11/26/2025 09:12:45 PM INFO:log_level set to: DEBUG
+11/26/2025 09:12:45 PM INFO:base_config set to: /home/haonan/proj/dannce-release_dev2/configs/dannce_mouse_config.yaml
+11/26/2025 09:12:45 PM INFO:viddir set to: videos
+11/26/2025 09:12:45 PM INFO:crop_height set to: None
+11/26/2025 09:12:45 PM INFO:crop_width set to: None
+11/26/2025 09:12:45 PM INFO:camnames set to: None
+11/26/2025 09:12:45 PM INFO:n_channels_out set to: 20
+11/26/2025 09:12:45 PM INFO:sigma set to: 10
+11/26/2025 09:12:45 PM INFO:net set to: None
+11/26/2025 09:12:45 PM INFO:immode set to: vid
+11/26/2025 09:12:45 PM INFO:mono set to: False
+11/26/2025 09:12:45 PM INFO:mirror set to: False
+11/26/2025 09:12:45 PM INFO:norm_method set to: layer
+11/26/2025 09:12:45 PM INFO:log_dest set to: ../../logs/dannce_Nov26_2025.log
+11/26/2025 09:12:45 PM INFO:start_batch set to: 0
+11/26/2025 09:12:45 PM INFO:start_sample set to: None
+11/26/2025 09:12:45 PM INFO:com_fromlabels set to: False
+11/26/2025 09:12:45 PM INFO:medfilt_window set to: None
+11/26/2025 09:12:45 PM INFO:new_last_kernel_size set to: [3, 3, 3]
+11/26/2025 09:12:45 PM INFO:n_layers_locked set to: 2
+11/26/2025 09:12:45 PM INFO:vmin set to: None
+11/26/2025 09:12:45 PM INFO:vmax set to: None
+11/26/2025 09:12:45 PM INFO:interp set to: nearest
+11/26/2025 09:12:45 PM INFO:depth set to: False
+11/26/2025 09:12:45 PM INFO:comthresh set to: 0
+11/26/2025 09:12:45 PM INFO:weighted set to: False
+11/26/2025 09:12:45 PM INFO:com_method set to: median
+11/26/2025 09:12:45 PM INFO:cthresh set to: None
+11/26/2025 09:12:45 PM INFO:channel_combo set to: None
+11/26/2025 09:12:45 PM INFO:predict_mode set to: torch
+11/26/2025 09:12:45 PM INFO:n_views set to: 6
+11/26/2025 09:12:45 PM INFO:dannce_predict_model set to: None
+11/26/2025 09:12:45 PM INFO:expval set to: None
+11/26/2025 09:12:45 PM INFO:from_weights set to: None
+11/26/2025 09:12:45 PM INFO:write_npy set to: None
+11/26/2025 09:12:45 PM INFO:loss set to: mask_nan_keep_loss
+11/26/2025 09:12:45 PM INFO:n_channels_in set to: None
+11/26/2025 09:12:45 PM INFO:extension set to: None
+11/26/2025 09:12:45 PM INFO:vid_dir_flag set to: None
+11/26/2025 09:12:45 PM INFO:num_train_per_exp set to: None
+11/26/2025 09:12:45 PM INFO:chunks set to: None
+11/26/2025 09:12:45 PM INFO:lockfirst set to: None
+11/26/2025 09:12:45 PM INFO:load_valid set to: None
+11/26/2025 09:12:45 PM INFO:augment_hue set to: False
+11/26/2025 09:12:45 PM INFO:augment_brightness set to: False
+11/26/2025 09:12:45 PM INFO:augment_hue_val set to: 0.05
+11/26/2025 09:12:45 PM INFO:augment_bright_val set to: 0.05
+11/26/2025 09:12:45 PM INFO:augment_rotation_val set to: 5
+11/26/2025 09:12:45 PM INFO:mirror_augmentation set to: False
+11/26/2025 09:12:45 PM INFO:right_keypoints set to: None
+11/26/2025 09:12:45 PM INFO:left_keypoints set to: None
+11/26/2025 09:12:45 PM INFO:drop_landmark set to: None
+11/26/2025 09:12:45 PM INFO:raw_im_h set to: None
+11/26/2025 09:12:45 PM INFO:raw_im_w set to: None
+11/26/2025 09:12:45 PM INFO:n_instances set to: 1
+11/26/2025 09:12:45 PM INFO:use_npy set to: False
+11/26/2025 09:12:45 PM INFO:data_split_seed set to: None
+11/26/2025 09:12:45 PM INFO:valid_exp set to: None
+11/26/2025 09:12:45 PM INFO:slurm_config set to: None
+11/26/2025 09:12:45 PM INFO:metric set to: ['euclidean_distance_3D']
+11/26/2025 09:12:45 PM INFO:lr set to: 0.001
+11/26/2025 09:12:45 PM INFO:rotate set to: True
+11/26/2025 09:12:45 PM INFO:augment_continuous_rotation set to: False
+11/26/2025 09:12:45 PM INFO:com_thresh set to: None
+11/26/2025 09:12:45 PM INFO:cam3_train set to: None
+11/26/2025 09:12:45 PM INFO:debug_volume_tifdir set to: None
+11/26/2025 09:12:45 PM INFO:downfac set to: None
+11/26/2025 09:12:45 PM INFO:dannce_predict_vol_tifdir set to: None
+11/26/2025 09:12:45 PM INFO:n_rand_views set to: 0
+11/26/2025 09:12:45 PM INFO:rand_view_replace set to: True
+11/26/2025 09:12:45 PM INFO:multi_gpu_train set to: False
+11/26/2025 09:12:45 PM INFO:heatmap_reg set to: False
+11/26/2025 09:12:45 PM INFO:heatmap_reg_coeff set to: 0.01
+11/26/2025 09:12:45 PM INFO:save_pred_targets set to: False
+11/26/2025 09:12:45 PM INFO:huber-delta set to: 1.35
+11/26/2025 09:12:45 PM INFO:avg+max set to: None
+11/26/2025 09:12:45 PM DEBUG:dannce.engine.preprocessing.py.grab_predict_label3d_file Using the following *dannce.mat files: ./mouse_val_sh_dannce.mat
+11/26/2025 09:12:52 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting vid_dir_flag to True.
+11/26/2025 09:12:52 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting extension to .mp4.
+11/26/2025 09:12:52 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting chunks to {'Camera1': array([0]), 'Camera2': array([0]), 'Camera3': array([0]), 'Camera4': array([0]), 'Camera5': array([0]), 'Camera6': array([0])}.
+11/26/2025 09:12:52 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting n_channels_in to 3.
+11/26/2025 09:12:52 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting raw_im_h to 1080.
+11/26/2025 09:12:52 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting raw_im_w to 1920.
+11/26/2025 09:12:52 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting expval to True.
+11/26/2025 09:12:52 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting net to finetune_AVG.
+11/26/2025 09:12:52 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting crop_height to [0, 1080].
+11/26/2025 09:12:52 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting crop_width to [0, 1920].
+11/26/2025 09:12:52 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting maxbatch to 2500.
+11/26/2025 09:12:52 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting start_batch to 0.
+11/26/2025 09:12:52 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting vmin to -90.0.
+11/26/2025 09:12:52 PM INFO:dannce.engine.preprocessing.py.print_and_set Setting vmax to 90.0.
+11/26/2025 09:12:52 PM DEBUG:dannce.engine.preprocessing.py.grab_predict_label3d_file Using the following *dannce.mat files: ./mouse_val_sh_dannce.mat
+11/26/2025 09:12:52 PM INFO:dannce.interface.setup_dannce_predict Using torch predict mode
+11/26/2025 09:12:52 PM INFO:dannce.interface.setup_dannce_predict Using camnames: ['Camera1', 'Camera2', 'Camera3', 'Camera4', 'Camera5', 'Camera6']
+11/26/2025 09:13:13 PM INFO:dannce.interface.do_COM_load Experiment 0 using com3d: ./COM/predict_results/com3d.mat
+11/26/2025 09:13:13 PM INFO:dannce.interface.do_COM_load Removed 0 samples from the dataset because they either had COM positions over cthresh, or did not have matching sampleIDs in the COM file
+11/26/2025 09:13:13 PM INFO:dannce.interface.write_com_file Saving 3D COM to ./DANNCE/predict_results/com3d_used.mat
+11/26/2025 09:13:13 PM INFO:None
+11/26/2025 09:13:19 PM INFO:dannce.engine.generator.DataGenerator_3Dconv_torch.__init__Executing eagerly: True
+11/26/2025 09:13:20 PM INFO:dannce.engine.generator.DataGenerator_3Dconv_torch.__init__Init took 6.480162858963013 sec.
+11/26/2025 09:13:20 PM INFO:dannce.interface.build_model Initializing Network...
+11/26/2025 09:13:20 PM INFO:dannce.interface.build_model Loading model from ./DANNCE/train_results/AVG/weights.482-5.49394.hdf5
+11/26/2025 09:13:20 PM DEBUG:Creating converter from 3 to 5
+11/26/2025 09:13:21 PM DEBUG:Predicting on batch 0
+11/26/2025 09:13:22 PM INFO:dannce.engine.video.LoadVideoFrame.load_vid_frame Loading new video: 0.mp4 for 0_Camera1
+11/26/2025 09:13:22 PM INFO:dannce.engine.video.LoadVideoFrame.load_vid_frame Loading new video: 0.mp4 for 0_Camera2
+11/26/2025 09:13:22 PM INFO:dannce.engine.video.LoadVideoFrame.load_vid_frame Loading new video: 0.mp4 for 0_Camera3
+11/26/2025 09:13:22 PM INFO:dannce.engine.video.LoadVideoFrame.load_vid_frame Loading new video: 0.mp4 for 0_Camera5
+11/26/2025 09:13:22 PM INFO:dannce.engine.video.LoadVideoFrame.load_vid_frame Loading new video: 0.mp4 for 0_Camera6
+11/26/2025 09:13:22 PM INFO:dannce.engine.video.LoadVideoFrame.load_vid_frame Loading new video: 0.mp4 for 0_Camera4
+11/26/2025 09:13:30 PM DEBUG:Predicting on batch 1
+11/26/2025 09:13:32 PM DEBUG:Predicting on batch 2
+11/26/2025 09:13:34 PM DEBUG:Predicting on batch 3
+11/26/2025 09:13:35 PM DEBUG:Predicting on batch 4
+11/26/2025 09:13:37 PM DEBUG:Predicting on batch 5
+11/26/2025 09:13:39 PM DEBUG:Predicting on batch 6
+11/26/2025 09:13:41 PM DEBUG:Predicting on batch 7
+11/26/2025 09:13:43 PM DEBUG:Predicting on batch 8
+11/26/2025 09:13:45 PM DEBUG:Predicting on batch 9
+11/26/2025 09:13:46 PM DEBUG:Predicting on batch 10
+11/26/2025 09:13:46 PM DEBUG:10
+11/26/2025 09:13:46 PM DEBUG:10 batches took 25.27748942375183 seconds
+11/26/2025 09:13:48 PM DEBUG:Predicting on batch 11
+11/26/2025 09:13:50 PM DEBUG:Predicting on batch 12
+11/26/2025 09:13:52 PM DEBUG:Predicting on batch 13
+11/26/2025 09:13:55 PM DEBUG:Predicting on batch 14
+11/26/2025 09:13:57 PM DEBUG:Predicting on batch 15
+11/26/2025 09:13:59 PM DEBUG:Predicting on batch 16
+11/26/2025 09:14:00 PM DEBUG:Predicting on batch 17
+11/26/2025 09:14:02 PM DEBUG:Predicting on batch 18
+11/26/2025 09:14:04 PM DEBUG:Predicting on batch 19
+11/26/2025 09:14:06 PM DEBUG:Predicting on batch 20
+11/26/2025 09:14:06 PM DEBUG:20
+11/26/2025 09:14:06 PM DEBUG:10 batches took 19.088038206100464 seconds
+11/26/2025 09:14:07 PM DEBUG:Predicting on batch 21
+11/26/2025 09:14:09 PM DEBUG:Predicting on batch 22
+11/26/2025 09:14:11 PM DEBUG:Predicting on batch 23
+11/26/2025 09:14:13 PM DEBUG:Predicting on batch 24
+11/26/2025 09:14:15 PM DEBUG:Predicting on batch 25
+11/26/2025 09:14:16 PM DEBUG:Predicting on batch 26
+11/26/2025 09:14:18 PM DEBUG:Predicting on batch 27
+11/26/2025 09:14:20 PM DEBUG:Predicting on batch 28
+11/26/2025 09:14:22 PM DEBUG:Predicting on batch 29
+11/26/2025 09:14:24 PM DEBUG:Predicting on batch 30
+11/26/2025 09:14:24 PM DEBUG:30
+11/26/2025 09:14:24 PM DEBUG:10 batches took 18.132110595703125 seconds
+11/26/2025 09:14:25 PM DEBUG:Predicting on batch 31
+11/26/2025 09:14:27 PM DEBUG:Predicting on batch 32
+11/26/2025 09:14:29 PM DEBUG:Predicting on batch 33
+11/26/2025 09:14:31 PM DEBUG:Predicting on batch 34
+11/26/2025 09:14:33 PM DEBUG:Predicting on batch 35
+11/26/2025 09:14:35 PM DEBUG:Predicting on batch 36
+11/26/2025 09:14:37 PM DEBUG:Predicting on batch 37
+11/26/2025 09:14:38 PM DEBUG:Predicting on batch 38
+11/26/2025 09:14:40 PM DEBUG:Predicting on batch 39
+11/26/2025 09:14:42 PM DEBUG:Predicting on batch 40
+11/26/2025 09:14:42 PM DEBUG:40
+11/26/2025 09:14:42 PM DEBUG:10 batches took 18.533111333847046 seconds
+11/26/2025 09:14:44 PM DEBUG:Predicting on batch 41
+11/26/2025 09:14:46 PM DEBUG:Predicting on batch 42
+11/26/2025 09:14:48 PM DEBUG:Predicting on batch 43
+11/26/2025 09:14:50 PM DEBUG:Predicting on batch 44
+11/26/2025 09:14:52 PM DEBUG:Predicting on batch 45
+11/26/2025 09:14:53 PM DEBUG:Predicting on batch 46
+11/26/2025 09:14:55 PM DEBUG:Predicting on batch 47
+11/26/2025 09:14:57 PM DEBUG:Predicting on batch 48
+11/26/2025 09:14:59 PM DEBUG:Predicting on batch 49
+11/26/2025 09:15:01 PM DEBUG:Predicting on batch 50
+11/26/2025 09:15:01 PM DEBUG:50
+11/26/2025 09:15:01 PM DEBUG:10 batches took 18.581828355789185 seconds
+11/26/2025 09:15:03 PM DEBUG:Predicting on batch 51
+11/26/2025 09:15:05 PM DEBUG:Predicting on batch 52
+11/26/2025 09:15:07 PM DEBUG:Predicting on batch 53
+11/26/2025 09:15:08 PM DEBUG:Predicting on batch 54
+11/26/2025 09:15:10 PM DEBUG:Predicting on batch 55
+11/26/2025 09:15:12 PM DEBUG:Predicting on batch 56
+11/26/2025 09:15:14 PM DEBUG:Predicting on batch 57
+11/26/2025 09:15:16 PM DEBUG:Predicting on batch 58
+11/26/2025 09:15:18 PM DEBUG:Predicting on batch 59
+11/26/2025 09:15:20 PM DEBUG:Predicting on batch 60
+11/26/2025 09:15:20 PM DEBUG:60
+11/26/2025 09:15:20 PM DEBUG:10 batches took 18.735727071762085 seconds
+11/26/2025 09:15:21 PM DEBUG:Predicting on batch 61
+11/26/2025 09:15:23 PM DEBUG:Predicting on batch 62
+11/26/2025 09:15:25 PM DEBUG:Predicting on batch 63
+11/26/2025 09:15:27 PM DEBUG:Predicting on batch 64
+11/26/2025 09:15:29 PM DEBUG:Predicting on batch 65
+11/26/2025 09:15:31 PM DEBUG:Predicting on batch 66
+11/26/2025 09:15:33 PM DEBUG:Predicting on batch 67
+11/26/2025 09:15:35 PM DEBUG:Predicting on batch 68
+11/26/2025 09:15:36 PM DEBUG:Predicting on batch 69
+11/26/2025 09:15:38 PM DEBUG:Predicting on batch 70
+11/26/2025 09:15:38 PM DEBUG:70
+11/26/2025 09:15:38 PM DEBUG:10 batches took 18.622069835662842 seconds
+11/26/2025 09:15:40 PM DEBUG:Predicting on batch 71
+11/26/2025 09:15:42 PM DEBUG:Predicting on batch 72
+11/26/2025 09:15:43 PM DEBUG:Predicting on batch 73
+11/26/2025 09:15:45 PM DEBUG:Predicting on batch 74
+11/26/2025 09:15:47 PM DEBUG:Predicting on batch 75
+11/26/2025 09:15:49 PM DEBUG:Predicting on batch 76
+11/26/2025 09:15:51 PM DEBUG:Predicting on batch 77
+11/26/2025 09:15:52 PM DEBUG:Predicting on batch 78
+11/26/2025 09:15:54 PM DEBUG:Predicting on batch 79
+11/26/2025 09:15:56 PM DEBUG:Predicting on batch 80
+11/26/2025 09:15:56 PM DEBUG:80
+11/26/2025 09:15:56 PM DEBUG:10 batches took 17.98739457130432 seconds
+11/26/2025 09:15:58 PM DEBUG:Predicting on batch 81
+11/26/2025 09:16:00 PM DEBUG:Predicting on batch 82
+11/26/2025 09:16:02 PM DEBUG:Predicting on batch 83
+11/26/2025 09:16:04 PM DEBUG:Predicting on batch 84
+11/26/2025 09:16:06 PM DEBUG:Predicting on batch 85
+11/26/2025 09:16:08 PM DEBUG:Predicting on batch 86
+11/26/2025 09:16:10 PM DEBUG:Predicting on batch 87
+11/26/2025 09:16:12 PM DEBUG:Predicting on batch 88
+11/26/2025 09:16:14 PM DEBUG:Predicting on batch 89
+11/26/2025 09:16:16 PM DEBUG:Predicting on batch 90
+11/26/2025 09:16:16 PM DEBUG:90
+11/26/2025 09:16:16 PM DEBUG:10 batches took 19.345630884170532 seconds
+11/26/2025 09:16:18 PM DEBUG:Predicting on batch 91
+11/26/2025 09:16:20 PM DEBUG:Predicting on batch 92
+11/26/2025 09:16:21 PM DEBUG:Predicting on batch 93
+11/26/2025 09:16:23 PM DEBUG:Predicting on batch 94
+11/26/2025 09:16:25 PM DEBUG:Predicting on batch 95
+11/26/2025 09:16:27 PM DEBUG:Predicting on batch 96
+11/26/2025 09:16:29 PM DEBUG:Predicting on batch 97
+11/26/2025 09:16:31 PM DEBUG:Predicting on batch 98
+11/26/2025 09:16:33 PM DEBUG:Predicting on batch 99
+11/26/2025 09:16:35 PM DEBUG:Predicting on batch 100
+11/26/2025 09:16:35 PM DEBUG:100
+11/26/2025 09:16:35 PM DEBUG:10 batches took 19.115244388580322 seconds
+11/26/2025 09:16:37 PM DEBUG:Predicting on batch 101
+11/26/2025 09:16:39 PM DEBUG:Predicting on batch 102
+11/26/2025 09:16:41 PM DEBUG:Predicting on batch 103
+11/26/2025 09:16:43 PM DEBUG:Predicting on batch 104
+11/26/2025 09:16:45 PM DEBUG:Predicting on batch 105
+11/26/2025 09:16:47 PM DEBUG:Predicting on batch 106
+11/26/2025 09:16:49 PM DEBUG:Predicting on batch 107
+11/26/2025 09:16:51 PM DEBUG:Predicting on batch 108
+11/26/2025 09:16:53 PM DEBUG:Predicting on batch 109
+11/26/2025 09:16:55 PM DEBUG:Predicting on batch 110
+11/26/2025 09:16:55 PM DEBUG:110
+11/26/2025 09:16:55 PM DEBUG:10 batches took 20.395016193389893 seconds
+11/26/2025 09:16:57 PM DEBUG:Predicting on batch 111
+11/26/2025 09:16:59 PM DEBUG:Predicting on batch 112
+11/26/2025 09:17:01 PM DEBUG:Predicting on batch 113
+11/26/2025 09:17:03 PM DEBUG:Predicting on batch 114
+11/26/2025 09:17:05 PM DEBUG:Predicting on batch 115
+11/26/2025 09:17:07 PM DEBUG:Predicting on batch 116
+11/26/2025 09:17:09 PM DEBUG:Predicting on batch 117
+11/26/2025 09:17:11 PM DEBUG:Predicting on batch 118
+11/26/2025 09:17:13 PM DEBUG:Predicting on batch 119
+11/26/2025 09:17:15 PM DEBUG:Predicting on batch 120
+11/26/2025 09:17:15 PM DEBUG:120
+11/26/2025 09:17:15 PM DEBUG:10 batches took 19.805936098098755 seconds
+11/26/2025 09:17:17 PM DEBUG:Predicting on batch 121
+11/26/2025 09:17:19 PM DEBUG:Predicting on batch 122
+11/26/2025 09:17:21 PM DEBUG:Predicting on batch 123
+11/26/2025 09:17:22 PM DEBUG:Predicting on batch 124
+11/26/2025 09:17:24 PM DEBUG:Predicting on batch 125
+11/26/2025 09:17:26 PM DEBUG:Predicting on batch 126
+11/26/2025 09:17:28 PM DEBUG:Predicting on batch 127
+11/26/2025 09:17:30 PM DEBUG:Predicting on batch 128
+11/26/2025 09:17:32 PM DEBUG:Predicting on batch 129
+11/26/2025 09:17:34 PM DEBUG:Predicting on batch 130
+11/26/2025 09:17:34 PM DEBUG:130
+11/26/2025 09:17:34 PM DEBUG:10 batches took 19.1850848197937 seconds
+11/26/2025 09:17:36 PM DEBUG:Predicting on batch 131
+11/26/2025 09:17:38 PM DEBUG:Predicting on batch 132
+11/26/2025 09:17:40 PM DEBUG:Predicting on batch 133
+11/26/2025 09:17:42 PM DEBUG:Predicting on batch 134
+11/26/2025 09:17:44 PM DEBUG:Predicting on batch 135
+11/26/2025 09:17:46 PM DEBUG:Predicting on batch 136
+11/26/2025 09:17:48 PM DEBUG:Predicting on batch 137
+11/26/2025 09:17:50 PM DEBUG:Predicting on batch 138
+11/26/2025 09:17:52 PM DEBUG:Predicting on batch 139
+11/26/2025 09:17:54 PM DEBUG:Predicting on batch 140
+11/26/2025 09:17:54 PM DEBUG:140
+11/26/2025 09:17:54 PM DEBUG:10 batches took 19.93535327911377 seconds
+11/26/2025 09:17:56 PM DEBUG:Predicting on batch 141
+11/26/2025 09:17:57 PM DEBUG:Predicting on batch 142
+11/26/2025 09:17:59 PM DEBUG:Predicting on batch 143
+11/26/2025 09:18:01 PM DEBUG:Predicting on batch 144
+11/26/2025 09:18:03 PM DEBUG:Predicting on batch 145
+11/26/2025 09:18:05 PM DEBUG:Predicting on batch 146
+11/26/2025 09:18:07 PM DEBUG:Predicting on batch 147
+11/26/2025 09:18:09 PM DEBUG:Predicting on batch 148
+11/26/2025 09:18:11 PM DEBUG:Predicting on batch 149
+11/26/2025 09:18:13 PM DEBUG:Predicting on batch 150
+11/26/2025 09:18:13 PM DEBUG:150
+11/26/2025 09:18:13 PM DEBUG:10 batches took 19.010188102722168 seconds
+11/26/2025 09:18:15 PM DEBUG:Predicting on batch 151
+11/26/2025 09:18:17 PM DEBUG:Predicting on batch 152
+11/26/2025 09:18:18 PM DEBUG:Predicting on batch 153
+11/26/2025 09:18:20 PM DEBUG:Predicting on batch 154
+11/26/2025 09:18:23 PM DEBUG:Predicting on batch 155
+11/26/2025 09:18:24 PM DEBUG:Predicting on batch 156
+11/26/2025 09:18:26 PM DEBUG:Predicting on batch 157
+11/26/2025 09:18:28 PM DEBUG:Predicting on batch 158
+11/26/2025 09:18:30 PM DEBUG:Predicting on batch 159
+11/26/2025 09:18:32 PM DEBUG:Predicting on batch 160
+11/26/2025 09:18:32 PM DEBUG:160
+11/26/2025 09:18:32 PM DEBUG:10 batches took 18.580013513565063 seconds
+11/26/2025 09:18:33 PM DEBUG:Predicting on batch 161
+11/26/2025 09:18:35 PM DEBUG:Predicting on batch 162
+11/26/2025 09:18:37 PM DEBUG:Predicting on batch 163
+11/26/2025 09:18:39 PM DEBUG:Predicting on batch 164
+11/26/2025 09:18:41 PM DEBUG:Predicting on batch 165
+11/26/2025 09:18:43 PM DEBUG:Predicting on batch 166
+11/26/2025 09:18:45 PM DEBUG:Predicting on batch 167
+11/26/2025 09:18:46 PM DEBUG:Predicting on batch 168
+11/26/2025 09:18:48 PM DEBUG:Predicting on batch 169
+11/26/2025 09:18:50 PM DEBUG:Predicting on batch 170
+11/26/2025 09:18:50 PM DEBUG:170
+11/26/2025 09:18:50 PM DEBUG:10 batches took 18.467468976974487 seconds
+11/26/2025 09:18:52 PM DEBUG:Predicting on batch 171
+11/26/2025 09:18:54 PM DEBUG:Predicting on batch 172
+11/26/2025 09:18:56 PM DEBUG:Predicting on batch 173
+11/26/2025 09:18:57 PM DEBUG:Predicting on batch 174
+11/26/2025 09:18:59 PM DEBUG:Predicting on batch 175
+11/26/2025 09:19:01 PM DEBUG:Predicting on batch 176
+11/26/2025 09:19:03 PM DEBUG:Predicting on batch 177
+11/26/2025 09:19:05 PM DEBUG:Predicting on batch 178
+11/26/2025 09:19:07 PM DEBUG:Predicting on batch 179
+11/26/2025 09:19:09 PM DEBUG:Predicting on batch 180
+11/26/2025 09:19:09 PM DEBUG:180
+11/26/2025 09:19:09 PM DEBUG:10 batches took 18.745965480804443 seconds
+11/26/2025 09:19:11 PM DEBUG:Predicting on batch 181
+11/26/2025 09:19:12 PM DEBUG:Predicting on batch 182
+11/26/2025 09:19:14 PM DEBUG:Predicting on batch 183
+11/26/2025 09:19:16 PM DEBUG:Predicting on batch 184
+11/26/2025 09:19:18 PM DEBUG:Predicting on batch 185
+11/26/2025 09:19:19 PM DEBUG:Predicting on batch 186
+11/26/2025 09:19:21 PM DEBUG:Predicting on batch 187
+11/26/2025 09:19:23 PM DEBUG:Predicting on batch 188
+11/26/2025 09:19:25 PM DEBUG:Predicting on batch 189
+11/26/2025 09:19:27 PM DEBUG:Predicting on batch 190
+11/26/2025 09:19:27 PM DEBUG:190
+11/26/2025 09:19:27 PM DEBUG:10 batches took 17.948827505111694 seconds
+11/26/2025 09:19:29 PM DEBUG:Predicting on batch 191
+11/26/2025 09:19:30 PM DEBUG:Predicting on batch 192
+11/26/2025 09:19:32 PM DEBUG:Predicting on batch 193
+11/26/2025 09:19:34 PM DEBUG:Predicting on batch 194
+11/26/2025 09:19:36 PM DEBUG:Predicting on batch 195
+11/26/2025 09:19:38 PM DEBUG:Predicting on batch 196
+11/26/2025 09:19:40 PM DEBUG:Predicting on batch 197
+11/26/2025 09:19:42 PM DEBUG:Predicting on batch 198
+11/26/2025 09:19:44 PM DEBUG:Predicting on batch 199
+11/26/2025 09:19:46 PM DEBUG:Predicting on batch 200
+11/26/2025 09:19:46 PM DEBUG:200
+11/26/2025 09:19:46 PM DEBUG:10 batches took 19.230069398880005 seconds
+11/26/2025 09:19:48 PM DEBUG:Predicting on batch 201
+11/26/2025 09:19:50 PM DEBUG:Predicting on batch 202
+11/26/2025 09:19:52 PM DEBUG:Predicting on batch 203
+11/26/2025 09:19:54 PM DEBUG:Predicting on batch 204
+11/26/2025 09:19:55 PM DEBUG:Predicting on batch 205
+11/26/2025 09:19:57 PM DEBUG:Predicting on batch 206
+11/26/2025 09:19:59 PM DEBUG:Predicting on batch 207
+11/26/2025 09:20:01 PM DEBUG:Predicting on batch 208
+11/26/2025 09:20:03 PM DEBUG:Predicting on batch 209
+11/26/2025 09:20:05 PM DEBUG:Predicting on batch 210
+11/26/2025 09:20:05 PM DEBUG:210
+11/26/2025 09:20:05 PM DEBUG:10 batches took 18.623846530914307 seconds
+11/26/2025 09:20:07 PM DEBUG:Predicting on batch 211
+11/26/2025 09:20:08 PM DEBUG:Predicting on batch 212
+11/26/2025 09:20:10 PM DEBUG:Predicting on batch 213
+11/26/2025 09:20:12 PM DEBUG:Predicting on batch 214
+11/26/2025 09:20:14 PM DEBUG:Predicting on batch 215
+11/26/2025 09:20:15 PM DEBUG:Predicting on batch 216
+11/26/2025 09:20:17 PM DEBUG:Predicting on batch 217
+11/26/2025 09:20:19 PM DEBUG:Predicting on batch 218
+11/26/2025 09:20:21 PM DEBUG:Predicting on batch 219
+11/26/2025 09:20:23 PM DEBUG:Predicting on batch 220
+11/26/2025 09:20:23 PM DEBUG:220
+11/26/2025 09:20:23 PM DEBUG:10 batches took 18.59549307823181 seconds
+11/26/2025 09:20:25 PM DEBUG:Predicting on batch 221
+11/26/2025 09:20:27 PM DEBUG:Predicting on batch 222
+11/26/2025 09:20:29 PM DEBUG:Predicting on batch 223
+11/26/2025 09:20:30 PM DEBUG:Predicting on batch 224
+11/26/2025 09:20:32 PM DEBUG:Predicting on batch 225
+11/26/2025 09:20:34 PM DEBUG:Predicting on batch 226
+11/26/2025 09:20:36 PM DEBUG:Predicting on batch 227
+11/26/2025 09:20:38 PM DEBUG:Predicting on batch 228
+11/26/2025 09:20:40 PM DEBUG:Predicting on batch 229
+11/26/2025 09:20:41 PM DEBUG:Predicting on batch 230
+11/26/2025 09:20:41 PM DEBUG:230
+11/26/2025 09:20:41 PM DEBUG:10 batches took 18.251298904418945 seconds
+11/26/2025 09:20:43 PM DEBUG:Predicting on batch 231
+11/26/2025 09:20:45 PM DEBUG:Predicting on batch 232
+11/26/2025 09:20:47 PM DEBUG:Predicting on batch 233
+11/26/2025 09:20:49 PM DEBUG:Predicting on batch 234
+11/26/2025 09:20:51 PM DEBUG:Predicting on batch 235
+11/26/2025 09:20:53 PM DEBUG:Predicting on batch 236
+11/26/2025 09:20:54 PM DEBUG:Predicting on batch 237
+11/26/2025 09:20:56 PM DEBUG:Predicting on batch 238
+11/26/2025 09:20:58 PM DEBUG:Predicting on batch 239
+11/26/2025 09:21:00 PM DEBUG:Predicting on batch 240
+11/26/2025 09:21:00 PM DEBUG:240
+11/26/2025 09:21:00 PM DEBUG:10 batches took 18.78661060333252 seconds
+11/26/2025 09:21:02 PM DEBUG:Predicting on batch 241
+11/26/2025 09:21:04 PM DEBUG:Predicting on batch 242
+11/26/2025 09:21:07 PM DEBUG:Predicting on batch 243
+11/26/2025 09:21:09 PM DEBUG:Predicting on batch 244
+11/26/2025 09:21:10 PM DEBUG:Predicting on batch 245
+11/26/2025 09:21:12 PM DEBUG:Predicting on batch 246
+11/26/2025 09:21:14 PM DEBUG:Predicting on batch 247
+11/26/2025 09:21:16 PM DEBUG:Predicting on batch 248
+11/26/2025 09:21:18 PM DEBUG:Predicting on batch 249
+11/26/2025 09:21:19 PM DEBUG:Predicting on batch 250
+11/26/2025 09:21:19 PM DEBUG:250
+11/26/2025 09:21:19 PM DEBUG:10 batches took 19.16110873222351 seconds
+11/26/2025 09:21:21 PM DEBUG:Predicting on batch 251
+11/26/2025 09:21:23 PM DEBUG:Predicting on batch 252
+11/26/2025 09:21:25 PM DEBUG:Predicting on batch 253
+11/26/2025 09:21:27 PM DEBUG:Predicting on batch 254
+11/26/2025 09:21:29 PM DEBUG:Predicting on batch 255
+11/26/2025 09:21:30 PM DEBUG:Predicting on batch 256
+11/26/2025 09:21:32 PM DEBUG:Predicting on batch 257
+11/26/2025 09:21:34 PM DEBUG:Predicting on batch 258
+11/26/2025 09:21:36 PM DEBUG:Predicting on batch 259
+11/26/2025 09:21:38 PM DEBUG:Predicting on batch 260
+11/26/2025 09:21:38 PM DEBUG:260
+11/26/2025 09:21:38 PM DEBUG:10 batches took 18.52117681503296 seconds
+11/26/2025 09:21:40 PM DEBUG:Predicting on batch 261
+11/26/2025 09:21:41 PM DEBUG:Predicting on batch 262
+11/26/2025 09:21:43 PM DEBUG:Predicting on batch 263
+11/26/2025 09:21:45 PM DEBUG:Predicting on batch 264
+11/26/2025 09:21:47 PM DEBUG:Predicting on batch 265
+11/26/2025 09:21:49 PM DEBUG:Predicting on batch 266
+11/26/2025 09:21:51 PM DEBUG:Predicting on batch 267
+11/26/2025 09:21:53 PM DEBUG:Predicting on batch 268
+11/26/2025 09:21:54 PM DEBUG:Predicting on batch 269
+11/26/2025 09:21:56 PM DEBUG:Predicting on batch 270
+11/26/2025 09:21:56 PM DEBUG:270
+11/26/2025 09:21:56 PM DEBUG:10 batches took 18.4526789188385 seconds
+11/26/2025 09:21:58 PM DEBUG:Predicting on batch 271
+11/26/2025 09:22:00 PM DEBUG:Predicting on batch 272
+11/26/2025 09:22:02 PM DEBUG:Predicting on batch 273
+11/26/2025 09:22:04 PM DEBUG:Predicting on batch 274
+11/26/2025 09:22:06 PM DEBUG:Predicting on batch 275
+11/26/2025 09:22:08 PM DEBUG:Predicting on batch 276
+11/26/2025 09:22:09 PM DEBUG:Predicting on batch 277
+11/26/2025 09:22:11 PM DEBUG:Predicting on batch 278
+11/26/2025 09:22:13 PM DEBUG:Predicting on batch 279
+11/26/2025 09:22:15 PM DEBUG:Predicting on batch 280
+11/26/2025 09:22:15 PM DEBUG:280
+11/26/2025 09:22:15 PM DEBUG:10 batches took 18.93996834754944 seconds
+11/26/2025 09:22:17 PM DEBUG:Predicting on batch 281
+11/26/2025 09:22:19 PM DEBUG:Predicting on batch 282
+11/26/2025 09:22:21 PM DEBUG:Predicting on batch 283
+11/26/2025 09:22:23 PM DEBUG:Predicting on batch 284
+11/26/2025 09:22:25 PM DEBUG:Predicting on batch 285
+11/26/2025 09:22:26 PM DEBUG:Predicting on batch 286
+11/26/2025 09:22:28 PM DEBUG:Predicting on batch 287
+11/26/2025 09:22:30 PM DEBUG:Predicting on batch 288
+11/26/2025 09:22:32 PM DEBUG:Predicting on batch 289
+11/26/2025 09:22:33 PM DEBUG:Predicting on batch 290
+11/26/2025 09:22:33 PM DEBUG:290
+11/26/2025 09:22:33 PM DEBUG:10 batches took 18.226818561553955 seconds
+11/26/2025 09:22:36 PM DEBUG:Predicting on batch 291
+11/26/2025 09:22:37 PM DEBUG:Predicting on batch 292
+11/26/2025 09:22:39 PM DEBUG:Predicting on batch 293
+11/26/2025 09:22:41 PM DEBUG:Predicting on batch 294
+11/26/2025 09:22:43 PM DEBUG:Predicting on batch 295
+11/26/2025 09:22:44 PM DEBUG:Predicting on batch 296
+11/26/2025 09:22:46 PM DEBUG:Predicting on batch 297
+11/26/2025 09:22:48 PM DEBUG:Predicting on batch 298
+11/26/2025 09:22:50 PM DEBUG:Predicting on batch 299
+11/26/2025 09:22:52 PM DEBUG:Predicting on batch 300
+11/26/2025 09:22:52 PM DEBUG:300
+11/26/2025 09:22:52 PM DEBUG:10 batches took 18.342288494110107 seconds
+11/26/2025 09:22:54 PM DEBUG:Predicting on batch 301
+11/26/2025 09:22:55 PM DEBUG:Predicting on batch 302
+11/26/2025 09:22:57 PM DEBUG:Predicting on batch 303
+11/26/2025 09:22:59 PM DEBUG:Predicting on batch 304
+11/26/2025 09:23:01 PM DEBUG:Predicting on batch 305
+11/26/2025 09:23:03 PM DEBUG:Predicting on batch 306
+11/26/2025 09:23:05 PM DEBUG:Predicting on batch 307
+11/26/2025 09:23:06 PM DEBUG:Predicting on batch 308
+11/26/2025 09:23:08 PM DEBUG:Predicting on batch 309
+11/26/2025 09:23:10 PM DEBUG:Predicting on batch 310
+11/26/2025 09:23:10 PM DEBUG:310
+11/26/2025 09:23:10 PM DEBUG:10 batches took 18.04983162879944 seconds
+11/26/2025 09:23:12 PM DEBUG:Predicting on batch 311
+11/26/2025 09:23:13 PM DEBUG:Predicting on batch 312
+11/26/2025 09:23:15 PM DEBUG:Predicting on batch 313
+11/26/2025 09:23:17 PM DEBUG:Predicting on batch 314
+11/26/2025 09:23:19 PM DEBUG:Predicting on batch 315
+11/26/2025 09:23:21 PM DEBUG:Predicting on batch 316
+11/26/2025 09:23:23 PM DEBUG:Predicting on batch 317
+11/26/2025 09:23:25 PM DEBUG:Predicting on batch 318
+11/26/2025 09:23:27 PM DEBUG:Predicting on batch 319
+11/26/2025 09:23:28 PM DEBUG:Predicting on batch 320
+11/26/2025 09:23:28 PM DEBUG:320
+11/26/2025 09:23:28 PM DEBUG:10 batches took 18.556941747665405 seconds
+11/26/2025 09:23:30 PM DEBUG:Predicting on batch 321
+11/26/2025 09:23:32 PM DEBUG:Predicting on batch 322
+11/26/2025 09:23:34 PM DEBUG:Predicting on batch 323
+11/26/2025 09:23:36 PM DEBUG:Predicting on batch 324
+11/26/2025 09:23:38 PM DEBUG:Predicting on batch 325
+11/26/2025 09:23:39 PM DEBUG:Predicting on batch 326
+11/26/2025 09:23:41 PM DEBUG:Predicting on batch 327
+11/26/2025 09:23:43 PM DEBUG:Predicting on batch 328
+11/26/2025 09:23:45 PM DEBUG:Predicting on batch 329
+11/26/2025 09:23:47 PM DEBUG:Predicting on batch 330
+11/26/2025 09:23:47 PM DEBUG:330
+11/26/2025 09:23:47 PM DEBUG:10 batches took 18.20828676223755 seconds
+11/26/2025 09:23:49 PM DEBUG:Predicting on batch 331
+11/26/2025 09:23:50 PM DEBUG:Predicting on batch 332
+11/26/2025 09:23:52 PM DEBUG:Predicting on batch 333
+11/26/2025 09:23:54 PM DEBUG:Predicting on batch 334
+11/26/2025 09:23:56 PM DEBUG:Predicting on batch 335
+11/26/2025 09:23:58 PM DEBUG:Predicting on batch 336
+11/26/2025 09:23:59 PM DEBUG:Predicting on batch 337
+11/26/2025 09:24:01 PM DEBUG:Predicting on batch 338
+11/26/2025 09:24:03 PM DEBUG:Predicting on batch 339
+11/26/2025 09:24:05 PM DEBUG:Predicting on batch 340
+11/26/2025 09:24:05 PM DEBUG:340
+11/26/2025 09:24:05 PM DEBUG:10 batches took 18.53799319267273 seconds
+11/26/2025 09:24:07 PM DEBUG:Predicting on batch 341
+11/26/2025 09:24:09 PM DEBUG:Predicting on batch 342
+11/26/2025 09:24:11 PM DEBUG:Predicting on batch 343
+11/26/2025 09:24:13 PM DEBUG:Predicting on batch 344
+11/26/2025 09:24:15 PM DEBUG:Predicting on batch 345
+11/26/2025 09:24:17 PM DEBUG:Predicting on batch 346
+11/26/2025 09:24:19 PM DEBUG:Predicting on batch 347
+11/26/2025 09:24:21 PM DEBUG:Predicting on batch 348
+11/26/2025 09:24:23 PM DEBUG:Predicting on batch 349
+11/26/2025 09:24:25 PM DEBUG:Predicting on batch 350
+11/26/2025 09:24:25 PM DEBUG:350
+11/26/2025 09:24:25 PM DEBUG:10 batches took 19.495424270629883 seconds
+11/26/2025 09:24:26 PM DEBUG:Predicting on batch 351
+11/26/2025 09:24:28 PM DEBUG:Predicting on batch 352
+11/26/2025 09:24:30 PM DEBUG:Predicting on batch 353
+11/26/2025 09:24:32 PM DEBUG:Predicting on batch 354
+11/26/2025 09:24:33 PM DEBUG:Predicting on batch 355
+11/26/2025 09:24:35 PM DEBUG:Predicting on batch 356
+11/26/2025 09:24:37 PM DEBUG:Predicting on batch 357
+11/26/2025 09:24:39 PM DEBUG:Predicting on batch 358
+11/26/2025 09:24:41 PM DEBUG:Predicting on batch 359
+11/26/2025 09:24:43 PM DEBUG:Predicting on batch 360
+11/26/2025 09:24:43 PM DEBUG:360
+11/26/2025 09:24:43 PM DEBUG:10 batches took 18.413694620132446 seconds
+11/26/2025 09:24:45 PM DEBUG:Predicting on batch 361
+11/26/2025 09:24:47 PM DEBUG:Predicting on batch 362
+11/26/2025 09:24:48 PM DEBUG:Predicting on batch 363
+11/26/2025 09:24:50 PM DEBUG:Predicting on batch 364
+11/26/2025 09:24:52 PM DEBUG:Predicting on batch 365
+11/26/2025 09:24:54 PM DEBUG:Predicting on batch 366
+11/26/2025 09:24:56 PM DEBUG:Predicting on batch 367
+11/26/2025 09:24:57 PM DEBUG:Predicting on batch 368
+11/26/2025 09:24:59 PM DEBUG:Predicting on batch 369
+11/26/2025 09:25:01 PM DEBUG:Predicting on batch 370
+11/26/2025 09:25:01 PM DEBUG:370
+11/26/2025 09:25:01 PM DEBUG:10 batches took 17.95111870765686 seconds
+11/26/2025 09:25:03 PM DEBUG:Predicting on batch 371
+11/26/2025 09:25:04 PM DEBUG:Predicting on batch 372
+11/26/2025 09:25:06 PM DEBUG:Predicting on batch 373
+11/26/2025 09:25:08 PM DEBUG:Predicting on batch 374
+11/26/2025 09:25:10 PM DEBUG:Predicting on batch 375
+11/26/2025 09:25:12 PM DEBUG:Predicting on batch 376
+11/26/2025 09:25:13 PM DEBUG:Predicting on batch 377
+11/26/2025 09:25:15 PM DEBUG:Predicting on batch 378
+11/26/2025 09:25:17 PM DEBUG:Predicting on batch 379
+11/26/2025 09:25:19 PM DEBUG:Predicting on batch 380
+11/26/2025 09:25:19 PM DEBUG:380
+11/26/2025 09:25:19 PM DEBUG:10 batches took 17.89816451072693 seconds
+11/26/2025 09:25:21 PM DEBUG:Predicting on batch 381
+11/26/2025 09:25:23 PM DEBUG:Predicting on batch 382
+11/26/2025 09:25:24 PM DEBUG:Predicting on batch 383
+11/26/2025 09:25:26 PM DEBUG:Predicting on batch 384
+11/26/2025 09:25:28 PM DEBUG:Predicting on batch 385
+11/26/2025 09:25:30 PM DEBUG:Predicting on batch 386
+11/26/2025 09:25:32 PM DEBUG:Predicting on batch 387
+11/26/2025 09:25:34 PM DEBUG:Predicting on batch 388
+11/26/2025 09:25:35 PM DEBUG:Predicting on batch 389
+11/26/2025 09:25:37 PM DEBUG:Predicting on batch 390
+11/26/2025 09:25:37 PM DEBUG:390
+11/26/2025 09:25:37 PM DEBUG:10 batches took 18.255364894866943 seconds
+11/26/2025 09:25:39 PM DEBUG:Predicting on batch 391
+11/26/2025 09:25:41 PM DEBUG:Predicting on batch 392
+11/26/2025 09:25:42 PM DEBUG:Predicting on batch 393
+11/26/2025 09:25:45 PM DEBUG:Predicting on batch 394
+11/26/2025 09:25:46 PM DEBUG:Predicting on batch 395
+11/26/2025 09:25:48 PM DEBUG:Predicting on batch 396
+11/26/2025 09:25:50 PM DEBUG:Predicting on batch 397
+11/26/2025 09:25:52 PM DEBUG:Predicting on batch 398
+11/26/2025 09:25:53 PM DEBUG:Predicting on batch 399
+11/26/2025 09:25:55 PM DEBUG:Predicting on batch 400
+11/26/2025 09:25:55 PM DEBUG:400
+11/26/2025 09:25:55 PM DEBUG:10 batches took 17.933547258377075 seconds
+11/26/2025 09:25:57 PM DEBUG:Predicting on batch 401
+11/26/2025 09:25:59 PM DEBUG:Predicting on batch 402
+11/26/2025 09:26:01 PM DEBUG:Predicting on batch 403
+11/26/2025 09:26:03 PM DEBUG:Predicting on batch 404
+11/26/2025 09:26:04 PM DEBUG:Predicting on batch 405
+11/26/2025 09:26:06 PM DEBUG:Predicting on batch 406
+11/26/2025 09:26:08 PM DEBUG:Predicting on batch 407
+11/26/2025 09:26:10 PM DEBUG:Predicting on batch 408
+11/26/2025 09:26:11 PM DEBUG:Predicting on batch 409
+11/26/2025 09:26:13 PM DEBUG:Predicting on batch 410
+11/26/2025 09:26:13 PM DEBUG:410
+11/26/2025 09:26:13 PM DEBUG:10 batches took 18.277700185775757 seconds
+11/26/2025 09:26:15 PM DEBUG:Predicting on batch 411
+11/26/2025 09:26:17 PM DEBUG:Predicting on batch 412
+11/26/2025 09:26:19 PM DEBUG:Predicting on batch 413
+11/26/2025 09:26:21 PM DEBUG:Predicting on batch 414
+11/26/2025 09:26:23 PM DEBUG:Predicting on batch 415
+11/26/2025 09:26:25 PM DEBUG:Predicting on batch 416
+11/26/2025 09:26:27 PM DEBUG:Predicting on batch 417
+11/26/2025 09:26:29 PM DEBUG:Predicting on batch 418
+11/26/2025 09:26:31 PM DEBUG:Predicting on batch 419
+11/26/2025 09:26:33 PM DEBUG:Predicting on batch 420
+11/26/2025 09:26:33 PM DEBUG:420
+11/26/2025 09:26:33 PM DEBUG:10 batches took 19.3115656375885 seconds
+11/26/2025 09:26:35 PM DEBUG:Predicting on batch 421
+11/26/2025 09:26:37 PM DEBUG:Predicting on batch 422
+11/26/2025 09:26:38 PM DEBUG:Predicting on batch 423
+11/26/2025 09:26:40 PM DEBUG:Predicting on batch 424
+11/26/2025 09:26:42 PM DEBUG:Predicting on batch 425
+11/26/2025 09:26:44 PM DEBUG:Predicting on batch 426
+11/26/2025 09:26:46 PM DEBUG:Predicting on batch 427
+11/26/2025 09:26:48 PM DEBUG:Predicting on batch 428
+11/26/2025 09:26:50 PM DEBUG:Predicting on batch 429
+11/26/2025 09:26:52 PM DEBUG:Predicting on batch 430
+11/26/2025 09:26:52 PM DEBUG:430
+11/26/2025 09:26:52 PM DEBUG:10 batches took 19.386976957321167 seconds
+11/26/2025 09:26:54 PM DEBUG:Predicting on batch 431
+11/26/2025 09:26:56 PM DEBUG:Predicting on batch 432
+11/26/2025 09:26:58 PM DEBUG:Predicting on batch 433
+11/26/2025 09:27:00 PM DEBUG:Predicting on batch 434
+11/26/2025 09:27:01 PM DEBUG:Predicting on batch 435
+11/26/2025 09:27:03 PM DEBUG:Predicting on batch 436
+11/26/2025 09:27:05 PM DEBUG:Predicting on batch 437
+11/26/2025 09:27:07 PM DEBUG:Predicting on batch 438
+11/26/2025 09:27:09 PM DEBUG:Predicting on batch 439
+11/26/2025 09:27:11 PM DEBUG:Predicting on batch 440
+11/26/2025 09:27:11 PM DEBUG:440
+11/26/2025 09:27:11 PM DEBUG:10 batches took 18.61053466796875 seconds
+11/26/2025 09:27:12 PM DEBUG:Predicting on batch 441
+11/26/2025 09:27:15 PM DEBUG:Predicting on batch 442
+11/26/2025 09:27:16 PM DEBUG:Predicting on batch 443
+11/26/2025 09:27:18 PM DEBUG:Predicting on batch 444
+11/26/2025 09:27:20 PM DEBUG:Predicting on batch 445
+11/26/2025 09:27:22 PM DEBUG:Predicting on batch 446
+11/26/2025 09:27:24 PM DEBUG:Predicting on batch 447
+11/26/2025 09:27:26 PM DEBUG:Predicting on batch 448
+11/26/2025 09:27:27 PM DEBUG:Predicting on batch 449
+11/26/2025 09:27:30 PM DEBUG:Predicting on batch 450
+11/26/2025 09:27:30 PM DEBUG:450
+11/26/2025 09:27:30 PM DEBUG:10 batches took 18.985755920410156 seconds
+11/26/2025 09:27:32 PM DEBUG:Predicting on batch 451
+11/26/2025 09:27:34 PM DEBUG:Predicting on batch 452
+11/26/2025 09:27:35 PM DEBUG:Predicting on batch 453
+11/26/2025 09:27:37 PM DEBUG:Predicting on batch 454
+11/26/2025 09:27:39 PM DEBUG:Predicting on batch 455
+11/26/2025 09:27:41 PM DEBUG:Predicting on batch 456
+11/26/2025 09:27:43 PM DEBUG:Predicting on batch 457
+11/26/2025 09:27:45 PM DEBUG:Predicting on batch 458
+11/26/2025 09:27:47 PM DEBUG:Predicting on batch 459
+11/26/2025 09:27:48 PM DEBUG:Predicting on batch 460
+11/26/2025 09:27:48 PM DEBUG:460
+11/26/2025 09:27:48 PM DEBUG:10 batches took 18.64669919013977 seconds
+11/26/2025 09:27:50 PM DEBUG:Predicting on batch 461
+11/26/2025 09:27:52 PM DEBUG:Predicting on batch 462
+11/26/2025 09:27:54 PM DEBUG:Predicting on batch 463
+11/26/2025 09:27:55 PM DEBUG:Predicting on batch 464
+11/26/2025 09:27:57 PM DEBUG:Predicting on batch 465
+11/26/2025 09:28:00 PM DEBUG:Predicting on batch 466
+11/26/2025 09:28:02 PM DEBUG:Predicting on batch 467
+11/26/2025 09:28:03 PM DEBUG:Predicting on batch 468
+11/26/2025 09:28:05 PM DEBUG:Predicting on batch 469
+11/26/2025 09:28:07 PM DEBUG:Predicting on batch 470
+11/26/2025 09:28:07 PM DEBUG:470
+11/26/2025 09:28:07 PM DEBUG:10 batches took 19.001149654388428 seconds
+11/26/2025 09:28:09 PM DEBUG:Predicting on batch 471
+11/26/2025 09:28:11 PM DEBUG:Predicting on batch 472
+11/26/2025 09:28:13 PM DEBUG:Predicting on batch 473
+11/26/2025 09:28:15 PM DEBUG:Predicting on batch 474
+11/26/2025 09:28:17 PM DEBUG:Predicting on batch 475
+11/26/2025 09:28:19 PM DEBUG:Predicting on batch 476
+11/26/2025 09:28:20 PM DEBUG:Predicting on batch 477
+11/26/2025 09:28:22 PM DEBUG:Predicting on batch 478
+11/26/2025 09:28:24 PM DEBUG:Predicting on batch 479
+11/26/2025 09:28:26 PM DEBUG:Predicting on batch 480
+11/26/2025 09:28:26 PM DEBUG:480
+11/26/2025 09:28:26 PM DEBUG:10 batches took 18.64370083808899 seconds
+11/26/2025 09:28:28 PM DEBUG:Predicting on batch 481
+11/26/2025 09:28:30 PM DEBUG:Predicting on batch 482
+11/26/2025 09:28:32 PM DEBUG:Predicting on batch 483
+11/26/2025 09:28:34 PM DEBUG:Predicting on batch 484
+11/26/2025 09:28:36 PM DEBUG:Predicting on batch 485
+11/26/2025 09:28:37 PM DEBUG:Predicting on batch 486
+11/26/2025 09:28:39 PM DEBUG:Predicting on batch 487
+11/26/2025 09:28:41 PM DEBUG:Predicting on batch 488
+11/26/2025 09:28:43 PM DEBUG:Predicting on batch 489
+11/26/2025 09:28:45 PM DEBUG:Predicting on batch 490
+11/26/2025 09:28:45 PM DEBUG:490
+11/26/2025 09:28:45 PM DEBUG:10 batches took 19.075724840164185 seconds
+11/26/2025 09:28:47 PM DEBUG:Predicting on batch 491
+11/26/2025 09:28:49 PM DEBUG:Predicting on batch 492
+11/26/2025 09:28:50 PM DEBUG:Predicting on batch 493
+11/26/2025 09:28:52 PM DEBUG:Predicting on batch 494
+11/26/2025 09:28:54 PM DEBUG:Predicting on batch 495
+11/26/2025 09:28:56 PM DEBUG:Predicting on batch 496
+11/26/2025 09:28:58 PM DEBUG:Predicting on batch 497
+11/26/2025 09:29:00 PM DEBUG:Predicting on batch 498
+11/26/2025 09:29:02 PM DEBUG:Predicting on batch 499
+11/26/2025 09:29:04 PM DEBUG:Predicting on batch 500
+11/26/2025 09:29:04 PM DEBUG:500
+11/26/2025 09:29:04 PM DEBUG:10 batches took 18.823171138763428 seconds
+11/26/2025 09:29:06 PM DEBUG:Predicting on batch 501
+11/26/2025 09:29:07 PM DEBUG:Predicting on batch 502
+11/26/2025 09:29:09 PM DEBUG:Predicting on batch 503
+11/26/2025 09:29:11 PM DEBUG:Predicting on batch 504
+11/26/2025 09:29:13 PM DEBUG:Predicting on batch 505
+11/26/2025 09:29:14 PM DEBUG:Predicting on batch 506
+11/26/2025 09:29:16 PM DEBUG:Predicting on batch 507
+11/26/2025 09:29:18 PM DEBUG:Predicting on batch 508
+11/26/2025 09:29:20 PM DEBUG:Predicting on batch 509
+11/26/2025 09:29:22 PM DEBUG:Predicting on batch 510
+11/26/2025 09:29:22 PM DEBUG:510
+11/26/2025 09:29:22 PM DEBUG:10 batches took 17.841458559036255 seconds
+11/26/2025 09:29:23 PM DEBUG:Predicting on batch 511
+11/26/2025 09:29:25 PM DEBUG:Predicting on batch 512
+11/26/2025 09:29:27 PM DEBUG:Predicting on batch 513
+11/26/2025 09:29:29 PM DEBUG:Predicting on batch 514
+11/26/2025 09:29:33 PM DEBUG:Predicting on batch 515
+11/26/2025 09:29:35 PM DEBUG:Predicting on batch 516
+11/26/2025 09:29:36 PM DEBUG:Predicting on batch 517
+11/26/2025 09:29:38 PM DEBUG:Predicting on batch 518
+11/26/2025 09:29:40 PM DEBUG:Predicting on batch 519
+11/26/2025 09:29:42 PM DEBUG:Predicting on batch 520
+11/26/2025 09:29:42 PM DEBUG:520
+11/26/2025 09:29:42 PM DEBUG:10 batches took 20.206613540649414 seconds
+11/26/2025 09:29:44 PM DEBUG:Predicting on batch 521
+11/26/2025 09:29:46 PM DEBUG:Predicting on batch 522
+11/26/2025 09:29:47 PM DEBUG:Predicting on batch 523
+11/26/2025 09:29:49 PM DEBUG:Predicting on batch 524
+11/26/2025 09:29:51 PM DEBUG:Predicting on batch 525
+11/26/2025 09:29:53 PM DEBUG:Predicting on batch 526
+11/26/2025 09:29:55 PM DEBUG:Predicting on batch 527
+11/26/2025 09:29:57 PM DEBUG:Predicting on batch 528
+11/26/2025 09:29:59 PM DEBUG:Predicting on batch 529
+11/26/2025 09:30:01 PM DEBUG:Predicting on batch 530
+11/26/2025 09:30:01 PM DEBUG:530
+11/26/2025 09:30:01 PM DEBUG:10 batches took 18.726946592330933 seconds
+11/26/2025 09:30:02 PM DEBUG:Predicting on batch 531
+11/26/2025 09:30:04 PM DEBUG:Predicting on batch 532
+11/26/2025 09:30:06 PM DEBUG:Predicting on batch 533
+11/26/2025 09:30:08 PM DEBUG:Predicting on batch 534
+11/26/2025 09:30:10 PM DEBUG:Predicting on batch 535
+11/26/2025 09:30:12 PM DEBUG:Predicting on batch 536
+11/26/2025 09:30:14 PM DEBUG:Predicting on batch 537
+11/26/2025 09:30:16 PM DEBUG:Predicting on batch 538
+11/26/2025 09:30:18 PM DEBUG:Predicting on batch 539
+11/26/2025 09:30:20 PM DEBUG:Predicting on batch 540
+11/26/2025 09:30:20 PM DEBUG:540
+11/26/2025 09:30:20 PM DEBUG:10 batches took 19.024930715560913 seconds
+11/26/2025 09:30:22 PM DEBUG:Predicting on batch 541
+11/26/2025 09:30:23 PM DEBUG:Predicting on batch 542
+11/26/2025 09:30:25 PM DEBUG:Predicting on batch 543
+11/26/2025 09:30:27 PM DEBUG:Predicting on batch 544
+11/26/2025 09:30:29 PM DEBUG:Predicting on batch 545
+11/26/2025 09:30:31 PM DEBUG:Predicting on batch 546
+11/26/2025 09:30:33 PM DEBUG:Predicting on batch 547
+11/26/2025 09:30:35 PM DEBUG:Predicting on batch 548
+11/26/2025 09:30:37 PM DEBUG:Predicting on batch 549
+11/26/2025 09:30:39 PM DEBUG:Predicting on batch 550
+11/26/2025 09:30:39 PM DEBUG:550
+11/26/2025 09:30:39 PM DEBUG:10 batches took 19.372159004211426 seconds
+11/26/2025 09:30:41 PM DEBUG:Predicting on batch 551
+11/26/2025 09:30:43 PM DEBUG:Predicting on batch 552
+11/26/2025 09:30:45 PM DEBUG:Predicting on batch 553
+11/26/2025 09:30:47 PM DEBUG:Predicting on batch 554
+11/26/2025 09:30:49 PM DEBUG:Predicting on batch 555
+11/26/2025 09:30:51 PM DEBUG:Predicting on batch 556
+11/26/2025 09:30:53 PM DEBUG:Predicting on batch 557
+11/26/2025 09:30:55 PM DEBUG:Predicting on batch 558
+11/26/2025 09:30:57 PM DEBUG:Predicting on batch 559
+11/26/2025 09:30:59 PM DEBUG:Predicting on batch 560
+11/26/2025 09:30:59 PM DEBUG:560
+11/26/2025 09:30:59 PM DEBUG:10 batches took 20.210464000701904 seconds
+11/26/2025 09:31:01 PM DEBUG:Predicting on batch 561
+11/26/2025 09:31:03 PM DEBUG:Predicting on batch 562
+11/26/2025 09:31:05 PM DEBUG:Predicting on batch 563
+11/26/2025 09:31:07 PM DEBUG:Predicting on batch 564
+11/26/2025 09:31:08 PM DEBUG:Predicting on batch 565
+11/26/2025 09:31:10 PM DEBUG:Predicting on batch 566
+11/26/2025 09:31:12 PM DEBUG:Predicting on batch 567
+11/26/2025 09:31:14 PM DEBUG:Predicting on batch 568
+11/26/2025 09:31:16 PM DEBUG:Predicting on batch 569
+11/26/2025 09:31:17 PM DEBUG:Predicting on batch 570
+11/26/2025 09:31:17 PM DEBUG:570
+11/26/2025 09:31:17 PM DEBUG:10 batches took 18.087748050689697 seconds
+11/26/2025 09:31:19 PM DEBUG:Predicting on batch 571
+11/26/2025 09:31:21 PM DEBUG:Predicting on batch 572
+11/26/2025 09:31:23 PM DEBUG:Predicting on batch 573
+11/26/2025 09:31:25 PM DEBUG:Predicting on batch 574
+11/26/2025 09:31:27 PM DEBUG:Predicting on batch 575
+11/26/2025 09:31:29 PM DEBUG:Predicting on batch 576
+11/26/2025 09:31:30 PM DEBUG:Predicting on batch 577
+11/26/2025 09:31:32 PM DEBUG:Predicting on batch 578
+11/26/2025 09:31:34 PM DEBUG:Predicting on batch 579
+11/26/2025 09:31:36 PM DEBUG:Predicting on batch 580
+11/26/2025 09:31:36 PM DEBUG:580
+11/26/2025 09:31:36 PM DEBUG:10 batches took 18.40227174758911 seconds
+11/26/2025 09:31:38 PM DEBUG:Predicting on batch 581
+11/26/2025 09:31:39 PM DEBUG:Predicting on batch 582
+11/26/2025 09:31:41 PM DEBUG:Predicting on batch 583
+11/26/2025 09:31:43 PM DEBUG:Predicting on batch 584
+11/26/2025 09:31:45 PM DEBUG:Predicting on batch 585
+11/26/2025 09:31:47 PM DEBUG:Predicting on batch 586
+11/26/2025 09:31:48 PM DEBUG:Predicting on batch 587
+11/26/2025 09:31:50 PM DEBUG:Predicting on batch 588
+11/26/2025 09:31:52 PM DEBUG:Predicting on batch 589
+11/26/2025 09:31:54 PM DEBUG:Predicting on batch 590
+11/26/2025 09:31:54 PM DEBUG:590
+11/26/2025 09:31:54 PM DEBUG:10 batches took 17.905048608779907 seconds
+11/26/2025 09:31:55 PM DEBUG:Predicting on batch 591
+11/26/2025 09:31:57 PM DEBUG:Predicting on batch 592
+11/26/2025 09:31:59 PM DEBUG:Predicting on batch 593
+11/26/2025 09:32:01 PM DEBUG:Predicting on batch 594
+11/26/2025 09:32:03 PM DEBUG:Predicting on batch 595
+11/26/2025 09:32:04 PM DEBUG:Predicting on batch 596
+11/26/2025 09:32:06 PM DEBUG:Predicting on batch 597
+11/26/2025 09:32:08 PM DEBUG:Predicting on batch 598
+11/26/2025 09:32:10 PM DEBUG:Predicting on batch 599
+11/26/2025 09:32:12 PM DEBUG:Predicting on batch 600
+11/26/2025 09:32:12 PM DEBUG:600
+11/26/2025 09:32:12 PM DEBUG:10 batches took 18.041212797164917 seconds
+11/26/2025 09:32:13 PM DEBUG:Predicting on batch 601
+11/26/2025 09:32:15 PM DEBUG:Predicting on batch 602
+11/26/2025 09:32:17 PM DEBUG:Predicting on batch 603
+11/26/2025 09:32:19 PM DEBUG:Predicting on batch 604
+11/26/2025 09:32:20 PM DEBUG:Predicting on batch 605
+11/26/2025 09:32:22 PM DEBUG:Predicting on batch 606
+11/26/2025 09:32:24 PM DEBUG:Predicting on batch 607
+11/26/2025 09:32:26 PM DEBUG:Predicting on batch 608
+11/26/2025 09:32:28 PM DEBUG:Predicting on batch 609
+11/26/2025 09:32:30 PM DEBUG:Predicting on batch 610
+11/26/2025 09:32:30 PM DEBUG:610
+11/26/2025 09:32:30 PM DEBUG:10 batches took 17.7999324798584 seconds
+11/26/2025 09:32:31 PM DEBUG:Predicting on batch 611
+11/26/2025 09:32:33 PM DEBUG:Predicting on batch 612
+11/26/2025 09:32:35 PM DEBUG:Predicting on batch 613
+11/26/2025 09:32:37 PM DEBUG:Predicting on batch 614
+11/26/2025 09:32:39 PM DEBUG:Predicting on batch 615
+11/26/2025 09:32:41 PM DEBUG:Predicting on batch 616
+11/26/2025 09:32:42 PM DEBUG:Predicting on batch 617
+11/26/2025 09:32:44 PM DEBUG:Predicting on batch 618
+11/26/2025 09:32:46 PM DEBUG:Predicting on batch 619
+11/26/2025 09:32:48 PM DEBUG:Predicting on batch 620
+11/26/2025 09:32:48 PM DEBUG:620
+11/26/2025 09:32:48 PM DEBUG:10 batches took 18.207932949066162 seconds
+11/26/2025 09:32:49 PM DEBUG:Predicting on batch 621
+11/26/2025 09:32:51 PM DEBUG:Predicting on batch 622
+11/26/2025 09:32:53 PM DEBUG:Predicting on batch 623
+11/26/2025 09:32:55 PM DEBUG:Predicting on batch 624
+11/26/2025 09:32:57 PM DEBUG:Predicting on batch 625
+11/26/2025 09:32:58 PM DEBUG:Predicting on batch 626
+11/26/2025 09:33:00 PM DEBUG:Predicting on batch 627
+11/26/2025 09:33:02 PM DEBUG:Predicting on batch 628
+11/26/2025 09:33:04 PM DEBUG:Predicting on batch 629
+11/26/2025 09:33:06 PM DEBUG:Predicting on batch 630
+11/26/2025 09:33:06 PM DEBUG:630
+11/26/2025 09:33:06 PM DEBUG:10 batches took 18.078003406524658 seconds
+11/26/2025 09:33:08 PM DEBUG:Predicting on batch 631
+11/26/2025 09:33:10 PM DEBUG:Predicting on batch 632
+11/26/2025 09:33:11 PM DEBUG:Predicting on batch 633
+11/26/2025 09:33:13 PM DEBUG:Predicting on batch 634
+11/26/2025 09:33:15 PM DEBUG:Predicting on batch 635
+11/26/2025 09:33:17 PM DEBUG:Predicting on batch 636
+11/26/2025 09:33:19 PM DEBUG:Predicting on batch 637
+11/26/2025 09:33:21 PM DEBUG:Predicting on batch 638
+11/26/2025 09:33:23 PM DEBUG:Predicting on batch 639
+11/26/2025 09:33:25 PM DEBUG:Predicting on batch 640
+11/26/2025 09:33:25 PM DEBUG:640
+11/26/2025 09:33:25 PM DEBUG:10 batches took 19.07541537284851 seconds
+11/26/2025 09:33:27 PM DEBUG:Predicting on batch 641
+11/26/2025 09:33:28 PM DEBUG:Predicting on batch 642
+11/26/2025 09:33:30 PM DEBUG:Predicting on batch 643
+11/26/2025 09:33:32 PM DEBUG:Predicting on batch 644
+11/26/2025 09:33:34 PM DEBUG:Predicting on batch 645
+11/26/2025 09:33:36 PM DEBUG:Predicting on batch 646
+11/26/2025 09:33:38 PM DEBUG:Predicting on batch 647
+11/26/2025 09:33:40 PM DEBUG:Predicting on batch 648
+11/26/2025 09:33:42 PM DEBUG:Predicting on batch 649
+11/26/2025 09:33:44 PM DEBUG:Predicting on batch 650
+11/26/2025 09:33:44 PM DEBUG:650
+11/26/2025 09:33:44 PM DEBUG:10 batches took 18.96708106994629 seconds
+11/26/2025 09:33:46 PM DEBUG:Predicting on batch 651
+11/26/2025 09:33:48 PM DEBUG:Predicting on batch 652
+11/26/2025 09:33:49 PM DEBUG:Predicting on batch 653
+11/26/2025 09:33:51 PM DEBUG:Predicting on batch 654
+11/26/2025 09:33:53 PM DEBUG:Predicting on batch 655
+11/26/2025 09:33:55 PM DEBUG:Predicting on batch 656
+11/26/2025 09:33:57 PM DEBUG:Predicting on batch 657
+11/26/2025 09:33:59 PM DEBUG:Predicting on batch 658
+11/26/2025 09:34:00 PM DEBUG:Predicting on batch 659
+11/26/2025 09:34:02 PM DEBUG:Predicting on batch 660
+11/26/2025 09:34:02 PM DEBUG:660
+11/26/2025 09:34:02 PM DEBUG:10 batches took 18.237324714660645 seconds
+11/26/2025 09:34:04 PM DEBUG:Predicting on batch 661
+11/26/2025 09:34:06 PM DEBUG:Predicting on batch 662
+11/26/2025 09:34:08 PM DEBUG:Predicting on batch 663
+11/26/2025 09:34:09 PM DEBUG:Predicting on batch 664
+11/26/2025 09:34:11 PM DEBUG:Predicting on batch 665
+11/26/2025 09:34:13 PM DEBUG:Predicting on batch 666
+11/26/2025 09:34:15 PM DEBUG:Predicting on batch 667
+11/26/2025 09:34:16 PM DEBUG:Predicting on batch 668
+11/26/2025 09:34:18 PM DEBUG:Predicting on batch 669
+11/26/2025 09:34:20 PM DEBUG:Predicting on batch 670
+11/26/2025 09:34:20 PM DEBUG:670
+11/26/2025 09:34:20 PM DEBUG:10 batches took 18.323765754699707 seconds
+11/26/2025 09:34:22 PM DEBUG:Predicting on batch 671
+11/26/2025 09:34:24 PM DEBUG:Predicting on batch 672
+11/26/2025 09:34:26 PM DEBUG:Predicting on batch 673
+11/26/2025 09:34:28 PM DEBUG:Predicting on batch 674
+11/26/2025 09:34:29 PM DEBUG:Predicting on batch 675
+11/26/2025 09:34:31 PM DEBUG:Predicting on batch 676
+11/26/2025 09:34:33 PM DEBUG:Predicting on batch 677
+11/26/2025 09:34:35 PM DEBUG:Predicting on batch 678
+11/26/2025 09:34:37 PM DEBUG:Predicting on batch 679
+11/26/2025 09:34:38 PM DEBUG:Predicting on batch 680
+11/26/2025 09:34:38 PM DEBUG:680
+11/26/2025 09:34:38 PM DEBUG:10 batches took 18.089855432510376 seconds
+11/26/2025 09:34:40 PM DEBUG:Predicting on batch 681
+11/26/2025 09:34:42 PM DEBUG:Predicting on batch 682
+11/26/2025 09:34:44 PM DEBUG:Predicting on batch 683
+11/26/2025 09:34:46 PM DEBUG:Predicting on batch 684
+11/26/2025 09:34:47 PM DEBUG:Predicting on batch 685
+11/26/2025 09:34:49 PM DEBUG:Predicting on batch 686
+11/26/2025 09:34:51 PM DEBUG:Predicting on batch 687
+11/26/2025 09:34:53 PM DEBUG:Predicting on batch 688
+11/26/2025 09:34:55 PM DEBUG:Predicting on batch 689
+11/26/2025 09:34:57 PM DEBUG:Predicting on batch 690
+11/26/2025 09:34:57 PM DEBUG:690
+11/26/2025 09:34:57 PM DEBUG:10 batches took 18.094170093536377 seconds
+11/26/2025 09:34:58 PM DEBUG:Predicting on batch 691
+11/26/2025 09:35:00 PM DEBUG:Predicting on batch 692
+11/26/2025 09:35:02 PM DEBUG:Predicting on batch 693
+11/26/2025 09:35:04 PM DEBUG:Predicting on batch 694
+11/26/2025 09:35:06 PM DEBUG:Predicting on batch 695
+11/26/2025 09:35:07 PM DEBUG:Predicting on batch 696
+11/26/2025 09:35:09 PM DEBUG:Predicting on batch 697
+11/26/2025 09:35:11 PM DEBUG:Predicting on batch 698
+11/26/2025 09:35:13 PM DEBUG:Predicting on batch 699
+11/26/2025 09:35:14 PM DEBUG:Predicting on batch 700
+11/26/2025 09:35:14 PM DEBUG:700
+11/26/2025 09:35:14 PM DEBUG:10 batches took 17.838233470916748 seconds
+11/26/2025 09:35:16 PM DEBUG:Predicting on batch 701
+11/26/2025 09:35:18 PM DEBUG:Predicting on batch 702
+11/26/2025 09:35:20 PM DEBUG:Predicting on batch 703
+11/26/2025 09:35:22 PM DEBUG:Predicting on batch 704
+11/26/2025 09:35:24 PM DEBUG:Predicting on batch 705
+11/26/2025 09:35:25 PM DEBUG:Predicting on batch 706
+11/26/2025 09:35:27 PM DEBUG:Predicting on batch 707
+11/26/2025 09:35:29 PM DEBUG:Predicting on batch 708
+11/26/2025 09:35:31 PM DEBUG:Predicting on batch 709
+11/26/2025 09:35:33 PM DEBUG:Predicting on batch 710
+11/26/2025 09:35:33 PM DEBUG:710
+11/26/2025 09:35:33 PM DEBUG:10 batches took 18.50459051132202 seconds
+11/26/2025 09:35:35 PM DEBUG:Predicting on batch 711
+11/26/2025 09:35:37 PM DEBUG:Predicting on batch 712
+11/26/2025 09:35:38 PM DEBUG:Predicting on batch 713
+11/26/2025 09:35:40 PM DEBUG:Predicting on batch 714
+11/26/2025 09:35:42 PM DEBUG:Predicting on batch 715
+11/26/2025 09:35:44 PM DEBUG:Predicting on batch 716
+11/26/2025 09:35:45 PM DEBUG:Predicting on batch 717
+11/26/2025 09:35:47 PM DEBUG:Predicting on batch 718
+11/26/2025 09:35:49 PM DEBUG:Predicting on batch 719
+11/26/2025 09:35:51 PM DEBUG:Predicting on batch 720
+11/26/2025 09:35:51 PM DEBUG:720
+11/26/2025 09:35:51 PM DEBUG:10 batches took 18.120717763900757 seconds
+11/26/2025 09:35:53 PM DEBUG:Predicting on batch 721
+11/26/2025 09:35:55 PM DEBUG:Predicting on batch 722
+11/26/2025 09:35:56 PM DEBUG:Predicting on batch 723
+11/26/2025 09:35:58 PM DEBUG:Predicting on batch 724
+11/26/2025 09:36:00 PM DEBUG:Predicting on batch 725
+11/26/2025 09:36:02 PM DEBUG:Predicting on batch 726
+11/26/2025 09:36:04 PM DEBUG:Predicting on batch 727
+11/26/2025 09:36:05 PM DEBUG:Predicting on batch 728
+11/26/2025 09:36:07 PM DEBUG:Predicting on batch 729
+11/26/2025 09:36:09 PM DEBUG:Predicting on batch 730
+11/26/2025 09:36:09 PM DEBUG:730
+11/26/2025 09:36:09 PM DEBUG:10 batches took 18.03588080406189 seconds
+11/26/2025 09:36:11 PM DEBUG:Predicting on batch 731
+11/26/2025 09:36:13 PM DEBUG:Predicting on batch 732
+11/26/2025 09:36:14 PM DEBUG:Predicting on batch 733
+11/26/2025 09:36:16 PM DEBUG:Predicting on batch 734
+11/26/2025 09:36:18 PM DEBUG:Predicting on batch 735
+11/26/2025 09:36:20 PM DEBUG:Predicting on batch 736
+11/26/2025 09:36:22 PM DEBUG:Predicting on batch 737
+11/26/2025 09:36:24 PM DEBUG:Predicting on batch 738
+11/26/2025 09:36:25 PM DEBUG:Predicting on batch 739
+11/26/2025 09:36:27 PM DEBUG:Predicting on batch 740
+11/26/2025 09:36:27 PM DEBUG:740
+11/26/2025 09:36:27 PM DEBUG:10 batches took 17.986238479614258 seconds
+11/26/2025 09:36:29 PM DEBUG:Predicting on batch 741
+11/26/2025 09:36:31 PM DEBUG:Predicting on batch 742
+11/26/2025 09:36:33 PM DEBUG:Predicting on batch 743
+11/26/2025 09:36:34 PM DEBUG:Predicting on batch 744
+11/26/2025 09:36:36 PM DEBUG:Predicting on batch 745
+11/26/2025 09:36:38 PM DEBUG:Predicting on batch 746
+11/26/2025 09:36:40 PM DEBUG:Predicting on batch 747
+11/26/2025 09:36:42 PM DEBUG:Predicting on batch 748
+11/26/2025 09:36:43 PM DEBUG:Predicting on batch 749
+11/26/2025 09:36:45 PM DEBUG:Predicting on batch 750
+11/26/2025 09:36:45 PM DEBUG:750
+11/26/2025 09:36:45 PM DEBUG:10 batches took 18.277901887893677 seconds
+11/26/2025 09:36:47 PM DEBUG:Predicting on batch 751
+11/26/2025 09:36:49 PM DEBUG:Predicting on batch 752
+11/26/2025 09:36:51 PM DEBUG:Predicting on batch 753
+11/26/2025 09:36:52 PM DEBUG:Predicting on batch 754
+11/26/2025 09:36:54 PM DEBUG:Predicting on batch 755
+11/26/2025 09:36:56 PM DEBUG:Predicting on batch 756
+11/26/2025 09:36:58 PM DEBUG:Predicting on batch 757
+11/26/2025 09:37:00 PM DEBUG:Predicting on batch 758
+11/26/2025 09:37:01 PM DEBUG:Predicting on batch 759
+11/26/2025 09:37:03 PM DEBUG:Predicting on batch 760
+11/26/2025 09:37:03 PM DEBUG:760
+11/26/2025 09:37:03 PM DEBUG:10 batches took 17.83955430984497 seconds
+11/26/2025 09:37:05 PM DEBUG:Predicting on batch 761
+11/26/2025 09:37:07 PM DEBUG:Predicting on batch 762
+11/26/2025 09:37:08 PM DEBUG:Predicting on batch 763
+11/26/2025 09:37:10 PM DEBUG:Predicting on batch 764
+11/26/2025 09:37:12 PM DEBUG:Predicting on batch 765
+11/26/2025 09:37:14 PM DEBUG:Predicting on batch 766
+11/26/2025 09:37:16 PM DEBUG:Predicting on batch 767
+11/26/2025 09:37:18 PM DEBUG:Predicting on batch 768
+11/26/2025 09:37:20 PM DEBUG:Predicting on batch 769
+11/26/2025 09:37:21 PM DEBUG:Predicting on batch 770
+11/26/2025 09:37:21 PM DEBUG:770
+11/26/2025 09:37:21 PM DEBUG:10 batches took 18.212923288345337 seconds
+11/26/2025 09:37:23 PM DEBUG:Predicting on batch 771
+11/26/2025 09:37:25 PM DEBUG:Predicting on batch 772
+11/26/2025 09:37:27 PM DEBUG:Predicting on batch 773
+11/26/2025 09:37:29 PM DEBUG:Predicting on batch 774
+11/26/2025 09:37:31 PM DEBUG:Predicting on batch 775
+11/26/2025 09:37:32 PM DEBUG:Predicting on batch 776
+11/26/2025 09:37:34 PM DEBUG:Predicting on batch 777
+11/26/2025 09:37:36 PM DEBUG:Predicting on batch 778
+11/26/2025 09:37:38 PM DEBUG:Predicting on batch 779
+11/26/2025 09:37:40 PM DEBUG:Predicting on batch 780
+11/26/2025 09:37:40 PM DEBUG:780
+11/26/2025 09:37:40 PM DEBUG:10 batches took 18.692487955093384 seconds
+11/26/2025 09:37:42 PM DEBUG:Predicting on batch 781
+11/26/2025 09:37:44 PM DEBUG:Predicting on batch 782
+11/26/2025 09:37:46 PM DEBUG:Predicting on batch 783
+11/26/2025 09:37:48 PM DEBUG:Predicting on batch 784
+11/26/2025 09:37:50 PM DEBUG:Predicting on batch 785
+11/26/2025 09:37:52 PM DEBUG:Predicting on batch 786
+11/26/2025 09:37:53 PM DEBUG:Predicting on batch 787
+11/26/2025 09:37:55 PM DEBUG:Predicting on batch 788
+11/26/2025 09:37:57 PM DEBUG:Predicting on batch 789
+11/26/2025 09:37:59 PM DEBUG:Predicting on batch 790
+11/26/2025 09:37:59 PM DEBUG:790
+11/26/2025 09:37:59 PM DEBUG:10 batches took 18.852473974227905 seconds
+11/26/2025 09:38:01 PM DEBUG:Predicting on batch 791
+11/26/2025 09:38:03 PM DEBUG:Predicting on batch 792
+11/26/2025 09:38:05 PM DEBUG:Predicting on batch 793
+11/26/2025 09:38:06 PM DEBUG:Predicting on batch 794
+11/26/2025 09:38:08 PM DEBUG:Predicting on batch 795
+11/26/2025 09:38:10 PM DEBUG:Predicting on batch 796
+11/26/2025 09:38:12 PM DEBUG:Predicting on batch 797
+11/26/2025 09:38:14 PM DEBUG:Predicting on batch 798
+11/26/2025 09:38:15 PM DEBUG:Predicting on batch 799
+11/26/2025 09:38:17 PM DEBUG:Predicting on batch 800
+11/26/2025 09:38:17 PM DEBUG:800
+11/26/2025 09:38:17 PM DEBUG:10 batches took 18.344023942947388 seconds
+11/26/2025 09:38:19 PM DEBUG:Predicting on batch 801
+11/26/2025 09:38:21 PM DEBUG:Predicting on batch 802
+11/26/2025 09:38:23 PM DEBUG:Predicting on batch 803
+11/26/2025 09:38:25 PM DEBUG:Predicting on batch 804
+11/26/2025 09:38:27 PM DEBUG:Predicting on batch 805
+11/26/2025 09:38:29 PM DEBUG:Predicting on batch 806
+11/26/2025 09:38:30 PM DEBUG:Predicting on batch 807
+11/26/2025 09:38:32 PM DEBUG:Predicting on batch 808
+11/26/2025 09:38:34 PM DEBUG:Predicting on batch 809
+11/26/2025 09:38:36 PM DEBUG:Predicting on batch 810
+11/26/2025 09:38:36 PM DEBUG:810
+11/26/2025 09:38:36 PM DEBUG:10 batches took 18.58682346343994 seconds
+11/26/2025 09:38:38 PM DEBUG:Predicting on batch 811
+11/26/2025 09:38:39 PM DEBUG:Predicting on batch 812
+11/26/2025 09:38:41 PM DEBUG:Predicting on batch 813
+11/26/2025 09:38:43 PM DEBUG:Predicting on batch 814
+11/26/2025 09:38:45 PM DEBUG:Predicting on batch 815
+11/26/2025 09:38:47 PM DEBUG:Predicting on batch 816
+11/26/2025 09:38:49 PM DEBUG:Predicting on batch 817
+11/26/2025 09:38:50 PM DEBUG:Predicting on batch 818
+11/26/2025 09:38:52 PM DEBUG:Predicting on batch 819
+11/26/2025 09:38:54 PM DEBUG:Predicting on batch 820
+11/26/2025 09:38:54 PM DEBUG:820
+11/26/2025 09:38:54 PM DEBUG:10 batches took 18.216227531433105 seconds
+11/26/2025 09:38:56 PM DEBUG:Predicting on batch 821
+11/26/2025 09:38:58 PM DEBUG:Predicting on batch 822
+11/26/2025 09:39:00 PM DEBUG:Predicting on batch 823
+11/26/2025 09:39:02 PM DEBUG:Predicting on batch 824
+11/26/2025 09:39:04 PM DEBUG:Predicting on batch 825
+11/26/2025 09:39:06 PM DEBUG:Predicting on batch 826
+11/26/2025 09:39:08 PM DEBUG:Predicting on batch 827
+11/26/2025 09:39:09 PM DEBUG:Predicting on batch 828
+11/26/2025 09:39:11 PM DEBUG:Predicting on batch 829
+11/26/2025 09:39:13 PM DEBUG:Predicting on batch 830
+11/26/2025 09:39:13 PM DEBUG:830
+11/26/2025 09:39:13 PM DEBUG:10 batches took 18.949411630630493 seconds
+11/26/2025 09:39:15 PM DEBUG:Predicting on batch 831
+11/26/2025 09:39:17 PM DEBUG:Predicting on batch 832
+11/26/2025 09:39:18 PM DEBUG:Predicting on batch 833
+11/26/2025 09:39:20 PM DEBUG:Predicting on batch 834
+11/26/2025 09:39:22 PM DEBUG:Predicting on batch 835
+11/26/2025 09:39:24 PM DEBUG:Predicting on batch 836
+11/26/2025 09:39:25 PM DEBUG:Predicting on batch 837
+11/26/2025 09:39:27 PM DEBUG:Predicting on batch 838
+11/26/2025 09:39:29 PM DEBUG:Predicting on batch 839
+11/26/2025 09:39:31 PM DEBUG:Predicting on batch 840
+11/26/2025 09:39:31 PM DEBUG:840
+11/26/2025 09:39:31 PM DEBUG:10 batches took 18.014132499694824 seconds
+11/26/2025 09:39:33 PM DEBUG:Predicting on batch 841
+11/26/2025 09:39:35 PM DEBUG:Predicting on batch 842
+11/26/2025 09:39:37 PM DEBUG:Predicting on batch 843
+11/26/2025 09:39:39 PM DEBUG:Predicting on batch 844
+11/26/2025 09:39:41 PM DEBUG:Predicting on batch 845
+11/26/2025 09:39:42 PM DEBUG:Predicting on batch 846
+11/26/2025 09:39:44 PM DEBUG:Predicting on batch 847
+11/26/2025 09:39:46 PM DEBUG:Predicting on batch 848
+11/26/2025 09:39:48 PM DEBUG:Predicting on batch 849
+11/26/2025 09:39:50 PM DEBUG:Predicting on batch 850
+11/26/2025 09:39:50 PM DEBUG:850
+11/26/2025 09:39:50 PM DEBUG:10 batches took 18.636406898498535 seconds
+11/26/2025 09:39:52 PM DEBUG:Predicting on batch 851
+11/26/2025 09:39:53 PM DEBUG:Predicting on batch 852
+11/26/2025 09:39:55 PM DEBUG:Predicting on batch 853
+11/26/2025 09:39:57 PM DEBUG:Predicting on batch 854
+11/26/2025 09:39:59 PM DEBUG:Predicting on batch 855
+11/26/2025 09:40:01 PM DEBUG:Predicting on batch 856
+11/26/2025 09:40:02 PM DEBUG:Predicting on batch 857
+11/26/2025 09:40:04 PM DEBUG:Predicting on batch 858
+11/26/2025 09:40:06 PM DEBUG:Predicting on batch 859
+11/26/2025 09:40:08 PM DEBUG:Predicting on batch 860
+11/26/2025 09:40:08 PM DEBUG:860
+11/26/2025 09:40:08 PM DEBUG:10 batches took 18.324119567871094 seconds
+11/26/2025 09:40:10 PM DEBUG:Predicting on batch 861
+11/26/2025 09:40:12 PM DEBUG:Predicting on batch 862
+11/26/2025 09:40:14 PM DEBUG:Predicting on batch 863
+11/26/2025 09:40:15 PM DEBUG:Predicting on batch 864
+11/26/2025 09:40:17 PM DEBUG:Predicting on batch 865
+11/26/2025 09:40:19 PM DEBUG:Predicting on batch 866
+11/26/2025 09:40:21 PM DEBUG:Predicting on batch 867
+11/26/2025 09:40:22 PM DEBUG:Predicting on batch 868
+11/26/2025 09:40:24 PM DEBUG:Predicting on batch 869
+11/26/2025 09:40:26 PM DEBUG:Predicting on batch 870
+11/26/2025 09:40:26 PM DEBUG:870
+11/26/2025 09:40:26 PM DEBUG:10 batches took 18.051700353622437 seconds
+11/26/2025 09:40:28 PM DEBUG:Predicting on batch 871
+11/26/2025 09:40:30 PM DEBUG:Predicting on batch 872
+11/26/2025 09:40:32 PM DEBUG:Predicting on batch 873
+11/26/2025 09:40:33 PM DEBUG:Predicting on batch 874
+11/26/2025 09:40:35 PM DEBUG:Predicting on batch 875
+11/26/2025 09:40:37 PM DEBUG:Predicting on batch 876
+11/26/2025 09:40:39 PM DEBUG:Predicting on batch 877
+11/26/2025 09:40:41 PM DEBUG:Predicting on batch 878
+11/26/2025 09:40:44 PM DEBUG:Predicting on batch 879
+11/26/2025 09:40:45 PM DEBUG:Predicting on batch 880
+11/26/2025 09:40:45 PM DEBUG:880
+11/26/2025 09:40:45 PM DEBUG:10 batches took 19.325109720230103 seconds
+11/26/2025 09:40:47 PM DEBUG:Predicting on batch 881
+11/26/2025 09:40:49 PM DEBUG:Predicting on batch 882
+11/26/2025 09:40:51 PM DEBUG:Predicting on batch 883
+11/26/2025 09:40:53 PM DEBUG:Predicting on batch 884
+11/26/2025 09:40:54 PM DEBUG:Predicting on batch 885
+11/26/2025 09:40:56 PM DEBUG:Predicting on batch 886
+11/26/2025 09:40:58 PM DEBUG:Predicting on batch 887
+11/26/2025 09:41:00 PM DEBUG:Predicting on batch 888
+11/26/2025 09:41:02 PM DEBUG:Predicting on batch 889
+11/26/2025 09:41:04 PM DEBUG:Predicting on batch 890
+11/26/2025 09:41:04 PM DEBUG:890
+11/26/2025 09:41:04 PM DEBUG:10 batches took 18.643235445022583 seconds
+11/26/2025 09:41:06 PM DEBUG:Predicting on batch 891
+11/26/2025 09:41:08 PM DEBUG:Predicting on batch 892
+11/26/2025 09:41:10 PM DEBUG:Predicting on batch 893
+11/26/2025 09:41:12 PM DEBUG:Predicting on batch 894
+11/26/2025 09:41:14 PM DEBUG:Predicting on batch 895
+11/26/2025 09:41:15 PM DEBUG:Predicting on batch 896
+11/26/2025 09:41:17 PM DEBUG:Predicting on batch 897
+11/26/2025 09:41:19 PM DEBUG:Predicting on batch 898
+11/26/2025 09:41:21 PM DEBUG:Predicting on batch 899
+11/26/2025 09:41:23 PM DEBUG:Predicting on batch 900
+11/26/2025 09:41:23 PM DEBUG:900
+11/26/2025 09:41:23 PM DEBUG:10 batches took 18.622722387313843 seconds
+11/26/2025 09:41:24 PM DEBUG:Predicting on batch 901
+11/26/2025 09:41:26 PM DEBUG:Predicting on batch 902
+11/26/2025 09:41:28 PM DEBUG:Predicting on batch 903
+11/26/2025 09:41:30 PM DEBUG:Predicting on batch 904
+11/26/2025 09:41:32 PM DEBUG:Predicting on batch 905
+11/26/2025 09:41:33 PM DEBUG:Predicting on batch 906
+11/26/2025 09:41:35 PM DEBUG:Predicting on batch 907
+11/26/2025 09:41:37 PM DEBUG:Predicting on batch 908
+11/26/2025 09:41:39 PM DEBUG:Predicting on batch 909
+11/26/2025 09:41:41 PM DEBUG:Predicting on batch 910
+11/26/2025 09:41:41 PM DEBUG:910
+11/26/2025 09:41:41 PM DEBUG:10 batches took 18.416101694107056 seconds
+11/26/2025 09:41:43 PM DEBUG:Predicting on batch 911
+11/26/2025 09:41:45 PM DEBUG:Predicting on batch 912
+11/26/2025 09:41:46 PM DEBUG:Predicting on batch 913
+11/26/2025 09:41:48 PM DEBUG:Predicting on batch 914
+11/26/2025 09:41:50 PM DEBUG:Predicting on batch 915
+11/26/2025 09:41:52 PM DEBUG:Predicting on batch 916
+11/26/2025 09:41:54 PM DEBUG:Predicting on batch 917
+11/26/2025 09:41:56 PM DEBUG:Predicting on batch 918
+11/26/2025 09:41:59 PM DEBUG:Predicting on batch 919
+11/26/2025 09:42:00 PM DEBUG:Predicting on batch 920
+11/26/2025 09:42:00 PM DEBUG:920
+11/26/2025 09:42:00 PM DEBUG:10 batches took 19.36440372467041 seconds
+11/26/2025 09:42:02 PM DEBUG:Predicting on batch 921
+11/26/2025 09:42:04 PM DEBUG:Predicting on batch 922
+11/26/2025 09:42:06 PM DEBUG:Predicting on batch 923
+11/26/2025 09:42:08 PM DEBUG:Predicting on batch 924
+11/26/2025 09:42:10 PM DEBUG:Predicting on batch 925
+11/26/2025 09:42:12 PM DEBUG:Predicting on batch 926
+11/26/2025 09:42:13 PM DEBUG:Predicting on batch 927
+11/26/2025 09:42:15 PM DEBUG:Predicting on batch 928
+11/26/2025 09:42:17 PM DEBUG:Predicting on batch 929
+11/26/2025 09:42:19 PM DEBUG:Predicting on batch 930
+11/26/2025 09:42:19 PM DEBUG:930
+11/26/2025 09:42:19 PM DEBUG:10 batches took 18.430243015289307 seconds
+11/26/2025 09:42:21 PM DEBUG:Predicting on batch 931
+11/26/2025 09:42:23 PM DEBUG:Predicting on batch 932
+11/26/2025 09:42:24 PM DEBUG:Predicting on batch 933
+11/26/2025 09:42:26 PM DEBUG:Predicting on batch 934
+11/26/2025 09:42:28 PM DEBUG:Predicting on batch 935
+11/26/2025 09:42:30 PM DEBUG:Predicting on batch 936
+11/26/2025 09:42:32 PM DEBUG:Predicting on batch 937
+11/26/2025 09:42:34 PM DEBUG:Predicting on batch 938
+11/26/2025 09:42:35 PM DEBUG:Predicting on batch 939
+11/26/2025 09:42:37 PM DEBUG:Predicting on batch 940
+11/26/2025 09:42:37 PM DEBUG:940
+11/26/2025 09:42:37 PM DEBUG:10 batches took 18.47097897529602 seconds
+11/26/2025 09:42:39 PM DEBUG:Predicting on batch 941
+11/26/2025 09:42:41 PM DEBUG:Predicting on batch 942
+11/26/2025 09:42:43 PM DEBUG:Predicting on batch 943
+11/26/2025 09:42:45 PM DEBUG:Predicting on batch 944
+11/26/2025 09:42:46 PM DEBUG:Predicting on batch 945
+11/26/2025 09:42:48 PM DEBUG:Predicting on batch 946
+11/26/2025 09:42:50 PM DEBUG:Predicting on batch 947
+11/26/2025 09:42:52 PM DEBUG:Predicting on batch 948
+11/26/2025 09:42:53 PM DEBUG:Predicting on batch 949
+11/26/2025 09:42:55 PM DEBUG:Predicting on batch 950
+11/26/2025 09:42:55 PM DEBUG:950
+11/26/2025 09:42:55 PM DEBUG:10 batches took 17.92651605606079 seconds
+11/26/2025 09:42:57 PM DEBUG:Predicting on batch 951
+11/26/2025 09:42:59 PM DEBUG:Predicting on batch 952
+11/26/2025 09:43:01 PM DEBUG:Predicting on batch 953
+11/26/2025 09:43:03 PM DEBUG:Predicting on batch 954
+11/26/2025 09:43:05 PM DEBUG:Predicting on batch 955
+11/26/2025 09:43:06 PM DEBUG:Predicting on batch 956
+11/26/2025 09:43:08 PM DEBUG:Predicting on batch 957
+11/26/2025 09:43:10 PM DEBUG:Predicting on batch 958
+11/26/2025 09:43:12 PM DEBUG:Predicting on batch 959
+11/26/2025 09:43:14 PM DEBUG:Predicting on batch 960
+11/26/2025 09:43:14 PM DEBUG:960
+11/26/2025 09:43:14 PM DEBUG:10 batches took 18.300368309020996 seconds
+11/26/2025 09:43:15 PM DEBUG:Predicting on batch 961
+11/26/2025 09:43:17 PM DEBUG:Predicting on batch 962
+11/26/2025 09:43:19 PM DEBUG:Predicting on batch 963
+11/26/2025 09:43:21 PM DEBUG:Predicting on batch 964
+11/26/2025 09:43:23 PM DEBUG:Predicting on batch 965
+11/26/2025 09:43:25 PM DEBUG:Predicting on batch 966
+11/26/2025 09:43:26 PM DEBUG:Predicting on batch 967
+11/26/2025 09:43:28 PM DEBUG:Predicting on batch 968
+11/26/2025 09:43:30 PM DEBUG:Predicting on batch 969
+11/26/2025 09:43:32 PM DEBUG:Predicting on batch 970
+11/26/2025 09:43:32 PM DEBUG:970
+11/26/2025 09:43:32 PM DEBUG:10 batches took 18.314260005950928 seconds
+11/26/2025 09:43:34 PM DEBUG:Predicting on batch 971
+11/26/2025 09:43:35 PM DEBUG:Predicting on batch 972
+11/26/2025 09:43:37 PM DEBUG:Predicting on batch 973
+11/26/2025 09:43:40 PM DEBUG:Predicting on batch 974
+11/26/2025 09:43:41 PM DEBUG:Predicting on batch 975
+11/26/2025 09:43:43 PM DEBUG:Predicting on batch 976
+11/26/2025 09:43:45 PM DEBUG:Predicting on batch 977
+11/26/2025 09:43:47 PM DEBUG:Predicting on batch 978
+11/26/2025 09:43:49 PM DEBUG:Predicting on batch 979
+11/26/2025 09:43:51 PM DEBUG:Predicting on batch 980
+11/26/2025 09:43:51 PM DEBUG:980
+11/26/2025 09:43:51 PM DEBUG:10 batches took 18.78949999809265 seconds
+11/26/2025 09:43:52 PM DEBUG:Predicting on batch 981
+11/26/2025 09:43:54 PM DEBUG:Predicting on batch 982
+11/26/2025 09:43:56 PM DEBUG:Predicting on batch 983
+11/26/2025 09:43:58 PM DEBUG:Predicting on batch 984
+11/26/2025 09:44:00 PM DEBUG:Predicting on batch 985
+11/26/2025 09:44:02 PM DEBUG:Predicting on batch 986
+11/26/2025 09:44:04 PM DEBUG:Predicting on batch 987
+11/26/2025 09:44:05 PM DEBUG:Predicting on batch 988
+11/26/2025 09:44:07 PM DEBUG:Predicting on batch 989
+11/26/2025 09:44:10 PM DEBUG:Predicting on batch 990
+11/26/2025 09:44:10 PM DEBUG:990
+11/26/2025 09:44:10 PM DEBUG:10 batches took 18.859240293502808 seconds
+11/26/2025 09:44:11 PM DEBUG:Predicting on batch 991
+11/26/2025 09:44:13 PM DEBUG:Predicting on batch 992
+11/26/2025 09:44:15 PM DEBUG:Predicting on batch 993
+11/26/2025 09:44:17 PM DEBUG:Predicting on batch 994
+11/26/2025 09:44:19 PM DEBUG:Predicting on batch 995
+11/26/2025 09:44:21 PM DEBUG:Predicting on batch 996
+11/26/2025 09:44:22 PM DEBUG:Predicting on batch 997
+11/26/2025 09:44:24 PM DEBUG:Predicting on batch 998
+11/26/2025 09:44:26 PM DEBUG:Predicting on batch 999
+11/26/2025 09:44:28 PM DEBUG:Predicting on batch 1000
+11/26/2025 09:44:28 PM DEBUG:1000
+11/26/2025 09:44:28 PM DEBUG:10 batches took 18.65826177597046 seconds
+11/26/2025 09:44:28 PM DEBUG:Saving checkpoint at 1000th batch
+11/26/2025 09:44:30 PM DEBUG:Predicting on batch 1001
+11/26/2025 09:44:32 PM DEBUG:Predicting on batch 1002
+11/26/2025 09:44:34 PM DEBUG:Predicting on batch 1003
+11/26/2025 09:44:35 PM DEBUG:Predicting on batch 1004
+11/26/2025 09:44:37 PM DEBUG:Predicting on batch 1005
+11/26/2025 09:44:39 PM DEBUG:Predicting on batch 1006
+11/26/2025 09:44:41 PM DEBUG:Predicting on batch 1007
+11/26/2025 09:44:43 PM DEBUG:Predicting on batch 1008
+11/26/2025 09:44:44 PM DEBUG:Predicting on batch 1009
+11/26/2025 09:44:46 PM DEBUG:Predicting on batch 1010
+11/26/2025 09:44:46 PM DEBUG:1010
+11/26/2025 09:44:46 PM DEBUG:10 batches took 18.037417888641357 seconds
+11/26/2025 09:44:48 PM DEBUG:Predicting on batch 1011
+11/26/2025 09:44:50 PM DEBUG:Predicting on batch 1012
+11/26/2025 09:44:52 PM DEBUG:Predicting on batch 1013
+11/26/2025 09:44:54 PM DEBUG:Predicting on batch 1014
+11/26/2025 09:44:58 PM DEBUG:Predicting on batch 1015
+11/26/2025 09:45:00 PM DEBUG:Predicting on batch 1016
+11/26/2025 09:45:02 PM DEBUG:Predicting on batch 1017
+11/26/2025 09:45:03 PM DEBUG:Predicting on batch 1018
+11/26/2025 09:45:05 PM DEBUG:Predicting on batch 1019
+11/26/2025 09:45:07 PM DEBUG:Predicting on batch 1020
+11/26/2025 09:45:07 PM DEBUG:1020
+11/26/2025 09:45:07 PM DEBUG:10 batches took 20.846709489822388 seconds
+11/26/2025 09:45:09 PM DEBUG:Predicting on batch 1021
+11/26/2025 09:45:11 PM DEBUG:Predicting on batch 1022
+11/26/2025 09:45:13 PM DEBUG:Predicting on batch 1023
+11/26/2025 09:45:14 PM DEBUG:Predicting on batch 1024
+11/26/2025 09:45:16 PM DEBUG:Predicting on batch 1025
+11/26/2025 09:45:18 PM DEBUG:Predicting on batch 1026
+11/26/2025 09:45:20 PM DEBUG:Predicting on batch 1027
+11/26/2025 09:45:22 PM DEBUG:Predicting on batch 1028
+11/26/2025 09:45:24 PM DEBUG:Predicting on batch 1029
+11/26/2025 09:45:26 PM DEBUG:Predicting on batch 1030
+11/26/2025 09:45:26 PM DEBUG:1030
+11/26/2025 09:45:26 PM DEBUG:10 batches took 18.43428659439087 seconds
+11/26/2025 09:45:27 PM DEBUG:Predicting on batch 1031
+11/26/2025 09:45:29 PM DEBUG:Predicting on batch 1032
+11/26/2025 09:45:31 PM DEBUG:Predicting on batch 1033
+11/26/2025 09:45:33 PM DEBUG:Predicting on batch 1034
+11/26/2025 09:45:34 PM DEBUG:Predicting on batch 1035
+11/26/2025 09:45:36 PM DEBUG:Predicting on batch 1036
+11/26/2025 09:45:38 PM DEBUG:Predicting on batch 1037
+11/26/2025 09:45:40 PM DEBUG:Predicting on batch 1038
+11/26/2025 09:45:42 PM DEBUG:Predicting on batch 1039
+11/26/2025 09:45:44 PM DEBUG:Predicting on batch 1040
+11/26/2025 09:45:44 PM DEBUG:1040
+11/26/2025 09:45:44 PM DEBUG:10 batches took 18.15569758415222 seconds
+11/26/2025 09:45:45 PM DEBUG:Predicting on batch 1041
+11/26/2025 09:45:47 PM DEBUG:Predicting on batch 1042
+11/26/2025 09:45:49 PM DEBUG:Predicting on batch 1043
+11/26/2025 09:45:51 PM DEBUG:Predicting on batch 1044
+11/26/2025 09:45:53 PM DEBUG:Predicting on batch 1045
+11/26/2025 09:45:55 PM DEBUG:Predicting on batch 1046
+11/26/2025 09:45:56 PM DEBUG:Predicting on batch 1047
+11/26/2025 09:45:58 PM DEBUG:Predicting on batch 1048
+11/26/2025 09:46:00 PM DEBUG:Predicting on batch 1049
+11/26/2025 09:46:02 PM DEBUG:Predicting on batch 1050
+11/26/2025 09:46:02 PM DEBUG:1050
+11/26/2025 09:46:02 PM DEBUG:10 batches took 18.321091890335083 seconds
+11/26/2025 09:46:04 PM DEBUG:Predicting on batch 1051
+11/26/2025 09:46:06 PM DEBUG:Predicting on batch 1052
+11/26/2025 09:46:07 PM DEBUG:Predicting on batch 1053
+11/26/2025 09:46:09 PM DEBUG:Predicting on batch 1054
+11/26/2025 09:46:11 PM DEBUG:Predicting on batch 1055
+11/26/2025 09:46:13 PM DEBUG:Predicting on batch 1056
+11/26/2025 09:46:15 PM DEBUG:Predicting on batch 1057
+11/26/2025 09:46:16 PM DEBUG:Predicting on batch 1058
+11/26/2025 09:46:18 PM DEBUG:Predicting on batch 1059
+11/26/2025 09:46:20 PM DEBUG:Predicting on batch 1060
+11/26/2025 09:46:20 PM DEBUG:1060
+11/26/2025 09:46:20 PM DEBUG:10 batches took 18.11312985420227 seconds
+11/26/2025 09:46:22 PM DEBUG:Predicting on batch 1061
+11/26/2025 09:46:24 PM DEBUG:Predicting on batch 1062
+11/26/2025 09:46:25 PM DEBUG:Predicting on batch 1063
+11/26/2025 09:46:27 PM DEBUG:Predicting on batch 1064
+11/26/2025 09:46:29 PM DEBUG:Predicting on batch 1065
+11/26/2025 09:46:31 PM DEBUG:Predicting on batch 1066
+11/26/2025 09:46:33 PM DEBUG:Predicting on batch 1067
+11/26/2025 09:46:35 PM DEBUG:Predicting on batch 1068
+11/26/2025 09:46:36 PM DEBUG:Predicting on batch 1069
+11/26/2025 09:46:38 PM DEBUG:Predicting on batch 1070
+11/26/2025 09:46:38 PM DEBUG:1070
+11/26/2025 09:46:38 PM DEBUG:10 batches took 18.118340015411377 seconds
+11/26/2025 09:46:40 PM DEBUG:Predicting on batch 1071
+11/26/2025 09:46:42 PM DEBUG:Predicting on batch 1072
+11/26/2025 09:46:44 PM DEBUG:Predicting on batch 1073
+11/26/2025 09:46:45 PM DEBUG:Predicting on batch 1074
+11/26/2025 09:46:48 PM DEBUG:Predicting on batch 1075
+11/26/2025 09:46:50 PM DEBUG:Predicting on batch 1076
+11/26/2025 09:46:51 PM DEBUG:Predicting on batch 1077
+11/26/2025 09:46:53 PM DEBUG:Predicting on batch 1078
+11/26/2025 09:46:55 PM DEBUG:Predicting on batch 1079
+11/26/2025 09:46:57 PM DEBUG:Predicting on batch 1080
+11/26/2025 09:46:57 PM DEBUG:1080
+11/26/2025 09:46:57 PM DEBUG:10 batches took 18.48640465736389 seconds
+11/26/2025 09:46:58 PM DEBUG:Predicting on batch 1081
+11/26/2025 09:47:00 PM DEBUG:Predicting on batch 1082
+11/26/2025 09:47:02 PM DEBUG:Predicting on batch 1083
+11/26/2025 09:47:04 PM DEBUG:Predicting on batch 1084
+11/26/2025 09:47:06 PM DEBUG:Predicting on batch 1085
+11/26/2025 09:47:08 PM DEBUG:Predicting on batch 1086
+11/26/2025 09:47:09 PM DEBUG:Predicting on batch 1087
+11/26/2025 09:47:11 PM DEBUG:Predicting on batch 1088
+11/26/2025 09:47:13 PM DEBUG:Predicting on batch 1089
+11/26/2025 09:47:15 PM DEBUG:Predicting on batch 1090
+11/26/2025 09:47:15 PM DEBUG:1090
+11/26/2025 09:47:15 PM DEBUG:10 batches took 18.234714031219482 seconds
+11/26/2025 09:47:17 PM DEBUG:Predicting on batch 1091
+11/26/2025 09:47:19 PM DEBUG:Predicting on batch 1092
+11/26/2025 09:47:20 PM DEBUG:Predicting on batch 1093
+11/26/2025 09:47:22 PM DEBUG:Predicting on batch 1094
+11/26/2025 09:47:24 PM DEBUG:Predicting on batch 1095
+11/26/2025 09:47:26 PM DEBUG:Predicting on batch 1096
+11/26/2025 09:47:27 PM DEBUG:Predicting on batch 1097
+11/26/2025 09:47:29 PM DEBUG:Predicting on batch 1098
+11/26/2025 09:47:31 PM DEBUG:Predicting on batch 1099
+11/26/2025 09:47:33 PM DEBUG:Predicting on batch 1100
+11/26/2025 09:47:33 PM DEBUG:1100
+11/26/2025 09:47:33 PM DEBUG:10 batches took 18.037169456481934 seconds
+11/26/2025 09:47:35 PM DEBUG:Predicting on batch 1101
+11/26/2025 09:47:37 PM DEBUG:Predicting on batch 1102
+11/26/2025 09:47:39 PM DEBUG:Predicting on batch 1103
+11/26/2025 09:47:40 PM DEBUG:Predicting on batch 1104
+11/26/2025 09:47:42 PM DEBUG:Predicting on batch 1105
+11/26/2025 09:47:44 PM DEBUG:Predicting on batch 1106
+11/26/2025 09:47:46 PM DEBUG:Predicting on batch 1107
+11/26/2025 09:47:48 PM DEBUG:Predicting on batch 1108
+11/26/2025 09:47:50 PM DEBUG:Predicting on batch 1109
+11/26/2025 09:47:52 PM DEBUG:Predicting on batch 1110
+11/26/2025 09:47:52 PM DEBUG:1110
+11/26/2025 09:47:52 PM DEBUG:10 batches took 18.701160669326782 seconds
+11/26/2025 09:47:54 PM DEBUG:Predicting on batch 1111
+11/26/2025 09:47:55 PM DEBUG:Predicting on batch 1112
+11/26/2025 09:47:57 PM DEBUG:Predicting on batch 1113
+11/26/2025 09:47:59 PM DEBUG:Predicting on batch 1114
+11/26/2025 09:48:01 PM DEBUG:Predicting on batch 1115
+11/26/2025 09:48:03 PM DEBUG:Predicting on batch 1116
+11/26/2025 09:48:04 PM DEBUG:Predicting on batch 1117
+11/26/2025 09:48:06 PM DEBUG:Predicting on batch 1118
+11/26/2025 09:48:08 PM DEBUG:Predicting on batch 1119
+11/26/2025 09:48:10 PM DEBUG:Predicting on batch 1120
+11/26/2025 09:48:10 PM DEBUG:1120
+11/26/2025 09:48:10 PM DEBUG:10 batches took 18.046783924102783 seconds
+11/26/2025 09:48:11 PM DEBUG:Predicting on batch 1121
+11/26/2025 09:48:13 PM DEBUG:Predicting on batch 1122
+11/26/2025 09:48:15 PM DEBUG:Predicting on batch 1123
+11/26/2025 09:48:17 PM DEBUG:Predicting on batch 1124
+11/26/2025 09:48:19 PM DEBUG:Predicting on batch 1125
+11/26/2025 09:48:20 PM DEBUG:Predicting on batch 1126
+11/26/2025 09:48:22 PM DEBUG:Predicting on batch 1127
+11/26/2025 09:48:24 PM DEBUG:Predicting on batch 1128
+11/26/2025 09:48:26 PM DEBUG:Predicting on batch 1129
+11/26/2025 09:48:28 PM DEBUG:Predicting on batch 1130
+11/26/2025 09:48:28 PM DEBUG:1130
+11/26/2025 09:48:28 PM DEBUG:10 batches took 17.911503314971924 seconds
+11/26/2025 09:48:29 PM DEBUG:Predicting on batch 1131
+11/26/2025 09:48:31 PM DEBUG:Predicting on batch 1132
+11/26/2025 09:48:33 PM DEBUG:Predicting on batch 1133
+11/26/2025 09:48:35 PM DEBUG:Predicting on batch 1134
+11/26/2025 09:48:37 PM DEBUG:Predicting on batch 1135
+11/26/2025 09:48:38 PM DEBUG:Predicting on batch 1136
+11/26/2025 09:48:40 PM DEBUG:Predicting on batch 1137
+11/26/2025 09:48:42 PM DEBUG:Predicting on batch 1138
+11/26/2025 09:48:44 PM DEBUG:Predicting on batch 1139
+11/26/2025 09:48:46 PM DEBUG:Predicting on batch 1140
+11/26/2025 09:48:46 PM DEBUG:1140
+11/26/2025 09:48:46 PM DEBUG:10 batches took 18.015310525894165 seconds
+11/26/2025 09:48:47 PM DEBUG:Predicting on batch 1141
+11/26/2025 09:48:49 PM DEBUG:Predicting on batch 1142
+11/26/2025 09:48:51 PM DEBUG:Predicting on batch 1143
+11/26/2025 09:48:53 PM DEBUG:Predicting on batch 1144
+11/26/2025 09:48:55 PM DEBUG:Predicting on batch 1145
+11/26/2025 09:48:57 PM DEBUG:Predicting on batch 1146
+11/26/2025 09:48:59 PM DEBUG:Predicting on batch 1147
+11/26/2025 09:49:01 PM DEBUG:Predicting on batch 1148
+11/26/2025 09:49:03 PM DEBUG:Predicting on batch 1149
+11/26/2025 09:49:05 PM DEBUG:Predicting on batch 1150
+11/26/2025 09:49:05 PM DEBUG:1150
+11/26/2025 09:49:05 PM DEBUG:10 batches took 19.45182466506958 seconds
+11/26/2025 09:49:07 PM DEBUG:Predicting on batch 1151
+11/26/2025 09:49:09 PM DEBUG:Predicting on batch 1152
+11/26/2025 09:49:11 PM DEBUG:Predicting on batch 1153
+11/26/2025 09:49:13 PM DEBUG:Predicting on batch 1154
+11/26/2025 09:49:15 PM DEBUG:Predicting on batch 1155
+11/26/2025 09:49:17 PM DEBUG:Predicting on batch 1156
+11/26/2025 09:49:19 PM DEBUG:Predicting on batch 1157
+11/26/2025 09:49:20 PM DEBUG:Predicting on batch 1158
+11/26/2025 09:49:22 PM DEBUG:Predicting on batch 1159
+11/26/2025 09:49:24 PM DEBUG:Predicting on batch 1160
+11/26/2025 09:49:24 PM DEBUG:1160
+11/26/2025 09:49:24 PM DEBUG:10 batches took 18.877783060073853 seconds
+11/26/2025 09:49:26 PM DEBUG:Predicting on batch 1161
+11/26/2025 09:49:28 PM DEBUG:Predicting on batch 1162
+11/26/2025 09:49:30 PM DEBUG:Predicting on batch 1163
+11/26/2025 09:49:32 PM DEBUG:Predicting on batch 1164
+11/26/2025 09:49:34 PM DEBUG:Predicting on batch 1165
+11/26/2025 09:49:35 PM DEBUG:Predicting on batch 1166
+11/26/2025 09:49:37 PM DEBUG:Predicting on batch 1167
+11/26/2025 09:49:39 PM DEBUG:Predicting on batch 1168
+11/26/2025 09:49:41 PM DEBUG:Predicting on batch 1169
+11/26/2025 09:49:42 PM DEBUG:Predicting on batch 1170
+11/26/2025 09:49:42 PM DEBUG:1170
+11/26/2025 09:49:42 PM DEBUG:10 batches took 18.42678928375244 seconds
+11/26/2025 09:49:44 PM DEBUG:Predicting on batch 1171
+11/26/2025 09:49:46 PM DEBUG:Predicting on batch 1172
+11/26/2025 09:49:48 PM DEBUG:Predicting on batch 1173
+11/26/2025 09:49:50 PM DEBUG:Predicting on batch 1174
+11/26/2025 09:49:51 PM DEBUG:Predicting on batch 1175
+11/26/2025 09:49:53 PM DEBUG:Predicting on batch 1176
+11/26/2025 09:49:55 PM DEBUG:Predicting on batch 1177
+11/26/2025 09:49:57 PM DEBUG:Predicting on batch 1178
+11/26/2025 09:49:59 PM DEBUG:Predicting on batch 1179
+11/26/2025 09:50:00 PM DEBUG:Predicting on batch 1180
+11/26/2025 09:50:00 PM DEBUG:1180
+11/26/2025 09:50:00 PM DEBUG:10 batches took 18.016956567764282 seconds
+11/26/2025 09:50:02 PM DEBUG:Predicting on batch 1181
+11/26/2025 09:50:04 PM DEBUG:Predicting on batch 1182
+11/26/2025 09:50:06 PM DEBUG:Predicting on batch 1183
+11/26/2025 09:50:08 PM DEBUG:Predicting on batch 1184
+11/26/2025 09:50:09 PM DEBUG:Predicting on batch 1185
+11/26/2025 09:50:11 PM DEBUG:Predicting on batch 1186
+11/26/2025 09:50:13 PM DEBUG:Predicting on batch 1187
+11/26/2025 09:50:15 PM DEBUG:Predicting on batch 1188
+11/26/2025 09:50:17 PM DEBUG:Predicting on batch 1189
+11/26/2025 09:50:19 PM DEBUG:Predicting on batch 1190
+11/26/2025 09:50:19 PM DEBUG:1190
+11/26/2025 09:50:19 PM DEBUG:10 batches took 18.23936700820923 seconds
+11/26/2025 09:50:20 PM DEBUG:Predicting on batch 1191
+11/26/2025 09:50:22 PM DEBUG:Predicting on batch 1192
+11/26/2025 09:50:24 PM DEBUG:Predicting on batch 1193
+11/26/2025 09:50:26 PM DEBUG:Predicting on batch 1194
+11/26/2025 09:50:28 PM DEBUG:Predicting on batch 1195
+11/26/2025 09:50:29 PM DEBUG:Predicting on batch 1196
+11/26/2025 09:50:31 PM DEBUG:Predicting on batch 1197
+11/26/2025 09:50:33 PM DEBUG:Predicting on batch 1198
+11/26/2025 09:50:35 PM DEBUG:Predicting on batch 1199
+11/26/2025 09:50:37 PM DEBUG:Predicting on batch 1200
+11/26/2025 09:50:37 PM DEBUG:1200
+11/26/2025 09:50:37 PM DEBUG:10 batches took 18.0443012714386 seconds
+11/26/2025 09:50:39 PM DEBUG:Predicting on batch 1201
+11/26/2025 09:50:40 PM DEBUG:Predicting on batch 1202
+11/26/2025 09:50:42 PM DEBUG:Predicting on batch 1203
+11/26/2025 09:50:44 PM DEBUG:Predicting on batch 1204
+11/26/2025 09:50:46 PM DEBUG:Predicting on batch 1205
+11/26/2025 09:50:48 PM DEBUG:Predicting on batch 1206
+11/26/2025 09:50:49 PM DEBUG:Predicting on batch 1207
+11/26/2025 09:50:51 PM DEBUG:Predicting on batch 1208
+11/26/2025 09:50:53 PM DEBUG:Predicting on batch 1209
+11/26/2025 09:50:55 PM DEBUG:Predicting on batch 1210
+11/26/2025 09:50:55 PM DEBUG:1210
+11/26/2025 09:50:55 PM DEBUG:10 batches took 17.925512075424194 seconds
+11/26/2025 09:50:57 PM DEBUG:Predicting on batch 1211
+11/26/2025 09:50:58 PM DEBUG:Predicting on batch 1212
+11/26/2025 09:51:00 PM DEBUG:Predicting on batch 1213
+11/26/2025 09:51:02 PM DEBUG:Predicting on batch 1214
+11/26/2025 09:51:03 PM DEBUG:Predicting on batch 1215
+11/26/2025 09:51:05 PM DEBUG:Predicting on batch 1216
+11/26/2025 09:51:07 PM DEBUG:Predicting on batch 1217
+11/26/2025 09:51:09 PM DEBUG:Predicting on batch 1218
+11/26/2025 09:51:11 PM DEBUG:Predicting on batch 1219
+11/26/2025 09:51:12 PM DEBUG:Predicting on batch 1220
+11/26/2025 09:51:12 PM DEBUG:1220
+11/26/2025 09:51:12 PM DEBUG:10 batches took 17.854072332382202 seconds
+11/26/2025 09:51:14 PM DEBUG:Predicting on batch 1221
+11/26/2025 09:51:16 PM DEBUG:Predicting on batch 1222
+11/26/2025 09:51:18 PM DEBUG:Predicting on batch 1223
+11/26/2025 09:51:20 PM DEBUG:Predicting on batch 1224
+11/26/2025 09:51:21 PM DEBUG:Predicting on batch 1225
+11/26/2025 09:51:23 PM DEBUG:Predicting on batch 1226
+11/26/2025 09:51:25 PM DEBUG:Predicting on batch 1227
+11/26/2025 09:51:27 PM DEBUG:Predicting on batch 1228
+11/26/2025 09:51:28 PM DEBUG:Predicting on batch 1229
+11/26/2025 09:51:30 PM DEBUG:Predicting on batch 1230
+11/26/2025 09:51:30 PM DEBUG:1230
+11/26/2025 09:51:30 PM DEBUG:10 batches took 17.54784321784973 seconds
+11/26/2025 09:51:32 PM DEBUG:Predicting on batch 1231
+11/26/2025 09:51:34 PM DEBUG:Predicting on batch 1232
+11/26/2025 09:51:35 PM DEBUG:Predicting on batch 1233
+11/26/2025 09:51:37 PM DEBUG:Predicting on batch 1234
+11/26/2025 09:51:39 PM DEBUG:Predicting on batch 1235
+11/26/2025 09:51:41 PM DEBUG:Predicting on batch 1236
+11/26/2025 09:51:42 PM DEBUG:Predicting on batch 1237
+11/26/2025 09:51:44 PM DEBUG:Predicting on batch 1238
+11/26/2025 09:51:46 PM DEBUG:Predicting on batch 1239
+11/26/2025 09:51:48 PM DEBUG:Predicting on batch 1240
+11/26/2025 09:51:48 PM DEBUG:1240
+11/26/2025 09:51:48 PM DEBUG:10 batches took 18.07797861099243 seconds
+11/26/2025 09:51:50 PM DEBUG:Predicting on batch 1241
+11/26/2025 09:51:52 PM DEBUG:Predicting on batch 1242
+11/26/2025 09:51:54 PM DEBUG:Predicting on batch 1243
+11/26/2025 09:51:55 PM DEBUG:Predicting on batch 1244
+11/26/2025 09:51:57 PM DEBUG:Predicting on batch 1245
+11/26/2025 09:51:59 PM DEBUG:Predicting on batch 1246
+11/26/2025 09:52:01 PM DEBUG:Predicting on batch 1247
+11/26/2025 09:52:02 PM DEBUG:Predicting on batch 1248
+11/26/2025 09:52:04 PM DEBUG:Predicting on batch 1249
+11/26/2025 09:52:06 PM DEBUG:Predicting on batch 1250
+11/26/2025 09:52:06 PM DEBUG:1250
+11/26/2025 09:52:06 PM DEBUG:10 batches took 17.715840339660645 seconds
+11/26/2025 09:52:08 PM DEBUG:Predicting on batch 1251
+11/26/2025 09:52:10 PM DEBUG:Predicting on batch 1252
+11/26/2025 09:52:11 PM DEBUG:Predicting on batch 1253
+11/26/2025 09:52:13 PM DEBUG:Predicting on batch 1254
+11/26/2025 09:52:15 PM DEBUG:Predicting on batch 1255
+11/26/2025 09:52:16 PM DEBUG:Predicting on batch 1256
+11/26/2025 09:52:18 PM DEBUG:Predicting on batch 1257
+11/26/2025 09:52:20 PM DEBUG:Predicting on batch 1258
+11/26/2025 09:52:22 PM DEBUG:Predicting on batch 1259
+11/26/2025 09:52:24 PM DEBUG:Predicting on batch 1260
+11/26/2025 09:52:24 PM DEBUG:1260
+11/26/2025 09:52:24 PM DEBUG:10 batches took 18.05755877494812 seconds
+11/26/2025 09:52:26 PM DEBUG:Predicting on batch 1261
+11/26/2025 09:52:27 PM DEBUG:Predicting on batch 1262
+11/26/2025 09:52:29 PM DEBUG:Predicting on batch 1263
+11/26/2025 09:52:31 PM DEBUG:Predicting on batch 1264
+11/26/2025 09:52:32 PM DEBUG:Predicting on batch 1265
+11/26/2025 09:52:34 PM DEBUG:Predicting on batch 1266
+11/26/2025 09:52:36 PM DEBUG:Predicting on batch 1267
+11/26/2025 09:52:38 PM DEBUG:Predicting on batch 1268
+11/26/2025 09:52:40 PM DEBUG:Predicting on batch 1269
+11/26/2025 09:52:41 PM DEBUG:Predicting on batch 1270
+11/26/2025 09:52:41 PM DEBUG:1270
+11/26/2025 09:52:41 PM DEBUG:10 batches took 17.530580282211304 seconds
+11/26/2025 09:52:43 PM DEBUG:Predicting on batch 1271
+11/26/2025 09:52:45 PM DEBUG:Predicting on batch 1272
+11/26/2025 09:52:47 PM DEBUG:Predicting on batch 1273
+11/26/2025 09:52:48 PM DEBUG:Predicting on batch 1274
+11/26/2025 09:52:50 PM DEBUG:Predicting on batch 1275
+11/26/2025 09:52:52 PM DEBUG:Predicting on batch 1276
+11/26/2025 09:52:54 PM DEBUG:Predicting on batch 1277
+11/26/2025 09:52:56 PM DEBUG:Predicting on batch 1278
+11/26/2025 09:52:58 PM DEBUG:Predicting on batch 1279
+11/26/2025 09:52:59 PM DEBUG:Predicting on batch 1280
+11/26/2025 09:52:59 PM DEBUG:1280
+11/26/2025 09:52:59 PM DEBUG:10 batches took 17.946532726287842 seconds
+11/26/2025 09:53:01 PM DEBUG:Predicting on batch 1281
+11/26/2025 09:53:03 PM DEBUG:Predicting on batch 1282
+11/26/2025 09:53:05 PM DEBUG:Predicting on batch 1283
+11/26/2025 09:53:07 PM DEBUG:Predicting on batch 1284
+11/26/2025 09:53:08 PM DEBUG:Predicting on batch 1285
+11/26/2025 09:53:10 PM DEBUG:Predicting on batch 1286
+11/26/2025 09:53:12 PM DEBUG:Predicting on batch 1287
+11/26/2025 09:53:14 PM DEBUG:Predicting on batch 1288
+11/26/2025 09:53:15 PM DEBUG:Predicting on batch 1289
+11/26/2025 09:53:17 PM DEBUG:Predicting on batch 1290
+11/26/2025 09:53:17 PM DEBUG:1290
+11/26/2025 09:53:17 PM DEBUG:10 batches took 17.65994882583618 seconds
+11/26/2025 09:53:19 PM DEBUG:Predicting on batch 1291
+11/26/2025 09:53:21 PM DEBUG:Predicting on batch 1292
+11/26/2025 09:53:22 PM DEBUG:Predicting on batch 1293
+11/26/2025 09:53:24 PM DEBUG:Predicting on batch 1294
+11/26/2025 09:53:26 PM DEBUG:Predicting on batch 1295
+11/26/2025 09:53:28 PM DEBUG:Predicting on batch 1296
+11/26/2025 09:53:29 PM DEBUG:Predicting on batch 1297
+11/26/2025 09:53:31 PM DEBUG:Predicting on batch 1298
+11/26/2025 09:53:33 PM DEBUG:Predicting on batch 1299
+11/26/2025 09:53:35 PM DEBUG:Predicting on batch 1300
+11/26/2025 09:53:35 PM DEBUG:1300
+11/26/2025 09:53:35 PM DEBUG:10 batches took 17.91739320755005 seconds
+11/26/2025 09:53:37 PM DEBUG:Predicting on batch 1301
+11/26/2025 09:53:38 PM DEBUG:Predicting on batch 1302
+11/26/2025 09:53:40 PM DEBUG:Predicting on batch 1303
+11/26/2025 09:53:42 PM DEBUG:Predicting on batch 1304
+11/26/2025 09:53:44 PM DEBUG:Predicting on batch 1305
+11/26/2025 09:53:45 PM DEBUG:Predicting on batch 1306
+11/26/2025 09:53:48 PM DEBUG:Predicting on batch 1307
+11/26/2025 09:53:52 PM DEBUG:Predicting on batch 1308
+11/26/2025 09:53:54 PM DEBUG:Predicting on batch 1309
+11/26/2025 09:53:57 PM DEBUG:Predicting on batch 1310
+11/26/2025 09:53:57 PM DEBUG:1310
+11/26/2025 09:53:57 PM DEBUG:10 batches took 21.815032243728638 seconds
+11/26/2025 09:53:59 PM DEBUG:Predicting on batch 1311
+11/26/2025 09:54:02 PM DEBUG:Predicting on batch 1312
+11/26/2025 09:54:05 PM DEBUG:Predicting on batch 1313
+11/26/2025 09:54:08 PM DEBUG:Predicting on batch 1314
+11/26/2025 09:54:11 PM DEBUG:Predicting on batch 1315
+11/26/2025 09:54:13 PM DEBUG:Predicting on batch 1316
+11/26/2025 09:54:16 PM DEBUG:Predicting on batch 1317
+11/26/2025 09:54:18 PM DEBUG:Predicting on batch 1318
+11/26/2025 09:54:20 PM DEBUG:Predicting on batch 1319
+11/26/2025 09:54:23 PM DEBUG:Predicting on batch 1320
+11/26/2025 09:54:23 PM DEBUG:1320
+11/26/2025 09:54:23 PM DEBUG:10 batches took 26.098751544952393 seconds
+11/26/2025 09:54:25 PM DEBUG:Predicting on batch 1321
+11/26/2025 09:54:28 PM DEBUG:Predicting on batch 1322
+11/26/2025 09:54:30 PM DEBUG:Predicting on batch 1323
+11/26/2025 09:54:33 PM DEBUG:Predicting on batch 1324
+11/26/2025 09:54:35 PM DEBUG:Predicting on batch 1325
+11/26/2025 09:54:37 PM DEBUG:Predicting on batch 1326
+11/26/2025 09:54:40 PM DEBUG:Predicting on batch 1327
+11/26/2025 09:54:42 PM DEBUG:Predicting on batch 1328
+11/26/2025 09:54:45 PM DEBUG:Predicting on batch 1329
+11/26/2025 09:54:47 PM DEBUG:Predicting on batch 1330
+11/26/2025 09:54:47 PM DEBUG:1330
+11/26/2025 09:54:47 PM DEBUG:10 batches took 24.221739768981934 seconds
+11/26/2025 09:54:49 PM DEBUG:Predicting on batch 1331
+11/26/2025 09:54:52 PM DEBUG:Predicting on batch 1332
+11/26/2025 09:54:54 PM DEBUG:Predicting on batch 1333
+11/26/2025 09:54:56 PM DEBUG:Predicting on batch 1334
+11/26/2025 09:54:58 PM DEBUG:Predicting on batch 1335
+11/26/2025 09:55:00 PM DEBUG:Predicting on batch 1336
+11/26/2025 09:55:03 PM DEBUG:Predicting on batch 1337
+11/26/2025 09:55:05 PM DEBUG:Predicting on batch 1338
+11/26/2025 09:55:08 PM DEBUG:Predicting on batch 1339
+11/26/2025 09:55:10 PM DEBUG:Predicting on batch 1340
+11/26/2025 09:55:10 PM DEBUG:1340
+11/26/2025 09:55:10 PM DEBUG:10 batches took 23.11180329322815 seconds
+11/26/2025 09:55:12 PM DEBUG:Predicting on batch 1341
+11/26/2025 09:55:15 PM DEBUG:Predicting on batch 1342
+11/26/2025 09:55:17 PM DEBUG:Predicting on batch 1343
+11/26/2025 09:55:20 PM DEBUG:Predicting on batch 1344
+11/26/2025 09:55:22 PM DEBUG:Predicting on batch 1345
+11/26/2025 09:55:24 PM DEBUG:Predicting on batch 1346
+11/26/2025 09:55:27 PM DEBUG:Predicting on batch 1347
+11/26/2025 09:55:29 PM DEBUG:Predicting on batch 1348
+11/26/2025 09:55:31 PM DEBUG:Predicting on batch 1349
+11/26/2025 09:55:33 PM DEBUG:Predicting on batch 1350
+11/26/2025 09:55:33 PM DEBUG:1350
+11/26/2025 09:55:33 PM DEBUG:10 batches took 23.23413395881653 seconds
+11/26/2025 09:55:36 PM DEBUG:Predicting on batch 1351
+11/26/2025 09:55:38 PM DEBUG:Predicting on batch 1352
+11/26/2025 09:55:41 PM DEBUG:Predicting on batch 1353
+11/26/2025 09:55:43 PM DEBUG:Predicting on batch 1354
+11/26/2025 09:55:46 PM DEBUG:Predicting on batch 1355
+11/26/2025 09:55:49 PM DEBUG:Predicting on batch 1356
+11/26/2025 09:55:52 PM DEBUG:Predicting on batch 1357
+11/26/2025 09:55:55 PM DEBUG:Predicting on batch 1358
+11/26/2025 09:55:57 PM DEBUG:Predicting on batch 1359
+11/26/2025 09:55:59 PM DEBUG:Predicting on batch 1360
+11/26/2025 09:55:59 PM DEBUG:1360
+11/26/2025 09:55:59 PM DEBUG:10 batches took 26.054808139801025 seconds
+11/26/2025 09:56:02 PM DEBUG:Predicting on batch 1361
+11/26/2025 09:56:05 PM DEBUG:Predicting on batch 1362
+11/26/2025 09:56:08 PM DEBUG:Predicting on batch 1363
+11/26/2025 09:56:11 PM DEBUG:Predicting on batch 1364
+11/26/2025 09:56:14 PM DEBUG:Predicting on batch 1365
+11/26/2025 09:56:17 PM DEBUG:Predicting on batch 1366
+11/26/2025 09:56:19 PM DEBUG:Predicting on batch 1367
+11/26/2025 09:56:22 PM DEBUG:Predicting on batch 1368
+11/26/2025 09:56:24 PM DEBUG:Predicting on batch 1369
+11/26/2025 09:56:27 PM DEBUG:Predicting on batch 1370
+11/26/2025 09:56:27 PM DEBUG:1370
+11/26/2025 09:56:27 PM DEBUG:10 batches took 27.89530873298645 seconds
+11/26/2025 09:56:31 PM DEBUG:Predicting on batch 1371
+11/26/2025 09:56:33 PM DEBUG:Predicting on batch 1372
+11/26/2025 09:56:36 PM DEBUG:Predicting on batch 1373
+11/26/2025 09:56:39 PM DEBUG:Predicting on batch 1374
+11/26/2025 09:56:42 PM DEBUG:Predicting on batch 1375
+11/26/2025 09:56:44 PM DEBUG:Predicting on batch 1376
+11/26/2025 09:56:47 PM DEBUG:Predicting on batch 1377
+11/26/2025 09:56:49 PM DEBUG:Predicting on batch 1378
+11/26/2025 09:56:52 PM DEBUG:Predicting on batch 1379
+11/26/2025 09:56:55 PM DEBUG:Predicting on batch 1380
+11/26/2025 09:56:55 PM DEBUG:1380
+11/26/2025 09:56:55 PM DEBUG:10 batches took 27.461905002593994 seconds
+11/26/2025 09:56:57 PM DEBUG:Predicting on batch 1381
+11/26/2025 09:57:00 PM DEBUG:Predicting on batch 1382
+11/26/2025 09:57:02 PM DEBUG:Predicting on batch 1383
+11/26/2025 09:57:05 PM DEBUG:Predicting on batch 1384
+11/26/2025 09:57:08 PM DEBUG:Predicting on batch 1385
+11/26/2025 09:57:11 PM DEBUG:Predicting on batch 1386
+11/26/2025 09:57:14 PM DEBUG:Predicting on batch 1387
+11/26/2025 09:57:17 PM DEBUG:Predicting on batch 1388
+11/26/2025 09:57:19 PM DEBUG:Predicting on batch 1389
+11/26/2025 09:57:22 PM DEBUG:Predicting on batch 1390
+11/26/2025 09:57:22 PM DEBUG:1390
+11/26/2025 09:57:22 PM DEBUG:10 batches took 26.995875597000122 seconds
+11/26/2025 09:57:25 PM DEBUG:Predicting on batch 1391
+11/26/2025 09:57:27 PM DEBUG:Predicting on batch 1392
+11/26/2025 09:57:30 PM DEBUG:Predicting on batch 1393
+11/26/2025 09:57:33 PM DEBUG:Predicting on batch 1394
+11/26/2025 09:57:35 PM DEBUG:Predicting on batch 1395
+11/26/2025 09:57:38 PM DEBUG:Predicting on batch 1396
+11/26/2025 09:57:41 PM DEBUG:Predicting on batch 1397
+11/26/2025 09:57:43 PM DEBUG:Predicting on batch 1398
+11/26/2025 09:57:46 PM DEBUG:Predicting on batch 1399
+11/26/2025 09:57:49 PM DEBUG:Predicting on batch 1400
+11/26/2025 09:57:49 PM DEBUG:1400
+11/26/2025 09:57:49 PM DEBUG:10 batches took 26.812496662139893 seconds
+11/26/2025 09:57:51 PM DEBUG:Predicting on batch 1401
+11/26/2025 09:57:54 PM DEBUG:Predicting on batch 1402
+11/26/2025 09:57:57 PM DEBUG:Predicting on batch 1403
+11/26/2025 09:58:00 PM DEBUG:Predicting on batch 1404
+11/26/2025 09:58:02 PM DEBUG:Predicting on batch 1405
+11/26/2025 09:58:05 PM DEBUG:Predicting on batch 1406
+11/26/2025 09:58:08 PM DEBUG:Predicting on batch 1407
+11/26/2025 09:58:10 PM DEBUG:Predicting on batch 1408
+11/26/2025 09:58:13 PM DEBUG:Predicting on batch 1409
+11/26/2025 09:58:16 PM DEBUG:Predicting on batch 1410
+11/26/2025 09:58:16 PM DEBUG:1410
+11/26/2025 09:58:16 PM DEBUG:10 batches took 27.154255390167236 seconds
+11/26/2025 09:58:18 PM DEBUG:Predicting on batch 1411
+11/26/2025 09:58:21 PM DEBUG:Predicting on batch 1412
+11/26/2025 09:58:23 PM DEBUG:Predicting on batch 1413
+11/26/2025 09:58:26 PM DEBUG:Predicting on batch 1414
+11/26/2025 09:58:28 PM DEBUG:Predicting on batch 1415
+11/26/2025 09:58:31 PM DEBUG:Predicting on batch 1416
+11/26/2025 09:58:34 PM DEBUG:Predicting on batch 1417
+11/26/2025 09:58:36 PM DEBUG:Predicting on batch 1418
+11/26/2025 09:58:39 PM DEBUG:Predicting on batch 1419
+11/26/2025 09:58:41 PM DEBUG:Predicting on batch 1420
+11/26/2025 09:58:41 PM DEBUG:1420
+11/26/2025 09:58:41 PM DEBUG:10 batches took 25.407647371292114 seconds
+11/26/2025 09:58:44 PM DEBUG:Predicting on batch 1421
+11/26/2025 09:58:46 PM DEBUG:Predicting on batch 1422
+11/26/2025 09:58:49 PM DEBUG:Predicting on batch 1423
+11/26/2025 09:58:51 PM DEBUG:Predicting on batch 1424
+11/26/2025 09:58:54 PM DEBUG:Predicting on batch 1425
+11/26/2025 09:58:57 PM DEBUG:Predicting on batch 1426
+11/26/2025 09:58:59 PM DEBUG:Predicting on batch 1427
+11/26/2025 09:59:02 PM DEBUG:Predicting on batch 1428
+11/26/2025 09:59:05 PM DEBUG:Predicting on batch 1429
+11/26/2025 09:59:07 PM DEBUG:Predicting on batch 1430
+11/26/2025 09:59:07 PM DEBUG:1430
+11/26/2025 09:59:07 PM DEBUG:10 batches took 25.95473027229309 seconds
+11/26/2025 09:59:10 PM DEBUG:Predicting on batch 1431
+11/26/2025 09:59:12 PM DEBUG:Predicting on batch 1432
+11/26/2025 09:59:15 PM DEBUG:Predicting on batch 1433
+11/26/2025 09:59:18 PM DEBUG:Predicting on batch 1434
+11/26/2025 09:59:20 PM DEBUG:Predicting on batch 1435
+11/26/2025 09:59:23 PM DEBUG:Predicting on batch 1436
+11/26/2025 09:59:25 PM DEBUG:Predicting on batch 1437
+11/26/2025 09:59:28 PM DEBUG:Predicting on batch 1438
+11/26/2025 09:59:31 PM DEBUG:Predicting on batch 1439
+11/26/2025 09:59:33 PM DEBUG:Predicting on batch 1440
+11/26/2025 09:59:33 PM DEBUG:1440
+11/26/2025 09:59:33 PM DEBUG:10 batches took 26.01023530960083 seconds
+11/26/2025 09:59:36 PM DEBUG:Predicting on batch 1441
+11/26/2025 09:59:39 PM DEBUG:Predicting on batch 1442
+11/26/2025 09:59:42 PM DEBUG:Predicting on batch 1443
+11/26/2025 09:59:44 PM DEBUG:Predicting on batch 1444
+11/26/2025 09:59:47 PM DEBUG:Predicting on batch 1445
+11/26/2025 09:59:49 PM DEBUG:Predicting on batch 1446
+11/26/2025 09:59:52 PM DEBUG:Predicting on batch 1447
+11/26/2025 09:59:54 PM DEBUG:Predicting on batch 1448
+11/26/2025 09:59:56 PM DEBUG:Predicting on batch 1449
+11/26/2025 10:00:00 PM DEBUG:Predicting on batch 1450
+11/26/2025 10:00:00 PM DEBUG:1450
+11/26/2025 10:00:00 PM DEBUG:10 batches took 26.61079478263855 seconds
+11/26/2025 10:00:02 PM DEBUG:Predicting on batch 1451
+11/26/2025 10:00:05 PM DEBUG:Predicting on batch 1452
+11/26/2025 10:00:07 PM DEBUG:Predicting on batch 1453
+11/26/2025 10:00:10 PM DEBUG:Predicting on batch 1454
+11/26/2025 10:00:12 PM DEBUG:Predicting on batch 1455
+11/26/2025 10:00:15 PM DEBUG:Predicting on batch 1456
+11/26/2025 10:00:17 PM DEBUG:Predicting on batch 1457
+11/26/2025 10:00:20 PM DEBUG:Predicting on batch 1458
+11/26/2025 10:00:23 PM DEBUG:Predicting on batch 1459
+11/26/2025 10:00:25 PM DEBUG:Predicting on batch 1460
+11/26/2025 10:00:25 PM DEBUG:1460
+11/26/2025 10:00:25 PM DEBUG:10 batches took 25.171791076660156 seconds
+11/26/2025 10:00:28 PM DEBUG:Predicting on batch 1461
+11/26/2025 10:00:30 PM DEBUG:Predicting on batch 1462
+11/26/2025 10:00:32 PM DEBUG:Predicting on batch 1463
+11/26/2025 10:00:35 PM DEBUG:Predicting on batch 1464
+11/26/2025 10:00:37 PM DEBUG:Predicting on batch 1465
+11/26/2025 10:00:40 PM DEBUG:Predicting on batch 1466
+11/26/2025 10:00:42 PM DEBUG:Predicting on batch 1467
+11/26/2025 10:00:45 PM DEBUG:Predicting on batch 1468
+11/26/2025 10:00:47 PM DEBUG:Predicting on batch 1469
+11/26/2025 10:00:49 PM DEBUG:Predicting on batch 1470
+11/26/2025 10:00:49 PM DEBUG:1470
+11/26/2025 10:00:49 PM DEBUG:10 batches took 24.112417936325073 seconds
+11/26/2025 10:00:51 PM DEBUG:Predicting on batch 1471
+11/26/2025 10:00:54 PM DEBUG:Predicting on batch 1472
+11/26/2025 10:00:56 PM DEBUG:Predicting on batch 1473
+11/26/2025 10:00:58 PM DEBUG:Predicting on batch 1474
+11/26/2025 10:01:01 PM DEBUG:Predicting on batch 1475
+11/26/2025 10:01:03 PM DEBUG:Predicting on batch 1476
+11/26/2025 10:01:05 PM DEBUG:Predicting on batch 1477
+11/26/2025 10:01:08 PM DEBUG:Predicting on batch 1478
+11/26/2025 10:01:10 PM DEBUG:Predicting on batch 1479
+11/26/2025 10:01:12 PM DEBUG:Predicting on batch 1480
+11/26/2025 10:01:12 PM DEBUG:1480
+11/26/2025 10:01:12 PM DEBUG:10 batches took 23.256239891052246 seconds
+11/26/2025 10:01:15 PM DEBUG:Predicting on batch 1481
+11/26/2025 10:01:17 PM DEBUG:Predicting on batch 1482
+11/26/2025 10:01:19 PM DEBUG:Predicting on batch 1483
+11/26/2025 10:01:22 PM DEBUG:Predicting on batch 1484
+11/26/2025 10:01:24 PM DEBUG:Predicting on batch 1485
+11/26/2025 10:01:26 PM DEBUG:Predicting on batch 1486
+11/26/2025 10:01:28 PM DEBUG:Predicting on batch 1487
+11/26/2025 10:01:30 PM DEBUG:Predicting on batch 1488
+11/26/2025 10:01:32 PM DEBUG:Predicting on batch 1489
+11/26/2025 10:01:35 PM DEBUG:Predicting on batch 1490
+11/26/2025 10:01:35 PM DEBUG:1490
+11/26/2025 10:01:35 PM DEBUG:10 batches took 22.797704219818115 seconds
+11/26/2025 10:01:37 PM DEBUG:Predicting on batch 1491
+11/26/2025 10:01:39 PM DEBUG:Predicting on batch 1492
+11/26/2025 10:01:42 PM DEBUG:Predicting on batch 1493
+11/26/2025 10:01:44 PM DEBUG:Predicting on batch 1494
+11/26/2025 10:01:46 PM DEBUG:Predicting on batch 1495
+11/26/2025 10:01:48 PM DEBUG:Predicting on batch 1496
+11/26/2025 10:01:50 PM DEBUG:Predicting on batch 1497
+11/26/2025 10:01:53 PM DEBUG:Predicting on batch 1498
+11/26/2025 10:01:55 PM DEBUG:Predicting on batch 1499
+11/26/2025 10:01:57 PM DEBUG:Predicting on batch 1500
+11/26/2025 10:01:57 PM DEBUG:1500
+11/26/2025 10:01:57 PM DEBUG:10 batches took 22.045847177505493 seconds
+11/26/2025 10:01:59 PM DEBUG:Predicting on batch 1501
+11/26/2025 10:02:01 PM DEBUG:Predicting on batch 1502
+11/26/2025 10:02:03 PM DEBUG:Predicting on batch 1503
+11/26/2025 10:02:05 PM DEBUG:Predicting on batch 1504
+11/26/2025 10:02:07 PM DEBUG:Predicting on batch 1505
+11/26/2025 10:02:09 PM DEBUG:Predicting on batch 1506
+11/26/2025 10:02:11 PM DEBUG:Predicting on batch 1507
+11/26/2025 10:02:13 PM DEBUG:Predicting on batch 1508
+11/26/2025 10:02:15 PM DEBUG:Predicting on batch 1509
+11/26/2025 10:02:17 PM DEBUG:Predicting on batch 1510
+11/26/2025 10:02:17 PM DEBUG:1510
+11/26/2025 10:02:17 PM DEBUG:10 batches took 19.43429732322693 seconds
+11/26/2025 10:02:18 PM DEBUG:Predicting on batch 1511
+11/26/2025 10:02:20 PM DEBUG:Predicting on batch 1512
+11/26/2025 10:02:22 PM DEBUG:Predicting on batch 1513
+11/26/2025 10:02:24 PM DEBUG:Predicting on batch 1514
+11/26/2025 10:02:26 PM DEBUG:Predicting on batch 1515
+11/26/2025 10:02:27 PM DEBUG:Predicting on batch 1516
+11/26/2025 10:02:29 PM DEBUG:Predicting on batch 1517
+11/26/2025 10:02:31 PM DEBUG:Predicting on batch 1518
+11/26/2025 10:02:33 PM DEBUG:Predicting on batch 1519
+11/26/2025 10:02:34 PM DEBUG:Predicting on batch 1520
+11/26/2025 10:02:34 PM DEBUG:1520
+11/26/2025 10:02:34 PM DEBUG:10 batches took 17.899773120880127 seconds
+11/26/2025 10:02:37 PM DEBUG:Predicting on batch 1521
+11/26/2025 10:02:39 PM DEBUG:Predicting on batch 1522
+11/26/2025 10:02:42 PM DEBUG:Predicting on batch 1523
+11/26/2025 10:02:44 PM DEBUG:Predicting on batch 1524
+11/26/2025 10:02:46 PM DEBUG:Predicting on batch 1525
+11/26/2025 10:02:48 PM DEBUG:Predicting on batch 1526
+11/26/2025 10:02:50 PM DEBUG:Predicting on batch 1527
+11/26/2025 10:02:51 PM DEBUG:Predicting on batch 1528
+11/26/2025 10:02:53 PM DEBUG:Predicting on batch 1529
+11/26/2025 10:02:55 PM DEBUG:Predicting on batch 1530
+11/26/2025 10:02:55 PM DEBUG:1530
+11/26/2025 10:02:55 PM DEBUG:10 batches took 20.71185803413391 seconds
+11/26/2025 10:02:57 PM DEBUG:Predicting on batch 1531
+11/26/2025 10:02:59 PM DEBUG:Predicting on batch 1532
+11/26/2025 10:03:01 PM DEBUG:Predicting on batch 1533
+11/26/2025 10:03:03 PM DEBUG:Predicting on batch 1534
+11/26/2025 10:03:04 PM DEBUG:Predicting on batch 1535
+11/26/2025 10:03:06 PM DEBUG:Predicting on batch 1536
+11/26/2025 10:03:08 PM DEBUG:Predicting on batch 1537
+11/26/2025 10:03:11 PM DEBUG:Predicting on batch 1538
+11/26/2025 10:03:13 PM DEBUG:Predicting on batch 1539
+11/26/2025 10:03:14 PM DEBUG:Predicting on batch 1540
+11/26/2025 10:03:14 PM DEBUG:1540
+11/26/2025 10:03:14 PM DEBUG:10 batches took 19.26268696784973 seconds
+11/26/2025 10:03:16 PM DEBUG:Predicting on batch 1541
+11/26/2025 10:03:18 PM DEBUG:Predicting on batch 1542
+11/26/2025 10:03:20 PM DEBUG:Predicting on batch 1543
+11/26/2025 10:03:22 PM DEBUG:Predicting on batch 1544
+11/26/2025 10:03:24 PM DEBUG:Predicting on batch 1545
+11/26/2025 10:03:26 PM DEBUG:Predicting on batch 1546
+11/26/2025 10:03:28 PM DEBUG:Predicting on batch 1547
+11/26/2025 10:03:30 PM DEBUG:Predicting on batch 1548
+11/26/2025 10:03:31 PM DEBUG:Predicting on batch 1549
+11/26/2025 10:03:33 PM DEBUG:Predicting on batch 1550
+11/26/2025 10:03:33 PM DEBUG:1550
+11/26/2025 10:03:33 PM DEBUG:10 batches took 18.65977144241333 seconds
+11/26/2025 10:03:35 PM DEBUG:Predicting on batch 1551
+11/26/2025 10:03:37 PM DEBUG:Predicting on batch 1552
+11/26/2025 10:03:39 PM DEBUG:Predicting on batch 1553
+11/26/2025 10:03:40 PM DEBUG:Predicting on batch 1554
+11/26/2025 10:03:42 PM DEBUG:Predicting on batch 1555
+11/26/2025 10:03:44 PM DEBUG:Predicting on batch 1556
+11/26/2025 10:03:46 PM DEBUG:Predicting on batch 1557
+11/26/2025 10:03:48 PM DEBUG:Predicting on batch 1558
+11/26/2025 10:03:50 PM DEBUG:Predicting on batch 1559
+11/26/2025 10:03:52 PM DEBUG:Predicting on batch 1560
+11/26/2025 10:03:52 PM DEBUG:1560
+11/26/2025 10:03:52 PM DEBUG:10 batches took 19.016929626464844 seconds
+11/26/2025 10:03:54 PM DEBUG:Predicting on batch 1561
+11/26/2025 10:03:56 PM DEBUG:Predicting on batch 1562
+11/26/2025 10:03:58 PM DEBUG:Predicting on batch 1563
+11/26/2025 10:03:59 PM DEBUG:Predicting on batch 1564
+11/26/2025 10:04:01 PM DEBUG:Predicting on batch 1565
+11/26/2025 10:04:03 PM DEBUG:Predicting on batch 1566
+11/26/2025 10:04:05 PM DEBUG:Predicting on batch 1567
+11/26/2025 10:04:07 PM DEBUG:Predicting on batch 1568
+11/26/2025 10:04:09 PM DEBUG:Predicting on batch 1569
+11/26/2025 10:04:11 PM DEBUG:Predicting on batch 1570
+11/26/2025 10:04:11 PM DEBUG:1570
+11/26/2025 10:04:11 PM DEBUG:10 batches took 18.456239223480225 seconds
+11/26/2025 10:04:13 PM DEBUG:Predicting on batch 1571
+11/26/2025 10:04:14 PM DEBUG:Predicting on batch 1572
+11/26/2025 10:04:16 PM DEBUG:Predicting on batch 1573
+11/26/2025 10:04:18 PM DEBUG:Predicting on batch 1574
+11/26/2025 10:04:21 PM DEBUG:Predicting on batch 1575
+11/26/2025 10:04:22 PM DEBUG:Predicting on batch 1576
+11/26/2025 10:04:24 PM DEBUG:Predicting on batch 1577
+11/26/2025 10:04:26 PM DEBUG:Predicting on batch 1578
+11/26/2025 10:04:28 PM DEBUG:Predicting on batch 1579
+11/26/2025 10:04:29 PM DEBUG:Predicting on batch 1580
+11/26/2025 10:04:29 PM DEBUG:1580
+11/26/2025 10:04:29 PM DEBUG:10 batches took 18.81231951713562 seconds
+11/26/2025 10:04:31 PM DEBUG:Predicting on batch 1581
+11/26/2025 10:04:33 PM DEBUG:Predicting on batch 1582
+11/26/2025 10:04:35 PM DEBUG:Predicting on batch 1583
+11/26/2025 10:04:37 PM DEBUG:Predicting on batch 1584
+11/26/2025 10:04:38 PM DEBUG:Predicting on batch 1585
+11/26/2025 10:04:40 PM DEBUG:Predicting on batch 1586
+11/26/2025 10:04:42 PM DEBUG:Predicting on batch 1587
+11/26/2025 10:04:44 PM DEBUG:Predicting on batch 1588
+11/26/2025 10:04:45 PM DEBUG:Predicting on batch 1589
+11/26/2025 10:04:47 PM DEBUG:Predicting on batch 1590
+11/26/2025 10:04:47 PM DEBUG:1590
+11/26/2025 10:04:47 PM DEBUG:10 batches took 17.703884840011597 seconds
+11/26/2025 10:04:49 PM DEBUG:Predicting on batch 1591
+11/26/2025 10:04:51 PM DEBUG:Predicting on batch 1592
+11/26/2025 10:04:53 PM DEBUG:Predicting on batch 1593
+11/26/2025 10:04:55 PM DEBUG:Predicting on batch 1594
+11/26/2025 10:04:56 PM DEBUG:Predicting on batch 1595
+11/26/2025 10:04:58 PM DEBUG:Predicting on batch 1596
+11/26/2025 10:05:00 PM DEBUG:Predicting on batch 1597
+11/26/2025 10:05:02 PM DEBUG:Predicting on batch 1598
+11/26/2025 10:05:04 PM DEBUG:Predicting on batch 1599
+11/26/2025 10:05:06 PM DEBUG:Predicting on batch 1600
+11/26/2025 10:05:06 PM DEBUG:1600
+11/26/2025 10:05:06 PM DEBUG:10 batches took 18.442180633544922 seconds
+11/26/2025 10:05:07 PM DEBUG:Predicting on batch 1601
+11/26/2025 10:05:09 PM DEBUG:Predicting on batch 1602
+11/26/2025 10:05:11 PM DEBUG:Predicting on batch 1603
+11/26/2025 10:05:13 PM DEBUG:Predicting on batch 1604
+11/26/2025 10:05:14 PM DEBUG:Predicting on batch 1605
+11/26/2025 10:05:16 PM DEBUG:Predicting on batch 1606
+11/26/2025 10:05:18 PM DEBUG:Predicting on batch 1607
+11/26/2025 10:05:20 PM DEBUG:Predicting on batch 1608
+11/26/2025 10:05:22 PM DEBUG:Predicting on batch 1609
+11/26/2025 10:05:23 PM DEBUG:Predicting on batch 1610
+11/26/2025 10:05:23 PM DEBUG:1610
+11/26/2025 10:05:23 PM DEBUG:10 batches took 17.69654607772827 seconds
+11/26/2025 10:05:25 PM DEBUG:Predicting on batch 1611
+11/26/2025 10:05:27 PM DEBUG:Predicting on batch 1612
+11/26/2025 10:05:28 PM DEBUG:Predicting on batch 1613
+11/26/2025 10:05:31 PM DEBUG:Predicting on batch 1614
+11/26/2025 10:05:33 PM DEBUG:Predicting on batch 1615
+11/26/2025 10:05:34 PM DEBUG:Predicting on batch 1616
+11/26/2025 10:05:36 PM DEBUG:Predicting on batch 1617
+11/26/2025 10:05:38 PM DEBUG:Predicting on batch 1618
+11/26/2025 10:05:40 PM DEBUG:Predicting on batch 1619
+11/26/2025 10:05:41 PM DEBUG:Predicting on batch 1620
+11/26/2025 10:05:41 PM DEBUG:1620
+11/26/2025 10:05:41 PM DEBUG:10 batches took 18.075185537338257 seconds
+11/26/2025 10:05:43 PM DEBUG:Predicting on batch 1621
+11/26/2025 10:05:45 PM DEBUG:Predicting on batch 1622
+11/26/2025 10:05:47 PM DEBUG:Predicting on batch 1623
+11/26/2025 10:05:49 PM DEBUG:Predicting on batch 1624
+11/26/2025 10:05:50 PM DEBUG:Predicting on batch 1625
+11/26/2025 10:05:52 PM DEBUG:Predicting on batch 1626
+11/26/2025 10:05:54 PM DEBUG:Predicting on batch 1627
+11/26/2025 10:05:56 PM DEBUG:Predicting on batch 1628
+11/26/2025 10:05:57 PM DEBUG:Predicting on batch 1629
+11/26/2025 10:05:59 PM DEBUG:Predicting on batch 1630
+11/26/2025 10:05:59 PM DEBUG:1630
+11/26/2025 10:05:59 PM DEBUG:10 batches took 17.89490842819214 seconds
+11/26/2025 10:06:01 PM DEBUG:Predicting on batch 1631
+11/26/2025 10:06:03 PM DEBUG:Predicting on batch 1632
+11/26/2025 10:06:05 PM DEBUG:Predicting on batch 1633
+11/26/2025 10:06:07 PM DEBUG:Predicting on batch 1634
+11/26/2025 10:06:09 PM DEBUG:Predicting on batch 1635
+11/26/2025 10:06:10 PM DEBUG:Predicting on batch 1636
+11/26/2025 10:06:12 PM DEBUG:Predicting on batch 1637
+11/26/2025 10:06:14 PM DEBUG:Predicting on batch 1638
+11/26/2025 10:06:16 PM DEBUG:Predicting on batch 1639
+11/26/2025 10:06:18 PM DEBUG:Predicting on batch 1640
+11/26/2025 10:06:18 PM DEBUG:1640
+11/26/2025 10:06:18 PM DEBUG:10 batches took 18.423354625701904 seconds
+11/26/2025 10:06:19 PM DEBUG:Predicting on batch 1641
+11/26/2025 10:06:21 PM DEBUG:Predicting on batch 1642
+11/26/2025 10:06:23 PM DEBUG:Predicting on batch 1643
+11/26/2025 10:06:25 PM DEBUG:Predicting on batch 1644
+11/26/2025 10:06:26 PM DEBUG:Predicting on batch 1645
+11/26/2025 10:06:28 PM DEBUG:Predicting on batch 1646
+11/26/2025 10:06:30 PM DEBUG:Predicting on batch 1647
+11/26/2025 10:06:32 PM DEBUG:Predicting on batch 1648
+11/26/2025 10:06:34 PM DEBUG:Predicting on batch 1649
+11/26/2025 10:06:35 PM DEBUG:Predicting on batch 1650
+11/26/2025 10:06:35 PM DEBUG:1650
+11/26/2025 10:06:35 PM DEBUG:10 batches took 17.65204930305481 seconds
+11/26/2025 10:06:37 PM DEBUG:Predicting on batch 1651
+11/26/2025 10:06:39 PM DEBUG:Predicting on batch 1652
+11/26/2025 10:06:41 PM DEBUG:Predicting on batch 1653
+11/26/2025 10:06:43 PM DEBUG:Predicting on batch 1654
+11/26/2025 10:06:45 PM DEBUG:Predicting on batch 1655
+11/26/2025 10:06:46 PM DEBUG:Predicting on batch 1656
+11/26/2025 10:06:48 PM DEBUG:Predicting on batch 1657
+11/26/2025 10:06:50 PM DEBUG:Predicting on batch 1658
+11/26/2025 10:06:52 PM DEBUG:Predicting on batch 1659
+11/26/2025 10:06:53 PM DEBUG:Predicting on batch 1660
+11/26/2025 10:06:53 PM DEBUG:1660
+11/26/2025 10:06:53 PM DEBUG:10 batches took 18.127800464630127 seconds
+11/26/2025 10:06:55 PM DEBUG:Predicting on batch 1661
+11/26/2025 10:06:57 PM DEBUG:Predicting on batch 1662
+11/26/2025 10:06:59 PM DEBUG:Predicting on batch 1663
+11/26/2025 10:07:01 PM DEBUG:Predicting on batch 1664
+11/26/2025 10:07:03 PM DEBUG:Predicting on batch 1665
+11/26/2025 10:07:04 PM DEBUG:Predicting on batch 1666
+11/26/2025 10:07:06 PM DEBUG:Predicting on batch 1667
+11/26/2025 10:07:08 PM DEBUG:Predicting on batch 1668
+11/26/2025 10:07:10 PM DEBUG:Predicting on batch 1669
+11/26/2025 10:07:11 PM DEBUG:Predicting on batch 1670
+11/26/2025 10:07:11 PM DEBUG:1670
+11/26/2025 10:07:11 PM DEBUG:10 batches took 17.857218980789185 seconds
+11/26/2025 10:07:13 PM DEBUG:Predicting on batch 1671
+11/26/2025 10:07:15 PM DEBUG:Predicting on batch 1672
+11/26/2025 10:07:17 PM DEBUG:Predicting on batch 1673
+11/26/2025 10:07:19 PM DEBUG:Predicting on batch 1674
+11/26/2025 10:07:21 PM DEBUG:Predicting on batch 1675
+11/26/2025 10:07:22 PM DEBUG:Predicting on batch 1676
+11/26/2025 10:07:24 PM DEBUG:Predicting on batch 1677
+11/26/2025 10:07:26 PM DEBUG:Predicting on batch 1678
+11/26/2025 10:07:28 PM DEBUG:Predicting on batch 1679
+11/26/2025 10:07:30 PM DEBUG:Predicting on batch 1680
+11/26/2025 10:07:30 PM DEBUG:1680
+11/26/2025 10:07:30 PM DEBUG:10 batches took 18.3938205242157 seconds
+11/26/2025 10:07:31 PM DEBUG:Predicting on batch 1681
+11/26/2025 10:07:33 PM DEBUG:Predicting on batch 1682
+11/26/2025 10:07:35 PM DEBUG:Predicting on batch 1683
+11/26/2025 10:07:37 PM DEBUG:Predicting on batch 1684
+11/26/2025 10:07:39 PM DEBUG:Predicting on batch 1685
+11/26/2025 10:07:40 PM DEBUG:Predicting on batch 1686
+11/26/2025 10:07:42 PM DEBUG:Predicting on batch 1687
+11/26/2025 10:07:44 PM DEBUG:Predicting on batch 1688
+11/26/2025 10:07:46 PM DEBUG:Predicting on batch 1689
+11/26/2025 10:07:48 PM DEBUG:Predicting on batch 1690
+11/26/2025 10:07:48 PM DEBUG:1690
+11/26/2025 10:07:48 PM DEBUG:10 batches took 18.051918268203735 seconds
+11/26/2025 10:07:50 PM DEBUG:Predicting on batch 1691
+11/26/2025 10:07:51 PM DEBUG:Predicting on batch 1692
+11/26/2025 10:07:53 PM DEBUG:Predicting on batch 1693
+11/26/2025 10:07:55 PM DEBUG:Predicting on batch 1694
+11/26/2025 10:07:57 PM DEBUG:Predicting on batch 1695
+11/26/2025 10:07:59 PM DEBUG:Predicting on batch 1696
+11/26/2025 10:08:01 PM DEBUG:Predicting on batch 1697
+11/26/2025 10:08:02 PM DEBUG:Predicting on batch 1698
+11/26/2025 10:08:04 PM DEBUG:Predicting on batch 1699
+11/26/2025 10:08:06 PM DEBUG:Predicting on batch 1700
+11/26/2025 10:08:06 PM DEBUG:1700
+11/26/2025 10:08:06 PM DEBUG:10 batches took 18.122345209121704 seconds
+11/26/2025 10:08:08 PM DEBUG:Predicting on batch 1701
+11/26/2025 10:08:09 PM DEBUG:Predicting on batch 1702
+11/26/2025 10:08:11 PM DEBUG:Predicting on batch 1703
+11/26/2025 10:08:13 PM DEBUG:Predicting on batch 1704
+11/26/2025 10:08:15 PM DEBUG:Predicting on batch 1705
+11/26/2025 10:08:17 PM DEBUG:Predicting on batch 1706
+11/26/2025 10:08:19 PM DEBUG:Predicting on batch 1707
+11/26/2025 10:08:20 PM DEBUG:Predicting on batch 1708
+11/26/2025 10:08:22 PM DEBUG:Predicting on batch 1709
+11/26/2025 10:08:24 PM DEBUG:Predicting on batch 1710
+11/26/2025 10:08:24 PM DEBUG:1710
+11/26/2025 10:08:24 PM DEBUG:10 batches took 18.6147518157959 seconds
+11/26/2025 10:08:27 PM DEBUG:Predicting on batch 1711
+11/26/2025 10:08:29 PM DEBUG:Predicting on batch 1712
+11/26/2025 10:08:30 PM DEBUG:Predicting on batch 1713
+11/26/2025 10:08:32 PM DEBUG:Predicting on batch 1714
+11/26/2025 10:08:34 PM DEBUG:Predicting on batch 1715
+11/26/2025 10:08:36 PM DEBUG:Predicting on batch 1716
+11/26/2025 10:08:37 PM DEBUG:Predicting on batch 1717
+11/26/2025 10:08:39 PM DEBUG:Predicting on batch 1718
+11/26/2025 10:08:41 PM DEBUG:Predicting on batch 1719
+11/26/2025 10:08:43 PM DEBUG:Predicting on batch 1720
+11/26/2025 10:08:43 PM DEBUG:1720
+11/26/2025 10:08:43 PM DEBUG:10 batches took 18.545581102371216 seconds
+11/26/2025 10:08:45 PM DEBUG:Predicting on batch 1721
+11/26/2025 10:08:47 PM DEBUG:Predicting on batch 1722
+11/26/2025 10:08:48 PM DEBUG:Predicting on batch 1723
+11/26/2025 10:08:50 PM DEBUG:Predicting on batch 1724
+11/26/2025 10:08:52 PM DEBUG:Predicting on batch 1725
+11/26/2025 10:08:54 PM DEBUG:Predicting on batch 1726
+11/26/2025 10:08:55 PM DEBUG:Predicting on batch 1727
+11/26/2025 10:08:57 PM DEBUG:Predicting on batch 1728
+11/26/2025 10:08:59 PM DEBUG:Predicting on batch 1729
+11/26/2025 10:09:01 PM DEBUG:Predicting on batch 1730
+11/26/2025 10:09:01 PM DEBUG:1730
+11/26/2025 10:09:01 PM DEBUG:10 batches took 18.12362813949585 seconds
+11/26/2025 10:09:03 PM DEBUG:Predicting on batch 1731
+11/26/2025 10:09:05 PM DEBUG:Predicting on batch 1732
+11/26/2025 10:09:07 PM DEBUG:Predicting on batch 1733
+11/26/2025 10:09:08 PM DEBUG:Predicting on batch 1734
+11/26/2025 10:09:10 PM DEBUG:Predicting on batch 1735
+11/26/2025 10:09:12 PM DEBUG:Predicting on batch 1736
+11/26/2025 10:09:14 PM DEBUG:Predicting on batch 1737
+11/26/2025 10:09:16 PM DEBUG:Predicting on batch 1738
+11/26/2025 10:09:17 PM DEBUG:Predicting on batch 1739
+11/26/2025 10:09:19 PM DEBUG:Predicting on batch 1740
+11/26/2025 10:09:19 PM DEBUG:1740
+11/26/2025 10:09:19 PM DEBUG:10 batches took 17.922576427459717 seconds
+11/26/2025 10:09:21 PM DEBUG:Predicting on batch 1741
+11/26/2025 10:09:23 PM DEBUG:Predicting on batch 1742
+11/26/2025 10:09:25 PM DEBUG:Predicting on batch 1743
+11/26/2025 10:09:26 PM DEBUG:Predicting on batch 1744
+11/26/2025 10:09:28 PM DEBUG:Predicting on batch 1745
+11/26/2025 10:09:30 PM DEBUG:Predicting on batch 1746
+11/26/2025 10:09:32 PM DEBUG:Predicting on batch 1747
+11/26/2025 10:09:34 PM DEBUG:Predicting on batch 1748
+11/26/2025 10:09:36 PM DEBUG:Predicting on batch 1749
+11/26/2025 10:09:37 PM DEBUG:Predicting on batch 1750
+11/26/2025 10:09:37 PM DEBUG:1750
+11/26/2025 10:09:37 PM DEBUG:10 batches took 18.2949481010437 seconds
+11/26/2025 10:09:39 PM DEBUG:Predicting on batch 1751
+11/26/2025 10:09:41 PM DEBUG:Predicting on batch 1752
+11/26/2025 10:09:43 PM DEBUG:Predicting on batch 1753
+11/26/2025 10:09:45 PM DEBUG:Predicting on batch 1754
+11/26/2025 10:09:46 PM DEBUG:Predicting on batch 1755
+11/26/2025 10:09:48 PM DEBUG:Predicting on batch 1756
+11/26/2025 10:09:50 PM DEBUG:Predicting on batch 1757
+11/26/2025 10:09:52 PM DEBUG:Predicting on batch 1758
+11/26/2025 10:09:54 PM DEBUG:Predicting on batch 1759
+11/26/2025 10:09:55 PM DEBUG:Predicting on batch 1760
+11/26/2025 10:09:55 PM DEBUG:1760
+11/26/2025 10:09:55 PM DEBUG:10 batches took 18.057095289230347 seconds
+11/26/2025 10:09:57 PM DEBUG:Predicting on batch 1761
+11/26/2025 10:09:59 PM DEBUG:Predicting on batch 1762
+11/26/2025 10:10:01 PM DEBUG:Predicting on batch 1763
+11/26/2025 10:10:02 PM DEBUG:Predicting on batch 1764
+11/26/2025 10:10:04 PM DEBUG:Predicting on batch 1765
+11/26/2025 10:10:06 PM DEBUG:Predicting on batch 1766
+11/26/2025 10:10:08 PM DEBUG:Predicting on batch 1767
+11/26/2025 10:10:10 PM DEBUG:Predicting on batch 1768
+11/26/2025 10:10:12 PM DEBUG:Predicting on batch 1769
+11/26/2025 10:10:14 PM DEBUG:Predicting on batch 1770
+11/26/2025 10:10:14 PM DEBUG:1770
+11/26/2025 10:10:14 PM DEBUG:10 batches took 18.272569179534912 seconds
+11/26/2025 10:10:16 PM DEBUG:Predicting on batch 1771
+11/26/2025 10:10:17 PM DEBUG:Predicting on batch 1772
+11/26/2025 10:10:19 PM DEBUG:Predicting on batch 1773
+11/26/2025 10:10:21 PM DEBUG:Predicting on batch 1774
+11/26/2025 10:10:23 PM DEBUG:Predicting on batch 1775
+11/26/2025 10:10:25 PM DEBUG:Predicting on batch 1776
+11/26/2025 10:10:26 PM DEBUG:Predicting on batch 1777
+11/26/2025 10:10:28 PM DEBUG:Predicting on batch 1778
+11/26/2025 10:10:30 PM DEBUG:Predicting on batch 1779
+11/26/2025 10:10:32 PM DEBUG:Predicting on batch 1780
+11/26/2025 10:10:32 PM DEBUG:1780
+11/26/2025 10:10:32 PM DEBUG:10 batches took 17.97174906730652 seconds
+11/26/2025 10:10:33 PM DEBUG:Predicting on batch 1781
+11/26/2025 10:10:35 PM DEBUG:Predicting on batch 1782
+11/26/2025 10:10:37 PM DEBUG:Predicting on batch 1783
+11/26/2025 10:10:39 PM DEBUG:Predicting on batch 1784
+11/26/2025 10:10:41 PM DEBUG:Predicting on batch 1785
+11/26/2025 10:10:43 PM DEBUG:Predicting on batch 1786
+11/26/2025 10:10:45 PM DEBUG:Predicting on batch 1787
+11/26/2025 10:10:47 PM DEBUG:Predicting on batch 1788
+11/26/2025 10:10:49 PM DEBUG:Predicting on batch 1789
+11/26/2025 10:10:51 PM DEBUG:Predicting on batch 1790
+11/26/2025 10:10:51 PM DEBUG:1790
+11/26/2025 10:10:51 PM DEBUG:10 batches took 18.95884346961975 seconds
+11/26/2025 10:10:53 PM DEBUG:Predicting on batch 1791
+11/26/2025 10:10:55 PM DEBUG:Predicting on batch 1792
+11/26/2025 10:10:57 PM DEBUG:Predicting on batch 1793
+11/26/2025 10:10:59 PM DEBUG:Predicting on batch 1794
+11/26/2025 10:11:00 PM DEBUG:Predicting on batch 1795
+11/26/2025 10:11:02 PM DEBUG:Predicting on batch 1796
+11/26/2025 10:11:04 PM DEBUG:Predicting on batch 1797
+11/26/2025 10:11:06 PM DEBUG:Predicting on batch 1798
+11/26/2025 10:11:08 PM DEBUG:Predicting on batch 1799
+11/26/2025 10:11:10 PM DEBUG:Predicting on batch 1800
+11/26/2025 10:11:10 PM DEBUG:1800
+11/26/2025 10:11:10 PM DEBUG:10 batches took 19.41185426712036 seconds
+11/26/2025 10:11:12 PM DEBUG:Predicting on batch 1801
+11/26/2025 10:11:14 PM DEBUG:Predicting on batch 1802
+11/26/2025 10:11:15 PM DEBUG:Predicting on batch 1803
+11/26/2025 10:11:17 PM DEBUG:Predicting on batch 1804
+11/26/2025 10:11:19 PM DEBUG:Predicting on batch 1805
+11/26/2025 10:11:21 PM DEBUG:Predicting on batch 1806
+11/26/2025 10:11:23 PM DEBUG:Predicting on batch 1807
+11/26/2025 10:11:25 PM DEBUG:Predicting on batch 1808
+11/26/2025 10:11:27 PM DEBUG:Predicting on batch 1809
+11/26/2025 10:11:29 PM DEBUG:Predicting on batch 1810
+11/26/2025 10:11:29 PM DEBUG:1810
+11/26/2025 10:11:29 PM DEBUG:10 batches took 18.735170602798462 seconds
+11/26/2025 10:11:31 PM DEBUG:Predicting on batch 1811
+11/26/2025 10:11:33 PM DEBUG:Predicting on batch 1812
+11/26/2025 10:11:34 PM DEBUG:Predicting on batch 1813
+11/26/2025 10:11:36 PM DEBUG:Predicting on batch 1814
+11/26/2025 10:11:38 PM DEBUG:Predicting on batch 1815
+11/26/2025 10:11:40 PM DEBUG:Predicting on batch 1816
+11/26/2025 10:11:42 PM DEBUG:Predicting on batch 1817
+11/26/2025 10:11:44 PM DEBUG:Predicting on batch 1818
+11/26/2025 10:11:46 PM DEBUG:Predicting on batch 1819
+11/26/2025 10:11:48 PM DEBUG:Predicting on batch 1820
+11/26/2025 10:11:48 PM DEBUG:1820
+11/26/2025 10:11:48 PM DEBUG:10 batches took 18.788814544677734 seconds
+11/26/2025 10:11:49 PM DEBUG:Predicting on batch 1821
+11/26/2025 10:11:51 PM DEBUG:Predicting on batch 1822
+11/26/2025 10:11:53 PM DEBUG:Predicting on batch 1823
+11/26/2025 10:11:55 PM DEBUG:Predicting on batch 1824
+11/26/2025 10:11:57 PM DEBUG:Predicting on batch 1825
+11/26/2025 10:11:59 PM DEBUG:Predicting on batch 1826
+11/26/2025 10:12:02 PM DEBUG:Predicting on batch 1827
+11/26/2025 10:12:05 PM DEBUG:Predicting on batch 1828
+11/26/2025 10:12:09 PM DEBUG:Predicting on batch 1829
+11/26/2025 10:12:12 PM DEBUG:Predicting on batch 1830
+11/26/2025 10:12:12 PM DEBUG:1830
+11/26/2025 10:12:12 PM DEBUG:10 batches took 24.293858766555786 seconds
+11/26/2025 10:12:17 PM DEBUG:Predicting on batch 1831
+11/26/2025 10:12:20 PM DEBUG:Predicting on batch 1832
+11/26/2025 10:12:24 PM DEBUG:Predicting on batch 1833
+11/26/2025 10:12:26 PM DEBUG:Predicting on batch 1834
+11/26/2025 10:12:28 PM DEBUG:Predicting on batch 1835
+11/26/2025 10:12:30 PM DEBUG:Predicting on batch 1836
+11/26/2025 10:12:32 PM DEBUG:Predicting on batch 1837
+11/26/2025 10:12:34 PM DEBUG:Predicting on batch 1838
+11/26/2025 10:12:36 PM DEBUG:Predicting on batch 1839
+11/26/2025 10:12:37 PM DEBUG:Predicting on batch 1840
+11/26/2025 10:12:37 PM DEBUG:1840
+11/26/2025 10:12:37 PM DEBUG:10 batches took 25.53705406188965 seconds
+11/26/2025 10:12:39 PM DEBUG:Predicting on batch 1841
+11/26/2025 10:12:41 PM DEBUG:Predicting on batch 1842
+11/26/2025 10:12:43 PM DEBUG:Predicting on batch 1843
+11/26/2025 10:12:44 PM DEBUG:Predicting on batch 1844
+11/26/2025 10:12:46 PM DEBUG:Predicting on batch 1845
+11/26/2025 10:12:48 PM DEBUG:Predicting on batch 1846
+11/26/2025 10:12:50 PM DEBUG:Predicting on batch 1847
+11/26/2025 10:12:52 PM DEBUG:Predicting on batch 1848
+11/26/2025 10:12:54 PM DEBUG:Predicting on batch 1849
+11/26/2025 10:12:56 PM DEBUG:Predicting on batch 1850
+11/26/2025 10:12:56 PM DEBUG:1850
+11/26/2025 10:12:56 PM DEBUG:10 batches took 18.133488416671753 seconds
+11/26/2025 10:12:57 PM DEBUG:Predicting on batch 1851
+11/26/2025 10:12:59 PM DEBUG:Predicting on batch 1852
+11/26/2025 10:13:01 PM DEBUG:Predicting on batch 1853
+11/26/2025 10:13:03 PM DEBUG:Predicting on batch 1854
+11/26/2025 10:13:05 PM DEBUG:Predicting on batch 1855
+11/26/2025 10:13:07 PM DEBUG:Predicting on batch 1856
+11/26/2025 10:13:09 PM DEBUG:Predicting on batch 1857
+11/26/2025 10:13:10 PM DEBUG:Predicting on batch 1858
+11/26/2025 10:13:12 PM DEBUG:Predicting on batch 1859
+11/26/2025 10:13:14 PM DEBUG:Predicting on batch 1860
+11/26/2025 10:13:14 PM DEBUG:1860
+11/26/2025 10:13:14 PM DEBUG:10 batches took 18.77133059501648 seconds
+11/26/2025 10:13:16 PM DEBUG:Predicting on batch 1861
+11/26/2025 10:13:18 PM DEBUG:Predicting on batch 1862
+11/26/2025 10:13:20 PM DEBUG:Predicting on batch 1863
+11/26/2025 10:13:22 PM DEBUG:Predicting on batch 1864
+11/26/2025 10:13:24 PM DEBUG:Predicting on batch 1865
+11/26/2025 10:13:25 PM DEBUG:Predicting on batch 1866
+11/26/2025 10:13:27 PM DEBUG:Predicting on batch 1867
+11/26/2025 10:13:29 PM DEBUG:Predicting on batch 1868
+11/26/2025 10:13:31 PM DEBUG:Predicting on batch 1869
+11/26/2025 10:13:33 PM DEBUG:Predicting on batch 1870
+11/26/2025 10:13:33 PM DEBUG:1870
+11/26/2025 10:13:33 PM DEBUG:10 batches took 18.466442346572876 seconds
+11/26/2025 10:13:37 PM DEBUG:Predicting on batch 1871
+11/26/2025 10:13:39 PM DEBUG:Predicting on batch 1872
+11/26/2025 10:13:41 PM DEBUG:Predicting on batch 1873
+11/26/2025 10:13:43 PM DEBUG:Predicting on batch 1874
+11/26/2025 10:13:45 PM DEBUG:Predicting on batch 1875
+11/26/2025 10:13:47 PM DEBUG:Predicting on batch 1876
+11/26/2025 10:13:49 PM DEBUG:Predicting on batch 1877
+11/26/2025 10:13:51 PM DEBUG:Predicting on batch 1878
+11/26/2025 10:13:53 PM DEBUG:Predicting on batch 1879
+11/26/2025 10:13:55 PM DEBUG:Predicting on batch 1880
+11/26/2025 10:13:55 PM DEBUG:1880
+11/26/2025 10:13:55 PM DEBUG:10 batches took 21.834940195083618 seconds
+11/26/2025 10:13:57 PM DEBUG:Predicting on batch 1881
+11/26/2025 10:13:58 PM DEBUG:Predicting on batch 1882
+11/26/2025 10:14:00 PM DEBUG:Predicting on batch 1883
+11/26/2025 10:14:02 PM DEBUG:Predicting on batch 1884
+11/26/2025 10:14:04 PM DEBUG:Predicting on batch 1885
+11/26/2025 10:14:06 PM DEBUG:Predicting on batch 1886
+11/26/2025 10:14:08 PM DEBUG:Predicting on batch 1887
+11/26/2025 10:14:09 PM DEBUG:Predicting on batch 1888
+11/26/2025 10:14:11 PM DEBUG:Predicting on batch 1889
+11/26/2025 10:14:13 PM DEBUG:Predicting on batch 1890
+11/26/2025 10:14:13 PM DEBUG:1890
+11/26/2025 10:14:13 PM DEBUG:10 batches took 18.35456681251526 seconds
+11/26/2025 10:14:15 PM DEBUG:Predicting on batch 1891
+11/26/2025 10:14:16 PM DEBUG:Predicting on batch 1892
+11/26/2025 10:14:18 PM DEBUG:Predicting on batch 1893
+11/26/2025 10:14:20 PM DEBUG:Predicting on batch 1894
+11/26/2025 10:14:22 PM DEBUG:Predicting on batch 1895
+11/26/2025 10:14:24 PM DEBUG:Predicting on batch 1896
+11/26/2025 10:14:25 PM DEBUG:Predicting on batch 1897
+11/26/2025 10:14:27 PM DEBUG:Predicting on batch 1898
+11/26/2025 10:14:29 PM DEBUG:Predicting on batch 1899
+11/26/2025 10:14:31 PM DEBUG:Predicting on batch 1900
+11/26/2025 10:14:31 PM DEBUG:1900
+11/26/2025 10:14:31 PM DEBUG:10 batches took 17.7449893951416 seconds
+11/26/2025 10:14:32 PM DEBUG:Predicting on batch 1901
+11/26/2025 10:14:34 PM DEBUG:Predicting on batch 1902
+11/26/2025 10:14:36 PM DEBUG:Predicting on batch 1903
+11/26/2025 10:14:38 PM DEBUG:Predicting on batch 1904
+11/26/2025 10:14:40 PM DEBUG:Predicting on batch 1905
+11/26/2025 10:14:41 PM DEBUG:Predicting on batch 1906
+11/26/2025 10:14:43 PM DEBUG:Predicting on batch 1907
+11/26/2025 10:14:45 PM DEBUG:Predicting on batch 1908
+11/26/2025 10:14:47 PM DEBUG:Predicting on batch 1909
+11/26/2025 10:14:49 PM DEBUG:Predicting on batch 1910
+11/26/2025 10:14:49 PM DEBUG:1910
+11/26/2025 10:14:49 PM DEBUG:10 batches took 17.94327473640442 seconds
+11/26/2025 10:14:51 PM DEBUG:Predicting on batch 1911
+11/26/2025 10:14:52 PM DEBUG:Predicting on batch 1912
+11/26/2025 10:14:54 PM DEBUG:Predicting on batch 1913
+11/26/2025 10:14:56 PM DEBUG:Predicting on batch 1914
+11/26/2025 10:14:58 PM DEBUG:Predicting on batch 1915
+11/26/2025 10:14:59 PM DEBUG:Predicting on batch 1916
+11/26/2025 10:15:01 PM DEBUG:Predicting on batch 1917
+11/26/2025 10:15:03 PM DEBUG:Predicting on batch 1918
+11/26/2025 10:15:05 PM DEBUG:Predicting on batch 1919
+11/26/2025 10:15:07 PM DEBUG:Predicting on batch 1920
+11/26/2025 10:15:07 PM DEBUG:1920
+11/26/2025 10:15:07 PM DEBUG:10 batches took 18.282697916030884 seconds
+11/26/2025 10:15:09 PM DEBUG:Predicting on batch 1921
+11/26/2025 10:15:10 PM DEBUG:Predicting on batch 1922
+11/26/2025 10:15:12 PM DEBUG:Predicting on batch 1923
+11/26/2025 10:15:14 PM DEBUG:Predicting on batch 1924
+11/26/2025 10:15:16 PM DEBUG:Predicting on batch 1925
+11/26/2025 10:15:18 PM DEBUG:Predicting on batch 1926
+11/26/2025 10:15:20 PM DEBUG:Predicting on batch 1927
+11/26/2025 10:15:21 PM DEBUG:Predicting on batch 1928
+11/26/2025 10:15:23 PM DEBUG:Predicting on batch 1929
+11/26/2025 10:15:25 PM DEBUG:Predicting on batch 1930
+11/26/2025 10:15:25 PM DEBUG:1930
+11/26/2025 10:15:25 PM DEBUG:10 batches took 18.141464233398438 seconds
+11/26/2025 10:15:27 PM DEBUG:Predicting on batch 1931
+11/26/2025 10:15:29 PM DEBUG:Predicting on batch 1932
+11/26/2025 10:15:30 PM DEBUG:Predicting on batch 1933
+11/26/2025 10:15:32 PM DEBUG:Predicting on batch 1934
+11/26/2025 10:15:34 PM DEBUG:Predicting on batch 1935
+11/26/2025 10:15:36 PM DEBUG:Predicting on batch 1936
+11/26/2025 10:15:38 PM DEBUG:Predicting on batch 1937
+11/26/2025 10:15:39 PM DEBUG:Predicting on batch 1938
+11/26/2025 10:15:41 PM DEBUG:Predicting on batch 1939
+11/26/2025 10:15:43 PM DEBUG:Predicting on batch 1940
+11/26/2025 10:15:43 PM DEBUG:1940
+11/26/2025 10:15:43 PM DEBUG:10 batches took 17.763343572616577 seconds
+11/26/2025 10:15:45 PM DEBUG:Predicting on batch 1941
+11/26/2025 10:15:46 PM DEBUG:Predicting on batch 1942
+11/26/2025 10:15:48 PM DEBUG:Predicting on batch 1943
+11/26/2025 10:15:50 PM DEBUG:Predicting on batch 1944
+11/26/2025 10:15:52 PM DEBUG:Predicting on batch 1945
+11/26/2025 10:15:53 PM DEBUG:Predicting on batch 1946
+11/26/2025 10:15:55 PM DEBUG:Predicting on batch 1947
+11/26/2025 10:15:57 PM DEBUG:Predicting on batch 1948
+11/26/2025 10:15:59 PM DEBUG:Predicting on batch 1949
+11/26/2025 10:16:01 PM DEBUG:Predicting on batch 1950
+11/26/2025 10:16:01 PM DEBUG:1950
+11/26/2025 10:16:01 PM DEBUG:10 batches took 17.94547414779663 seconds
+11/26/2025 10:16:03 PM DEBUG:Predicting on batch 1951
+11/26/2025 10:16:04 PM DEBUG:Predicting on batch 1952
+11/26/2025 10:16:06 PM DEBUG:Predicting on batch 1953
+11/26/2025 10:16:08 PM DEBUG:Predicting on batch 1954
+11/26/2025 10:16:10 PM DEBUG:Predicting on batch 1955
+11/26/2025 10:16:11 PM DEBUG:Predicting on batch 1956
+11/26/2025 10:16:13 PM DEBUG:Predicting on batch 1957
+11/26/2025 10:16:15 PM DEBUG:Predicting on batch 1958
+11/26/2025 10:16:17 PM DEBUG:Predicting on batch 1959
+11/26/2025 10:16:19 PM DEBUG:Predicting on batch 1960
+11/26/2025 10:16:19 PM DEBUG:1960
+11/26/2025 10:16:19 PM DEBUG:10 batches took 17.849093675613403 seconds
+11/26/2025 10:16:20 PM DEBUG:Predicting on batch 1961
+11/26/2025 10:16:22 PM DEBUG:Predicting on batch 1962
+11/26/2025 10:16:24 PM DEBUG:Predicting on batch 1963
+11/26/2025 10:16:26 PM DEBUG:Predicting on batch 1964
+11/26/2025 10:16:28 PM DEBUG:Predicting on batch 1965
+11/26/2025 10:16:29 PM DEBUG:Predicting on batch 1966
+11/26/2025 10:16:31 PM DEBUG:Predicting on batch 1967
+11/26/2025 10:16:33 PM DEBUG:Predicting on batch 1968
+11/26/2025 10:16:35 PM DEBUG:Predicting on batch 1969
+11/26/2025 10:16:37 PM DEBUG:Predicting on batch 1970
+11/26/2025 10:16:37 PM DEBUG:1970
+11/26/2025 10:16:37 PM DEBUG:10 batches took 18.026485681533813 seconds
+11/26/2025 10:16:38 PM DEBUG:Predicting on batch 1971
+11/26/2025 10:16:40 PM DEBUG:Predicting on batch 1972
+11/26/2025 10:16:42 PM DEBUG:Predicting on batch 1973
+11/26/2025 10:16:44 PM DEBUG:Predicting on batch 1974
+11/26/2025 10:16:46 PM DEBUG:Predicting on batch 1975
+11/26/2025 10:16:47 PM DEBUG:Predicting on batch 1976
+11/26/2025 10:16:49 PM DEBUG:Predicting on batch 1977
+11/26/2025 10:16:51 PM DEBUG:Predicting on batch 1978
+11/26/2025 10:16:53 PM DEBUG:Predicting on batch 1979
+11/26/2025 10:16:55 PM DEBUG:Predicting on batch 1980
+11/26/2025 10:16:55 PM DEBUG:1980
+11/26/2025 10:16:55 PM DEBUG:10 batches took 17.978339910507202 seconds
+11/26/2025 10:16:56 PM DEBUG:Predicting on batch 1981
+11/26/2025 10:16:58 PM DEBUG:Predicting on batch 1982
+11/26/2025 10:17:00 PM DEBUG:Predicting on batch 1983
+11/26/2025 10:17:02 PM DEBUG:Predicting on batch 1984
+11/26/2025 10:17:04 PM DEBUG:Predicting on batch 1985
+11/26/2025 10:17:05 PM DEBUG:Predicting on batch 1986
+11/26/2025 10:17:07 PM DEBUG:Predicting on batch 1987
+11/26/2025 10:17:09 PM DEBUG:Predicting on batch 1988
+11/26/2025 10:17:11 PM DEBUG:Predicting on batch 1989
+11/26/2025 10:17:13 PM DEBUG:Predicting on batch 1990
+11/26/2025 10:17:13 PM DEBUG:1990
+11/26/2025 10:17:13 PM DEBUG:10 batches took 17.937016010284424 seconds
+11/26/2025 10:17:15 PM DEBUG:Predicting on batch 1991
+11/26/2025 10:17:16 PM DEBUG:Predicting on batch 1992
+11/26/2025 10:17:18 PM DEBUG:Predicting on batch 1993
+11/26/2025 10:17:20 PM DEBUG:Predicting on batch 1994
+11/26/2025 10:17:22 PM DEBUG:Predicting on batch 1995
+11/26/2025 10:17:24 PM DEBUG:Predicting on batch 1996
+11/26/2025 10:17:26 PM DEBUG:Predicting on batch 1997
+11/26/2025 10:17:27 PM DEBUG:Predicting on batch 1998
+11/26/2025 10:17:29 PM DEBUG:Predicting on batch 1999
+11/26/2025 10:17:31 PM DEBUG:Predicting on batch 2000
+11/26/2025 10:17:31 PM DEBUG:2000
+11/26/2025 10:17:31 PM DEBUG:10 batches took 18.315869331359863 seconds
+11/26/2025 10:17:31 PM DEBUG:Saving checkpoint at 2000th batch
+11/26/2025 10:17:33 PM DEBUG:Predicting on batch 2001
+11/26/2025 10:17:35 PM DEBUG:Predicting on batch 2002
+11/26/2025 10:17:36 PM DEBUG:Predicting on batch 2003
+11/26/2025 10:17:38 PM DEBUG:Predicting on batch 2004
+11/26/2025 10:17:40 PM DEBUG:Predicting on batch 2005
+11/26/2025 10:17:42 PM DEBUG:Predicting on batch 2006
+11/26/2025 10:17:44 PM DEBUG:Predicting on batch 2007
+11/26/2025 10:17:46 PM DEBUG:Predicting on batch 2008
+11/26/2025 10:17:48 PM DEBUG:Predicting on batch 2009
+11/26/2025 10:17:50 PM DEBUG:Predicting on batch 2010
+11/26/2025 10:17:50 PM DEBUG:2010
+11/26/2025 10:17:50 PM DEBUG:10 batches took 18.774898767471313 seconds
+11/26/2025 10:17:52 PM DEBUG:Predicting on batch 2011
+11/26/2025 10:17:53 PM DEBUG:Predicting on batch 2012
+11/26/2025 10:17:55 PM DEBUG:Predicting on batch 2013
+11/26/2025 10:17:57 PM DEBUG:Predicting on batch 2014
+11/26/2025 10:17:59 PM DEBUG:Predicting on batch 2015
+11/26/2025 10:18:03 PM DEBUG:Predicting on batch 2016
+11/26/2025 10:18:05 PM DEBUG:Predicting on batch 2017
+11/26/2025 10:18:07 PM DEBUG:Predicting on batch 2018
+11/26/2025 10:18:09 PM DEBUG:Predicting on batch 2019
+11/26/2025 10:18:11 PM DEBUG:Predicting on batch 2020
+11/26/2025 10:18:11 PM DEBUG:2020
+11/26/2025 10:18:11 PM DEBUG:10 batches took 21.133724212646484 seconds
+11/26/2025 10:18:13 PM DEBUG:Predicting on batch 2021
+11/26/2025 10:18:15 PM DEBUG:Predicting on batch 2022
+11/26/2025 10:18:17 PM DEBUG:Predicting on batch 2023
+11/26/2025 10:18:19 PM DEBUG:Predicting on batch 2024
+11/26/2025 10:18:21 PM DEBUG:Predicting on batch 2025
+11/26/2025 10:18:22 PM DEBUG:Predicting on batch 2026
+11/26/2025 10:18:24 PM DEBUG:Predicting on batch 2027
+11/26/2025 10:18:26 PM DEBUG:Predicting on batch 2028
+11/26/2025 10:18:28 PM DEBUG:Predicting on batch 2029
+11/26/2025 10:18:30 PM DEBUG:Predicting on batch 2030
+11/26/2025 10:18:30 PM DEBUG:2030
+11/26/2025 10:18:30 PM DEBUG:10 batches took 18.97322416305542 seconds
+11/26/2025 10:18:32 PM DEBUG:Predicting on batch 2031
+11/26/2025 10:18:33 PM DEBUG:Predicting on batch 2032
+11/26/2025 10:18:35 PM DEBUG:Predicting on batch 2033
+11/26/2025 10:18:37 PM DEBUG:Predicting on batch 2034
+11/26/2025 10:18:39 PM DEBUG:Predicting on batch 2035
+11/26/2025 10:18:41 PM DEBUG:Predicting on batch 2036
+11/26/2025 10:18:42 PM DEBUG:Predicting on batch 2037
+11/26/2025 10:18:44 PM DEBUG:Predicting on batch 2038
+11/26/2025 10:18:46 PM DEBUG:Predicting on batch 2039
+11/26/2025 10:18:48 PM DEBUG:Predicting on batch 2040
+11/26/2025 10:18:48 PM DEBUG:2040
+11/26/2025 10:18:48 PM DEBUG:10 batches took 18.313185214996338 seconds
+11/26/2025 10:18:50 PM DEBUG:Predicting on batch 2041
+11/26/2025 10:18:52 PM DEBUG:Predicting on batch 2042
+11/26/2025 10:18:54 PM DEBUG:Predicting on batch 2043
+11/26/2025 10:18:55 PM DEBUG:Predicting on batch 2044
+11/26/2025 10:18:57 PM DEBUG:Predicting on batch 2045
+11/26/2025 10:18:59 PM DEBUG:Predicting on batch 2046
+11/26/2025 10:19:01 PM DEBUG:Predicting on batch 2047
+11/26/2025 10:19:03 PM DEBUG:Predicting on batch 2048
+11/26/2025 10:19:05 PM DEBUG:Predicting on batch 2049
+11/26/2025 10:19:07 PM DEBUG:Predicting on batch 2050
+11/26/2025 10:19:07 PM DEBUG:2050
+11/26/2025 10:19:07 PM DEBUG:10 batches took 18.53658962249756 seconds
+11/26/2025 10:19:09 PM DEBUG:Predicting on batch 2051
+11/26/2025 10:19:11 PM DEBUG:Predicting on batch 2052
+11/26/2025 10:19:12 PM DEBUG:Predicting on batch 2053
+11/26/2025 10:19:14 PM DEBUG:Predicting on batch 2054
+11/26/2025 10:19:16 PM DEBUG:Predicting on batch 2055
+11/26/2025 10:19:18 PM DEBUG:Predicting on batch 2056
+11/26/2025 10:19:20 PM DEBUG:Predicting on batch 2057
+11/26/2025 10:19:21 PM DEBUG:Predicting on batch 2058
+11/26/2025 10:19:23 PM DEBUG:Predicting on batch 2059
+11/26/2025 10:19:25 PM DEBUG:Predicting on batch 2060
+11/26/2025 10:19:25 PM DEBUG:2060
+11/26/2025 10:19:25 PM DEBUG:10 batches took 18.708998680114746 seconds
+11/26/2025 10:19:27 PM DEBUG:Predicting on batch 2061
+11/26/2025 10:19:29 PM DEBUG:Predicting on batch 2062
+11/26/2025 10:19:31 PM DEBUG:Predicting on batch 2063
+11/26/2025 10:19:33 PM DEBUG:Predicting on batch 2064
+11/26/2025 10:19:35 PM DEBUG:Predicting on batch 2065
+11/26/2025 10:19:37 PM DEBUG:Predicting on batch 2066
+11/26/2025 10:19:39 PM DEBUG:Predicting on batch 2067
+11/26/2025 10:19:41 PM DEBUG:Predicting on batch 2068
+11/26/2025 10:19:42 PM DEBUG:Predicting on batch 2069
+11/26/2025 10:19:44 PM DEBUG:Predicting on batch 2070
+11/26/2025 10:19:44 PM DEBUG:2070
+11/26/2025 10:19:44 PM DEBUG:10 batches took 18.926344394683838 seconds
+11/26/2025 10:19:46 PM DEBUG:Predicting on batch 2071
+11/26/2025 10:19:48 PM DEBUG:Predicting on batch 2072
+11/26/2025 10:19:50 PM DEBUG:Predicting on batch 2073
+11/26/2025 10:19:51 PM DEBUG:Predicting on batch 2074
+11/26/2025 10:19:53 PM DEBUG:Predicting on batch 2075
+11/26/2025 10:19:55 PM DEBUG:Predicting on batch 2076
+11/26/2025 10:19:57 PM DEBUG:Predicting on batch 2077
+11/26/2025 10:19:59 PM DEBUG:Predicting on batch 2078
+11/26/2025 10:20:01 PM DEBUG:Predicting on batch 2079
+11/26/2025 10:20:03 PM DEBUG:Predicting on batch 2080
+11/26/2025 10:20:03 PM DEBUG:2080
+11/26/2025 10:20:03 PM DEBUG:10 batches took 19.044450283050537 seconds
+11/26/2025 10:20:05 PM DEBUG:Predicting on batch 2081
+11/26/2025 10:20:07 PM DEBUG:Predicting on batch 2082
+11/26/2025 10:20:09 PM DEBUG:Predicting on batch 2083
+11/26/2025 10:20:11 PM DEBUG:Predicting on batch 2084
+11/26/2025 10:20:13 PM DEBUG:Predicting on batch 2085
+11/26/2025 10:20:15 PM DEBUG:Predicting on batch 2086
+11/26/2025 10:20:17 PM DEBUG:Predicting on batch 2087
+11/26/2025 10:20:18 PM DEBUG:Predicting on batch 2088
+11/26/2025 10:20:20 PM DEBUG:Predicting on batch 2089
+11/26/2025 10:20:22 PM DEBUG:Predicting on batch 2090
+11/26/2025 10:20:22 PM DEBUG:2090
+11/26/2025 10:20:22 PM DEBUG:10 batches took 18.645904541015625 seconds
+11/26/2025 10:20:24 PM DEBUG:Predicting on batch 2091
+11/26/2025 10:20:26 PM DEBUG:Predicting on batch 2092
+11/26/2025 10:20:27 PM DEBUG:Predicting on batch 2093
+11/26/2025 10:20:29 PM DEBUG:Predicting on batch 2094
+11/26/2025 10:20:31 PM DEBUG:Predicting on batch 2095
+11/26/2025 10:20:33 PM DEBUG:Predicting on batch 2096
+11/26/2025 10:20:35 PM DEBUG:Predicting on batch 2097
+11/26/2025 10:20:36 PM DEBUG:Predicting on batch 2098
+11/26/2025 10:20:38 PM DEBUG:Predicting on batch 2099
+11/26/2025 10:20:40 PM DEBUG:Predicting on batch 2100
+11/26/2025 10:20:40 PM DEBUG:2100
+11/26/2025 10:20:40 PM DEBUG:10 batches took 18.392987966537476 seconds
+11/26/2025 10:20:42 PM DEBUG:Predicting on batch 2101
+11/26/2025 10:20:44 PM DEBUG:Predicting on batch 2102
+11/26/2025 10:20:46 PM DEBUG:Predicting on batch 2103
+11/26/2025 10:20:47 PM DEBUG:Predicting on batch 2104
+11/26/2025 10:20:49 PM DEBUG:Predicting on batch 2105
+11/26/2025 10:20:51 PM DEBUG:Predicting on batch 2106
+11/26/2025 10:20:53 PM DEBUG:Predicting on batch 2107
+11/26/2025 10:20:55 PM DEBUG:Predicting on batch 2108
+11/26/2025 10:20:57 PM DEBUG:Predicting on batch 2109
+11/26/2025 10:20:59 PM DEBUG:Predicting on batch 2110
+11/26/2025 10:20:59 PM DEBUG:2110
+11/26/2025 10:20:59 PM DEBUG:10 batches took 18.344292640686035 seconds
+11/26/2025 10:21:00 PM DEBUG:Predicting on batch 2111
+11/26/2025 10:21:02 PM DEBUG:Predicting on batch 2112
+11/26/2025 10:21:04 PM DEBUG:Predicting on batch 2113
+11/26/2025 10:21:06 PM DEBUG:Predicting on batch 2114
+11/26/2025 10:21:08 PM DEBUG:Predicting on batch 2115
+11/26/2025 10:21:10 PM DEBUG:Predicting on batch 2116
+11/26/2025 10:21:11 PM DEBUG:Predicting on batch 2117
+11/26/2025 10:21:13 PM DEBUG:Predicting on batch 2118
+11/26/2025 10:21:15 PM DEBUG:Predicting on batch 2119
+11/26/2025 10:21:17 PM DEBUG:Predicting on batch 2120
+11/26/2025 10:21:17 PM DEBUG:2120
+11/26/2025 10:21:17 PM DEBUG:10 batches took 18.059434413909912 seconds
+11/26/2025 10:21:19 PM DEBUG:Predicting on batch 2121
+11/26/2025 10:21:20 PM DEBUG:Predicting on batch 2122
+11/26/2025 10:21:22 PM DEBUG:Predicting on batch 2123
+11/26/2025 10:21:24 PM DEBUG:Predicting on batch 2124
+11/26/2025 10:21:26 PM DEBUG:Predicting on batch 2125
+11/26/2025 10:21:28 PM DEBUG:Predicting on batch 2126
+11/26/2025 10:21:29 PM DEBUG:Predicting on batch 2127
+11/26/2025 10:21:31 PM DEBUG:Predicting on batch 2128
+11/26/2025 10:21:33 PM DEBUG:Predicting on batch 2129
+11/26/2025 10:21:35 PM DEBUG:Predicting on batch 2130
+11/26/2025 10:21:35 PM DEBUG:2130
+11/26/2025 10:21:35 PM DEBUG:10 batches took 17.869457721710205 seconds
+11/26/2025 10:21:37 PM DEBUG:Predicting on batch 2131
+11/26/2025 10:21:38 PM DEBUG:Predicting on batch 2132
+11/26/2025 10:21:40 PM DEBUG:Predicting on batch 2133
+11/26/2025 10:21:42 PM DEBUG:Predicting on batch 2134
+11/26/2025 10:21:44 PM DEBUG:Predicting on batch 2135
+11/26/2025 10:21:46 PM DEBUG:Predicting on batch 2136
+11/26/2025 10:21:48 PM DEBUG:Predicting on batch 2137
+11/26/2025 10:21:49 PM DEBUG:Predicting on batch 2138
+11/26/2025 10:21:51 PM DEBUG:Predicting on batch 2139
+11/26/2025 10:21:53 PM DEBUG:Predicting on batch 2140
+11/26/2025 10:21:53 PM DEBUG:2140
+11/26/2025 10:21:53 PM DEBUG:10 batches took 18.522345542907715 seconds
+11/26/2025 10:21:55 PM DEBUG:Predicting on batch 2141
+11/26/2025 10:21:57 PM DEBUG:Predicting on batch 2142
+11/26/2025 10:21:58 PM DEBUG:Predicting on batch 2143
+11/26/2025 10:22:00 PM DEBUG:Predicting on batch 2144
+11/26/2025 10:22:02 PM DEBUG:Predicting on batch 2145
+11/26/2025 10:22:04 PM DEBUG:Predicting on batch 2146
+11/26/2025 10:22:06 PM DEBUG:Predicting on batch 2147
+11/26/2025 10:22:07 PM DEBUG:Predicting on batch 2148
+11/26/2025 10:22:09 PM DEBUG:Predicting on batch 2149
+11/26/2025 10:22:11 PM DEBUG:Predicting on batch 2150
+11/26/2025 10:22:11 PM DEBUG:2150
+11/26/2025 10:22:11 PM DEBUG:10 batches took 17.76461386680603 seconds
+11/26/2025 10:22:13 PM DEBUG:Predicting on batch 2151
+11/26/2025 10:22:15 PM DEBUG:Predicting on batch 2152
+11/26/2025 10:22:16 PM DEBUG:Predicting on batch 2153
+11/26/2025 10:22:19 PM DEBUG:Predicting on batch 2154
+11/26/2025 10:22:21 PM DEBUG:Predicting on batch 2155
+11/26/2025 10:22:22 PM DEBUG:Predicting on batch 2156
+11/26/2025 10:22:24 PM DEBUG:Predicting on batch 2157
+11/26/2025 10:22:26 PM DEBUG:Predicting on batch 2158
+11/26/2025 10:22:28 PM DEBUG:Predicting on batch 2159
+11/26/2025 10:22:30 PM DEBUG:Predicting on batch 2160
+11/26/2025 10:22:30 PM DEBUG:2160
+11/26/2025 10:22:30 PM DEBUG:10 batches took 18.75985884666443 seconds
+11/26/2025 10:22:31 PM DEBUG:Predicting on batch 2161
+11/26/2025 10:22:33 PM DEBUG:Predicting on batch 2162
+11/26/2025 10:22:35 PM DEBUG:Predicting on batch 2163
+11/26/2025 10:22:37 PM DEBUG:Predicting on batch 2164
+11/26/2025 10:22:39 PM DEBUG:Predicting on batch 2165
+11/26/2025 10:22:41 PM DEBUG:Predicting on batch 2166
+11/26/2025 10:22:42 PM DEBUG:Predicting on batch 2167
+11/26/2025 10:22:44 PM DEBUG:Predicting on batch 2168
+11/26/2025 10:22:46 PM DEBUG:Predicting on batch 2169
+11/26/2025 10:22:48 PM DEBUG:Predicting on batch 2170
+11/26/2025 10:22:48 PM DEBUG:2170
+11/26/2025 10:22:48 PM DEBUG:10 batches took 17.995030403137207 seconds
+11/26/2025 10:22:50 PM DEBUG:Predicting on batch 2171
+11/26/2025 10:22:52 PM DEBUG:Predicting on batch 2172
+11/26/2025 10:22:54 PM DEBUG:Predicting on batch 2173
+11/26/2025 10:22:55 PM DEBUG:Predicting on batch 2174
+11/26/2025 10:22:57 PM DEBUG:Predicting on batch 2175
+11/26/2025 10:22:59 PM DEBUG:Predicting on batch 2176
+11/26/2025 10:23:01 PM DEBUG:Predicting on batch 2177
+11/26/2025 10:23:03 PM DEBUG:Predicting on batch 2178
+11/26/2025 10:23:05 PM DEBUG:Predicting on batch 2179
+11/26/2025 10:23:07 PM DEBUG:Predicting on batch 2180
+11/26/2025 10:23:07 PM DEBUG:2180
+11/26/2025 10:23:07 PM DEBUG:10 batches took 19.209948301315308 seconds
+11/26/2025 10:23:09 PM DEBUG:Predicting on batch 2181
+11/26/2025 10:23:11 PM DEBUG:Predicting on batch 2182
+11/26/2025 10:23:13 PM DEBUG:Predicting on batch 2183
+11/26/2025 10:23:15 PM DEBUG:Predicting on batch 2184
+11/26/2025 10:23:16 PM DEBUG:Predicting on batch 2185
+11/26/2025 10:23:18 PM DEBUG:Predicting on batch 2186
+11/26/2025 10:23:20 PM DEBUG:Predicting on batch 2187
+11/26/2025 10:23:22 PM DEBUG:Predicting on batch 2188
+11/26/2025 10:23:24 PM DEBUG:Predicting on batch 2189
+11/26/2025 10:23:26 PM DEBUG:Predicting on batch 2190
+11/26/2025 10:23:26 PM DEBUG:2190
+11/26/2025 10:23:26 PM DEBUG:10 batches took 19.179707527160645 seconds
+11/26/2025 10:23:28 PM DEBUG:Predicting on batch 2191
+11/26/2025 10:23:30 PM DEBUG:Predicting on batch 2192
+11/26/2025 10:23:32 PM DEBUG:Predicting on batch 2193
+11/26/2025 10:23:33 PM DEBUG:Predicting on batch 2194
+11/26/2025 10:23:35 PM DEBUG:Predicting on batch 2195
+11/26/2025 10:23:37 PM DEBUG:Predicting on batch 2196
+11/26/2025 10:23:39 PM DEBUG:Predicting on batch 2197
+11/26/2025 10:23:41 PM DEBUG:Predicting on batch 2198
+11/26/2025 10:23:43 PM DEBUG:Predicting on batch 2199
+11/26/2025 10:23:44 PM DEBUG:Predicting on batch 2200
+11/26/2025 10:23:44 PM DEBUG:2200
+11/26/2025 10:23:44 PM DEBUG:10 batches took 18.328879833221436 seconds
+11/26/2025 10:23:46 PM DEBUG:Predicting on batch 2201
+11/26/2025 10:23:48 PM DEBUG:Predicting on batch 2202
+11/26/2025 10:23:50 PM DEBUG:Predicting on batch 2203
+11/26/2025 10:23:52 PM DEBUG:Predicting on batch 2204
+11/26/2025 10:23:53 PM DEBUG:Predicting on batch 2205
+11/26/2025 10:23:55 PM DEBUG:Predicting on batch 2206
+11/26/2025 10:23:57 PM DEBUG:Predicting on batch 2207
+11/26/2025 10:23:59 PM DEBUG:Predicting on batch 2208
+11/26/2025 10:24:01 PM DEBUG:Predicting on batch 2209
+11/26/2025 10:24:02 PM DEBUG:Predicting on batch 2210
+11/26/2025 10:24:02 PM DEBUG:2210
+11/26/2025 10:24:02 PM DEBUG:10 batches took 17.913346529006958 seconds
+11/26/2025 10:24:05 PM DEBUG:Predicting on batch 2211
+11/26/2025 10:24:06 PM DEBUG:Predicting on batch 2212
+11/26/2025 10:24:08 PM DEBUG:Predicting on batch 2213
+11/26/2025 10:24:10 PM DEBUG:Predicting on batch 2214
+11/26/2025 10:24:12 PM DEBUG:Predicting on batch 2215
+11/26/2025 10:24:14 PM DEBUG:Predicting on batch 2216
+11/26/2025 10:24:15 PM DEBUG:Predicting on batch 2217
+11/26/2025 10:24:17 PM DEBUG:Predicting on batch 2218
+11/26/2025 10:24:19 PM DEBUG:Predicting on batch 2219
+11/26/2025 10:24:21 PM DEBUG:Predicting on batch 2220
+11/26/2025 10:24:21 PM DEBUG:2220
+11/26/2025 10:24:21 PM DEBUG:10 batches took 18.576993465423584 seconds
+11/26/2025 10:24:23 PM DEBUG:Predicting on batch 2221
+11/26/2025 10:24:24 PM DEBUG:Predicting on batch 2222
+11/26/2025 10:24:26 PM DEBUG:Predicting on batch 2223
+11/26/2025 10:24:28 PM DEBUG:Predicting on batch 2224
+11/26/2025 10:24:30 PM DEBUG:Predicting on batch 2225
+11/26/2025 10:24:32 PM DEBUG:Predicting on batch 2226
+11/26/2025 10:24:34 PM DEBUG:Predicting on batch 2227
+11/26/2025 10:24:36 PM DEBUG:Predicting on batch 2228
+11/26/2025 10:24:38 PM DEBUG:Predicting on batch 2229
+11/26/2025 10:24:40 PM DEBUG:Predicting on batch 2230
+11/26/2025 10:24:40 PM DEBUG:2230
+11/26/2025 10:24:40 PM DEBUG:10 batches took 18.876335382461548 seconds
+11/26/2025 10:24:41 PM DEBUG:Predicting on batch 2231
+11/26/2025 10:24:43 PM DEBUG:Predicting on batch 2232
+11/26/2025 10:24:45 PM DEBUG:Predicting on batch 2233
+11/26/2025 10:24:47 PM DEBUG:Predicting on batch 2234
+11/26/2025 10:24:49 PM DEBUG:Predicting on batch 2235
+11/26/2025 10:24:50 PM DEBUG:Predicting on batch 2236
+11/26/2025 10:24:52 PM DEBUG:Predicting on batch 2237
+11/26/2025 10:24:54 PM DEBUG:Predicting on batch 2238
+11/26/2025 10:24:56 PM DEBUG:Predicting on batch 2239
+11/26/2025 10:24:58 PM DEBUG:Predicting on batch 2240
+11/26/2025 10:24:58 PM DEBUG:2240
+11/26/2025 10:24:58 PM DEBUG:10 batches took 17.8537175655365 seconds
+11/26/2025 10:24:59 PM DEBUG:Predicting on batch 2241
+11/26/2025 10:25:01 PM DEBUG:Predicting on batch 2242
+11/26/2025 10:25:03 PM DEBUG:Predicting on batch 2243
+11/26/2025 10:25:05 PM DEBUG:Predicting on batch 2244
+11/26/2025 10:25:07 PM DEBUG:Predicting on batch 2245
+11/26/2025 10:25:08 PM DEBUG:Predicting on batch 2246
+11/26/2025 10:25:10 PM DEBUG:Predicting on batch 2247
+11/26/2025 10:25:12 PM DEBUG:Predicting on batch 2248
+11/26/2025 10:25:14 PM DEBUG:Predicting on batch 2249
+11/26/2025 10:25:16 PM DEBUG:Predicting on batch 2250
+11/26/2025 10:25:16 PM DEBUG:2250
+11/26/2025 10:25:16 PM DEBUG:10 batches took 18.12962770462036 seconds
+11/26/2025 10:25:18 PM DEBUG:Predicting on batch 2251
+11/26/2025 10:25:19 PM DEBUG:Predicting on batch 2252
+11/26/2025 10:25:21 PM DEBUG:Predicting on batch 2253
+11/26/2025 10:25:23 PM DEBUG:Predicting on batch 2254
+11/26/2025 10:25:25 PM DEBUG:Predicting on batch 2255
+11/26/2025 10:25:27 PM DEBUG:Predicting on batch 2256
+11/26/2025 10:25:29 PM DEBUG:Predicting on batch 2257
+11/26/2025 10:25:30 PM DEBUG:Predicting on batch 2258
+11/26/2025 10:25:32 PM DEBUG:Predicting on batch 2259
+11/26/2025 10:25:34 PM DEBUG:Predicting on batch 2260
+11/26/2025 10:25:34 PM DEBUG:2260
+11/26/2025 10:25:34 PM DEBUG:10 batches took 18.574873208999634 seconds
+11/26/2025 10:25:36 PM DEBUG:Predicting on batch 2261
+11/26/2025 10:25:38 PM DEBUG:Predicting on batch 2262
+11/26/2025 10:25:40 PM DEBUG:Predicting on batch 2263
+11/26/2025 10:25:42 PM DEBUG:Predicting on batch 2264
+11/26/2025 10:25:44 PM DEBUG:Predicting on batch 2265
+11/26/2025 10:25:46 PM DEBUG:Predicting on batch 2266
+11/26/2025 10:25:48 PM DEBUG:Predicting on batch 2267
+11/26/2025 10:25:50 PM DEBUG:Predicting on batch 2268
+11/26/2025 10:25:51 PM DEBUG:Predicting on batch 2269
+11/26/2025 10:25:53 PM DEBUG:Predicting on batch 2270
+11/26/2025 10:25:53 PM DEBUG:2270
+11/26/2025 10:25:53 PM DEBUG:10 batches took 18.977080583572388 seconds
+11/26/2025 10:25:55 PM DEBUG:Predicting on batch 2271
+11/26/2025 10:25:57 PM DEBUG:Predicting on batch 2272
+11/26/2025 10:25:59 PM DEBUG:Predicting on batch 2273
+11/26/2025 10:26:00 PM DEBUG:Predicting on batch 2274
+11/26/2025 10:26:02 PM DEBUG:Predicting on batch 2275
+11/26/2025 10:26:04 PM DEBUG:Predicting on batch 2276
+11/26/2025 10:26:06 PM DEBUG:Predicting on batch 2277
+11/26/2025 10:26:08 PM DEBUG:Predicting on batch 2278
+11/26/2025 10:26:10 PM DEBUG:Predicting on batch 2279
+11/26/2025 10:26:11 PM DEBUG:Predicting on batch 2280
+11/26/2025 10:26:11 PM DEBUG:2280
+11/26/2025 10:26:11 PM DEBUG:10 batches took 18.087789058685303 seconds
+11/26/2025 10:26:13 PM DEBUG:Predicting on batch 2281
+11/26/2025 10:26:15 PM DEBUG:Predicting on batch 2282
+11/26/2025 10:26:17 PM DEBUG:Predicting on batch 2283
+11/26/2025 10:26:19 PM DEBUG:Predicting on batch 2284
+11/26/2025 10:26:20 PM DEBUG:Predicting on batch 2285
+11/26/2025 10:26:22 PM DEBUG:Predicting on batch 2286
+11/26/2025 10:26:24 PM DEBUG:Predicting on batch 2287
+11/26/2025 10:26:26 PM DEBUG:Predicting on batch 2288
+11/26/2025 10:26:28 PM DEBUG:Predicting on batch 2289
+11/26/2025 10:26:30 PM DEBUG:Predicting on batch 2290
+11/26/2025 10:26:30 PM DEBUG:2290
+11/26/2025 10:26:30 PM DEBUG:10 batches took 18.22028422355652 seconds
+11/26/2025 10:26:32 PM DEBUG:Predicting on batch 2291
+11/26/2025 10:26:34 PM DEBUG:Predicting on batch 2292
+11/26/2025 10:26:36 PM DEBUG:Predicting on batch 2293
+11/26/2025 10:26:38 PM DEBUG:Predicting on batch 2294
+11/26/2025 10:26:40 PM DEBUG:Predicting on batch 2295
+11/26/2025 10:26:41 PM DEBUG:Predicting on batch 2296
+11/26/2025 10:26:43 PM DEBUG:Predicting on batch 2297
+11/26/2025 10:26:45 PM DEBUG:Predicting on batch 2298
+11/26/2025 10:26:47 PM DEBUG:Predicting on batch 2299
+11/26/2025 10:26:49 PM DEBUG:Predicting on batch 2300
+11/26/2025 10:26:49 PM DEBUG:2300
+11/26/2025 10:26:49 PM DEBUG:10 batches took 19.418684720993042 seconds
+11/26/2025 10:26:51 PM DEBUG:Predicting on batch 2301
+11/26/2025 10:26:53 PM DEBUG:Predicting on batch 2302
+11/26/2025 10:26:55 PM DEBUG:Predicting on batch 2303
+11/26/2025 10:26:57 PM DEBUG:Predicting on batch 2304
+11/26/2025 10:26:59 PM DEBUG:Predicting on batch 2305
+11/26/2025 10:27:01 PM DEBUG:Predicting on batch 2306
+11/26/2025 10:27:03 PM DEBUG:Predicting on batch 2307
+11/26/2025 10:27:04 PM DEBUG:Predicting on batch 2308
+11/26/2025 10:27:06 PM DEBUG:Predicting on batch 2309
+11/26/2025 10:27:08 PM DEBUG:Predicting on batch 2310
+11/26/2025 10:27:08 PM DEBUG:2310
+11/26/2025 10:27:08 PM DEBUG:10 batches took 19.131858587265015 seconds
+11/26/2025 10:27:10 PM DEBUG:Predicting on batch 2311
+11/26/2025 10:27:12 PM DEBUG:Predicting on batch 2312
+11/26/2025 10:27:14 PM DEBUG:Predicting on batch 2313
+11/26/2025 10:27:15 PM DEBUG:Predicting on batch 2314
+11/26/2025 10:27:17 PM DEBUG:Predicting on batch 2315
+11/26/2025 10:27:19 PM DEBUG:Predicting on batch 2316
+11/26/2025 10:27:21 PM DEBUG:Predicting on batch 2317
+11/26/2025 10:27:23 PM DEBUG:Predicting on batch 2318
+11/26/2025 10:27:25 PM DEBUG:Predicting on batch 2319
+11/26/2025 10:27:26 PM DEBUG:Predicting on batch 2320
+11/26/2025 10:27:26 PM DEBUG:2320
+11/26/2025 10:27:26 PM DEBUG:10 batches took 18.33539843559265 seconds
+11/26/2025 10:27:28 PM DEBUG:Predicting on batch 2321
+11/26/2025 10:27:30 PM DEBUG:Predicting on batch 2322
+11/26/2025 10:27:32 PM DEBUG:Predicting on batch 2323
+11/26/2025 10:27:34 PM DEBUG:Predicting on batch 2324
+11/26/2025 10:27:36 PM DEBUG:Predicting on batch 2325
+11/26/2025 10:27:38 PM DEBUG:Predicting on batch 2326
+11/26/2025 10:27:40 PM DEBUG:Predicting on batch 2327
+11/26/2025 10:27:42 PM DEBUG:Predicting on batch 2328
+11/26/2025 10:27:43 PM DEBUG:Predicting on batch 2329
+11/26/2025 10:27:45 PM DEBUG:Predicting on batch 2330
+11/26/2025 10:27:45 PM DEBUG:2330
+11/26/2025 10:27:45 PM DEBUG:10 batches took 18.726542949676514 seconds
+11/26/2025 10:27:47 PM DEBUG:Predicting on batch 2331
+11/26/2025 10:27:49 PM DEBUG:Predicting on batch 2332
+11/26/2025 10:27:51 PM DEBUG:Predicting on batch 2333
+11/26/2025 10:27:53 PM DEBUG:Predicting on batch 2334
+11/26/2025 10:27:55 PM DEBUG:Predicting on batch 2335
+11/26/2025 10:27:57 PM DEBUG:Predicting on batch 2336
+11/26/2025 10:27:58 PM DEBUG:Predicting on batch 2337
+11/26/2025 10:28:00 PM DEBUG:Predicting on batch 2338
+11/26/2025 10:28:02 PM DEBUG:Predicting on batch 2339
+11/26/2025 10:28:04 PM DEBUG:Predicting on batch 2340
+11/26/2025 10:28:04 PM DEBUG:2340
+11/26/2025 10:28:04 PM DEBUG:10 batches took 18.631646871566772 seconds
+11/26/2025 10:28:06 PM DEBUG:Predicting on batch 2341
+11/26/2025 10:28:08 PM DEBUG:Predicting on batch 2342
+11/26/2025 10:28:09 PM DEBUG:Predicting on batch 2343
+11/26/2025 10:28:11 PM DEBUG:Predicting on batch 2344
+11/26/2025 10:28:13 PM DEBUG:Predicting on batch 2345
+11/26/2025 10:28:15 PM DEBUG:Predicting on batch 2346
+11/26/2025 10:28:16 PM DEBUG:Predicting on batch 2347
+11/26/2025 10:28:18 PM DEBUG:Predicting on batch 2348
+11/26/2025 10:28:20 PM DEBUG:Predicting on batch 2349
+11/26/2025 10:28:22 PM DEBUG:Predicting on batch 2350
+11/26/2025 10:28:22 PM DEBUG:2350
+11/26/2025 10:28:22 PM DEBUG:10 batches took 18.46294617652893 seconds
+11/26/2025 10:28:24 PM DEBUG:Predicting on batch 2351
+11/26/2025 10:28:26 PM DEBUG:Predicting on batch 2352
+11/26/2025 10:28:28 PM DEBUG:Predicting on batch 2353
+11/26/2025 10:28:30 PM DEBUG:Predicting on batch 2354
+11/26/2025 10:28:32 PM DEBUG:Predicting on batch 2355
+11/26/2025 10:28:34 PM DEBUG:Predicting on batch 2356
+11/26/2025 10:28:36 PM DEBUG:Predicting on batch 2357
+11/26/2025 10:28:38 PM DEBUG:Predicting on batch 2358
+11/26/2025 10:28:40 PM DEBUG:Predicting on batch 2359
+11/26/2025 10:28:42 PM DEBUG:Predicting on batch 2360
+11/26/2025 10:28:42 PM DEBUG:2360
+11/26/2025 10:28:42 PM DEBUG:10 batches took 19.489917516708374 seconds
+11/26/2025 10:28:44 PM DEBUG:Predicting on batch 2361
+11/26/2025 10:28:46 PM DEBUG:Predicting on batch 2362
+11/26/2025 10:28:48 PM DEBUG:Predicting on batch 2363
+11/26/2025 10:28:50 PM DEBUG:Predicting on batch 2364
+11/26/2025 10:28:52 PM DEBUG:Predicting on batch 2365
+11/26/2025 10:28:54 PM DEBUG:Predicting on batch 2366
+11/26/2025 10:28:55 PM DEBUG:Predicting on batch 2367
+11/26/2025 10:28:57 PM DEBUG:Predicting on batch 2368
+11/26/2025 10:28:59 PM DEBUG:Predicting on batch 2369
+11/26/2025 10:29:01 PM DEBUG:Predicting on batch 2370
+11/26/2025 10:29:01 PM DEBUG:2370
+11/26/2025 10:29:01 PM DEBUG:10 batches took 19.457951307296753 seconds
+11/26/2025 10:29:03 PM DEBUG:Predicting on batch 2371
+11/26/2025 10:29:05 PM DEBUG:Predicting on batch 2372
+11/26/2025 10:29:07 PM DEBUG:Predicting on batch 2373
+11/26/2025 10:29:09 PM DEBUG:Predicting on batch 2374
+11/26/2025 10:29:11 PM DEBUG:Predicting on batch 2375
+11/26/2025 10:29:13 PM DEBUG:Predicting on batch 2376
+11/26/2025 10:29:15 PM DEBUG:Predicting on batch 2377
+11/26/2025 10:29:17 PM DEBUG:Predicting on batch 2378
+11/26/2025 10:29:19 PM DEBUG:Predicting on batch 2379
+11/26/2025 10:29:21 PM DEBUG:Predicting on batch 2380
+11/26/2025 10:29:21 PM DEBUG:2380
+11/26/2025 10:29:21 PM DEBUG:10 batches took 19.309964895248413 seconds
+11/26/2025 10:29:22 PM DEBUG:Predicting on batch 2381
+11/26/2025 10:29:24 PM DEBUG:Predicting on batch 2382
+11/26/2025 10:29:26 PM DEBUG:Predicting on batch 2383
+11/26/2025 10:29:28 PM DEBUG:Predicting on batch 2384
+11/26/2025 10:29:29 PM DEBUG:Predicting on batch 2385
+11/26/2025 10:29:31 PM DEBUG:Predicting on batch 2386
+11/26/2025 10:29:33 PM DEBUG:Predicting on batch 2387
+11/26/2025 10:29:35 PM DEBUG:Predicting on batch 2388
+11/26/2025 10:29:37 PM DEBUG:Predicting on batch 2389
+11/26/2025 10:29:39 PM DEBUG:Predicting on batch 2390
+11/26/2025 10:29:39 PM DEBUG:2390
+11/26/2025 10:29:39 PM DEBUG:10 batches took 17.980771780014038 seconds
+11/26/2025 10:29:40 PM DEBUG:Predicting on batch 2391
+11/26/2025 10:29:42 PM DEBUG:Predicting on batch 2392
+11/26/2025 10:29:44 PM DEBUG:Predicting on batch 2393
+11/26/2025 10:29:46 PM DEBUG:Predicting on batch 2394
+11/26/2025 10:29:48 PM DEBUG:Predicting on batch 2395
+11/26/2025 10:29:49 PM DEBUG:Predicting on batch 2396
+11/26/2025 10:29:51 PM DEBUG:Predicting on batch 2397
+11/26/2025 10:29:53 PM DEBUG:Predicting on batch 2398
+11/26/2025 10:29:55 PM DEBUG:Predicting on batch 2399
+11/26/2025 10:29:57 PM DEBUG:Predicting on batch 2400
+11/26/2025 10:29:57 PM DEBUG:2400
+11/26/2025 10:29:57 PM DEBUG:10 batches took 18.116193056106567 seconds
+11/26/2025 10:29:58 PM DEBUG:Predicting on batch 2401
+11/26/2025 10:30:00 PM DEBUG:Predicting on batch 2402
+11/26/2025 10:30:02 PM DEBUG:Predicting on batch 2403
+11/26/2025 10:30:04 PM DEBUG:Predicting on batch 2404
+11/26/2025 10:30:06 PM DEBUG:Predicting on batch 2405
+11/26/2025 10:30:07 PM DEBUG:Predicting on batch 2406
+11/26/2025 10:30:09 PM DEBUG:Predicting on batch 2407
+11/26/2025 10:30:11 PM DEBUG:Predicting on batch 2408
+11/26/2025 10:30:13 PM DEBUG:Predicting on batch 2409
+11/26/2025 10:30:15 PM DEBUG:Predicting on batch 2410
+11/26/2025 10:30:15 PM DEBUG:2410
+11/26/2025 10:30:15 PM DEBUG:10 batches took 18.00813603401184 seconds
+11/26/2025 10:30:17 PM DEBUG:Predicting on batch 2411
+11/26/2025 10:30:19 PM DEBUG:Predicting on batch 2412
+11/26/2025 10:30:21 PM DEBUG:Predicting on batch 2413
+11/26/2025 10:30:24 PM DEBUG:Predicting on batch 2414
+11/26/2025 10:30:26 PM DEBUG:Predicting on batch 2415
+11/26/2025 10:30:29 PM DEBUG:Predicting on batch 2416
+11/26/2025 10:30:31 PM DEBUG:Predicting on batch 2417
+11/26/2025 10:30:33 PM DEBUG:Predicting on batch 2418
+11/26/2025 10:30:35 PM DEBUG:Predicting on batch 2419
+11/26/2025 10:30:37 PM DEBUG:Predicting on batch 2420
+11/26/2025 10:30:37 PM DEBUG:2420
+11/26/2025 10:30:37 PM DEBUG:10 batches took 22.627025604248047 seconds
+11/26/2025 10:30:39 PM DEBUG:Predicting on batch 2421
+11/26/2025 10:30:41 PM DEBUG:Predicting on batch 2422
+11/26/2025 10:30:43 PM DEBUG:Predicting on batch 2423
+11/26/2025 10:30:45 PM DEBUG:Predicting on batch 2424
+11/26/2025 10:30:46 PM DEBUG:Predicting on batch 2425
+11/26/2025 10:30:48 PM DEBUG:Predicting on batch 2426
+11/26/2025 10:30:50 PM DEBUG:Predicting on batch 2427
+11/26/2025 10:30:52 PM DEBUG:Predicting on batch 2428
+11/26/2025 10:30:54 PM DEBUG:Predicting on batch 2429
+11/26/2025 10:30:56 PM DEBUG:Predicting on batch 2430
+11/26/2025 10:30:56 PM DEBUG:2430
+11/26/2025 10:30:56 PM DEBUG:10 batches took 18.43553352355957 seconds
+11/26/2025 10:30:58 PM DEBUG:Predicting on batch 2431
+11/26/2025 10:30:59 PM DEBUG:Predicting on batch 2432
+11/26/2025 10:31:01 PM DEBUG:Predicting on batch 2433
+11/26/2025 10:31:03 PM DEBUG:Predicting on batch 2434
+11/26/2025 10:31:05 PM DEBUG:Predicting on batch 2435
+11/26/2025 10:31:07 PM DEBUG:Predicting on batch 2436
+11/26/2025 10:31:09 PM DEBUG:Predicting on batch 2437
+11/26/2025 10:31:11 PM DEBUG:Predicting on batch 2438
+11/26/2025 10:31:13 PM DEBUG:Predicting on batch 2439
+11/26/2025 10:31:15 PM DEBUG:Predicting on batch 2440
+11/26/2025 10:31:15 PM DEBUG:2440
+11/26/2025 10:31:15 PM DEBUG:10 batches took 19.113950967788696 seconds
+11/26/2025 10:31:17 PM DEBUG:Predicting on batch 2441
+11/26/2025 10:31:18 PM DEBUG:Predicting on batch 2442
+11/26/2025 10:31:20 PM DEBUG:Predicting on batch 2443
+11/26/2025 10:31:22 PM DEBUG:Predicting on batch 2444
+11/26/2025 10:31:24 PM DEBUG:Predicting on batch 2445
+11/26/2025 10:31:26 PM DEBUG:Predicting on batch 2446
+11/26/2025 10:31:28 PM DEBUG:Predicting on batch 2447
+11/26/2025 10:31:30 PM DEBUG:Predicting on batch 2448
+11/26/2025 10:31:32 PM DEBUG:Predicting on batch 2449
+11/26/2025 10:31:34 PM DEBUG:Predicting on batch 2450
+11/26/2025 10:31:34 PM DEBUG:2450
+11/26/2025 10:31:34 PM DEBUG:10 batches took 18.816977739334106 seconds
+11/26/2025 10:31:36 PM DEBUG:Predicting on batch 2451
+11/26/2025 10:31:38 PM DEBUG:Predicting on batch 2452
+11/26/2025 10:31:40 PM DEBUG:Predicting on batch 2453
+11/26/2025 10:31:42 PM DEBUG:Predicting on batch 2454
+11/26/2025 10:31:44 PM DEBUG:Predicting on batch 2455
+11/26/2025 10:31:46 PM DEBUG:Predicting on batch 2456
+11/26/2025 10:31:47 PM DEBUG:Predicting on batch 2457
+11/26/2025 10:31:49 PM DEBUG:Predicting on batch 2458
+11/26/2025 10:31:51 PM DEBUG:Predicting on batch 2459
+11/26/2025 10:31:53 PM DEBUG:Predicting on batch 2460
+11/26/2025 10:31:53 PM DEBUG:2460
+11/26/2025 10:31:53 PM DEBUG:10 batches took 19.1707706451416 seconds
+11/26/2025 10:31:55 PM DEBUG:Predicting on batch 2461
+11/26/2025 10:31:57 PM DEBUG:Predicting on batch 2462
+11/26/2025 10:31:58 PM DEBUG:Predicting on batch 2463
+11/26/2025 10:32:00 PM DEBUG:Predicting on batch 2464
+11/26/2025 10:32:02 PM DEBUG:Predicting on batch 2465
+11/26/2025 10:32:04 PM DEBUG:Predicting on batch 2466
+11/26/2025 10:32:06 PM DEBUG:Predicting on batch 2467
+11/26/2025 10:32:08 PM DEBUG:Predicting on batch 2468
+11/26/2025 10:32:10 PM DEBUG:Predicting on batch 2469
+11/26/2025 10:32:12 PM DEBUG:Predicting on batch 2470
+11/26/2025 10:32:12 PM DEBUG:2470
+11/26/2025 10:32:12 PM DEBUG:10 batches took 18.885541677474976 seconds
+11/26/2025 10:32:14 PM DEBUG:Predicting on batch 2471
+11/26/2025 10:32:16 PM DEBUG:Predicting on batch 2472
+11/26/2025 10:32:18 PM DEBUG:Predicting on batch 2473
+11/26/2025 10:32:19 PM DEBUG:Predicting on batch 2474
+11/26/2025 10:32:21 PM DEBUG:Predicting on batch 2475
+11/26/2025 10:32:23 PM DEBUG:Predicting on batch 2476
+11/26/2025 10:32:25 PM DEBUG:Predicting on batch 2477
+11/26/2025 10:32:27 PM DEBUG:Predicting on batch 2478
+11/26/2025 10:32:29 PM DEBUG:Predicting on batch 2479
+11/26/2025 10:32:31 PM DEBUG:Predicting on batch 2480
+11/26/2025 10:32:31 PM DEBUG:2480
+11/26/2025 10:32:31 PM DEBUG:10 batches took 19.262386798858643 seconds
+11/26/2025 10:32:33 PM DEBUG:Predicting on batch 2481
+11/26/2025 10:32:35 PM DEBUG:Predicting on batch 2482
+11/26/2025 10:32:38 PM DEBUG:Predicting on batch 2483
+11/26/2025 10:32:40 PM DEBUG:Predicting on batch 2484
+11/26/2025 10:32:42 PM DEBUG:Predicting on batch 2485
+11/26/2025 10:32:44 PM DEBUG:Predicting on batch 2486
+11/26/2025 10:32:46 PM DEBUG:Predicting on batch 2487
+11/26/2025 10:32:49 PM DEBUG:Predicting on batch 2488
+11/26/2025 10:32:51 PM DEBUG:Predicting on batch 2489
+11/26/2025 10:32:53 PM DEBUG:Predicting on batch 2490
+11/26/2025 10:32:53 PM DEBUG:2490
+11/26/2025 10:32:53 PM DEBUG:10 batches took 22.257450103759766 seconds
+11/26/2025 10:32:56 PM DEBUG:Predicting on batch 2491
+11/26/2025 10:32:58 PM DEBUG:Predicting on batch 2492
+11/26/2025 10:33:00 PM DEBUG:Predicting on batch 2493
+11/26/2025 10:33:02 PM DEBUG:Predicting on batch 2494
+11/26/2025 10:33:04 PM DEBUG:Predicting on batch 2495
+11/26/2025 10:33:07 PM DEBUG:Predicting on batch 2496
+11/26/2025 10:33:09 PM DEBUG:Predicting on batch 2497
+11/26/2025 10:33:11 PM DEBUG:Predicting on batch 2498
+11/26/2025 10:33:13 PM DEBUG:Predicting on batch 2499

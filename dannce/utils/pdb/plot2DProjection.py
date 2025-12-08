@@ -127,6 +127,8 @@ def get_camParams(params, skeleton, exclude_joints):
     trans.append(params[i]['t'])
     if 'm' in params[i].keys():
       mirror.append(params[i]['m'])
+    else:
+      mirror.append(0)  # Default to no mirroring if 'm' field is missing
 
   links = skeleton["joints_idx"]
 
@@ -260,30 +262,35 @@ def plot_projected_points(predictions,
       # frame should be taken from sync[0]["data_frame"] from an index where data_sampleID from sync[0] matches sampleID at i-th index from predictions
       # using np.where for this gives a nested numpy array containing a single element(the index), so use squeeze     
       fr = sync[0]["data_frame"][(np.where(sync[0]["data_sampleID"] == predictions["sampleID"][0][i]))[0].squeeze()]
-      frame = movie_reader.get_data(fr[0])
+      # Handle both scalar and array cases
+      if np.isscalar(fr):
+        frame_num = int(fr)
+      else:
+        frame_num = int(fr[0])
+      frame = movie_reader.get_data(frame_num)
       print("Sample: ", i)
     
       axes.imshow(frame)      
       
-      for ncam in range (len(params)):
+      # Only plot the first camera's skeleton (ncam=0)
+      ncam = 0
+      imagePoints = imagePoints_agg[ncam][i]
+      if com_2d_agg != None:
+        com = com_2d_agg[ncam][i]
+        axes.scatter(com[:,0], com[:,1], marker='.', color='red', linewidths=1)
+      
+      for mm in range(len(links)):
+        if links[mm][0] in goodmarks and links[mm][1] in goodmarks:
+          xx = [imagePoints[links[mm][0]-1,0],
+                imagePoints[links[mm][1]-1,0]]
+          yy = [imagePoints[links[mm][0]-1,1],
+                imagePoints[links[mm][1]-1,1]]
 
-        imagePoints = imagePoints_agg[ncam][i]
-        if com_2d_agg != None:
-          com = com_2d_agg[ncam][i]
-          axes.scatter(com[:,0], com[:,1], marker='.', color='red', linewidths=1)
-        
-        for mm in range(len(links)):
-          if links[mm][0] in goodmarks and links[mm][1] in goodmarks:
-            xx = [imagePoints[links[mm][0]-1,0],
-                  imagePoints[links[mm][1]-1,0]]
-            yy = [imagePoints[links[mm][0]-1,1],
-                  imagePoints[links[mm][1]-1,1]]
-
-            axes.scatter(xx, yy, marker = '.', color='white', linewidths=0.5)
-            axes.plot(xx,yy, c=color_dict[mm], lw=2)
-        
-        axes.axis("off")
-        axes.set_title(str(i))
+          axes.scatter(xx, yy, marker = '.', color='white', linewidths=0.5)
+          axes.plot(xx,yy, c=color_dict[mm % len(color_dict)], lw=2)
+      
+      axes.axis("off")
+      axes.set_title(str(i))
         
       writer.grab_frame()
       axes.clear()
@@ -328,7 +335,7 @@ def driver(dannceMat_filepath : str,
                         fps=fps)
 
 driver(dannceMat_filepath, preditcions_filepath, videofle_path, skeleton_path, com3d_file,
-        exclude_joints = [7], 
+        exclude_joints = [], 
         video_save_path = video_save_path, 
         start_sample = start_sample, 
         max_samples = max_samples,
