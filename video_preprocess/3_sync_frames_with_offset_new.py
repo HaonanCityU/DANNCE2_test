@@ -142,16 +142,16 @@ def process(current_dir, offsets, video_name):
 
 if __name__ == '__main__':
     print("===== 帧同步工具（优化版） =====")
-    dir = "../sh_test2/videos"
+    dir = "/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/videos"
     video_name = "0"
 
     offsets = {
         f'processed_Camera1_{video_name}_results.csv': 0,
-        f'processed_Camera2_{video_name}_results.csv': -151,
-        f'processed_Camera3_{video_name}_results.csv': -47,
-        f'processed_Camera4_{video_name}_results.csv': -85,
-        f'processed_Camera5_{video_name}_results.csv': -98,
-        f'processed_Camera6_{video_name}_results.csv': -349,
+        f'processed_Camera2_{video_name}_results.csv': -116,
+        f'processed_Camera3_{video_name}_results.csv': 13,
+        f'processed_Camera4_{video_name}_results.csv': 150,
+        f'processed_Camera5_{video_name}_results.csv': 115,
+        f'processed_Camera6_{video_name}_results.csv': 266,
     }
     
     process(dir, offsets, video_name)

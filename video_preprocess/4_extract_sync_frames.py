@@ -106,7 +106,13 @@ def extract_frames_opencv_accurate(video_path, camera_name, frame_data_list, out
         cap.release()
 
 def extract_synced_frames(sync_csv_path, video_root, output_root, start_row, end_row, video_name):
-    """基于同步 CSV 抽取指定区间的同步帧"""
+    """基于同步 CSV 抽取指定区间的同步帧
+    
+    Args:
+        start_row: 开始行数（CSV表头下第一行为1）。如果为None，则从第一行开始
+        end_row: 结束行数（包含该行）。如果为None，则到文件末尾
+        如果start_row和end_row都为None，则提取所有帧
+    """
     # 1. 读取同步 CSV，截取目标区间
     sync_frame_map = {}  # key: 摄像头名称, value: 目标帧号列表
     camera_names = []    # 存储摄像头顺序（与 CSV 列一致）
@@ -124,19 +130,37 @@ def extract_synced_frames(sync_csv_path, video_root, output_root, start_row, end
         row_idx = 0
         for row in reader:
             row_idx += 1
-            # 只保留 [start_row, end_row] 区间的行（闭区间）
-            if row_idx < start_row:
-                continue
-            if row_idx > end_row:
-                break
-            # 把当前行的帧号存入对应摄像头（同时保存CSV行号）
-            for cam_idx, cam_name in enumerate(camera_names):
-                frame_num = int(row[cam_idx])
-                sync_frame_map[cam_name].append((row_idx, frame_num))  # (CSV行号, 帧号)
+            # 如果start_row和end_row都为None，读取所有行
+            if start_row is None and end_row is None:
+                # 读取所有行，不做过滤
+                for cam_idx, cam_name in enumerate(camera_names):
+                    frame_num = int(row[cam_idx])
+                    sync_frame_map[cam_name].append((row_idx, frame_num))  # (CSV行号, 帧号)
+            else:
+                # 只保留 [start_row, end_row] 区间的行（闭区间）
+                if start_row is not None and row_idx < start_row:
+                    continue
+                if end_row is not None and row_idx > end_row:
+                    break
+                # 把当前行的帧号存入对应摄像头（同时保存CSV行号）
+                for cam_idx, cam_name in enumerate(camera_names):
+                    frame_num = int(row[cam_idx])
+                    sync_frame_map[cam_name].append((row_idx, frame_num))  # (CSV行号, 帧号)
 
     # 校验目标帧数（所有摄像头的帧号数量应一致）
     target_frame_count = len(sync_frame_map[camera_names[0]]) if camera_names else 0
-    print(f"📊 目标抽取帧数：{target_frame_count} 帧（CSV 行 {start_row}-{end_row}）")
+    
+    # 格式化输出信息
+    if start_row is None and end_row is None:
+        row_range_str = "全部行（从开始到结束）"
+    elif start_row is None:
+        row_range_str = f"第1-{end_row}行"
+    elif end_row is None:
+        row_range_str = f"第{start_row}行到结束"
+    else:
+        row_range_str = f"第{start_row}-{end_row}行"
+    
+    print(f"📊 目标抽取帧数：{target_frame_count} 帧（CSV {row_range_str}）")
     print(f"📹 涉及摄像头：{camera_names}")
     
     # 检查是否有重复帧号（可能会导致文件覆盖）
@@ -228,11 +252,14 @@ def extract_synced_frames(sync_csv_path, video_root, output_root, start_row, end
 
 if __name__ == "__main__":
     # ===================== 直接在这里定义参数 =====================
-    sync_csv_path = "../sh_test2/videos/synchronized_frames_with_offsets_0.csv"  # 同步CSV文件路径
-    video_root = "../sh_test2/videos"  # 原视频根目录（包含Camera1/Camera2等文件夹）
-    start_row = 8000  # 开始行数（CSV表头下第一行为1，根据需求修改）
-    end_row = 12000  # 结束行数（包含该行，10000帧就设为10000，根据需求修改）
-    output_root = f"../sh_test2/videos/frames/test2_{start_row}_{end_row}"  # 抽帧输出根目录（自动创建CameraX子文件夹）
+    sync_csv_path = "/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/videos/synchronized_frames_with_offset_0.csv"  # 同步CSV文件路径
+    video_root = "/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/videos"  # 原视频根目录（包含Camera1/Camera2等文件夹）
+    start_row = None  # 开始行数（CSV表头下第一行为1，根据需求修改）
+    end_row = None  # 结束行数（包含该行，10000帧就设为10000，根据需求修改）
+    if start_row is None and end_row is None:
+        output_root = f"/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/videos/frames/test_all"
+    else:
+        output_root = f"/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/videos/frames/test_{start_row}_{end_row}"  # 抽帧输出根目录（自动创建CameraX子文件夹）
 
     video_name = "0"
     # ==============================================================

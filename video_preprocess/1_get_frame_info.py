@@ -83,7 +83,7 @@ def process_videos(root_path, video_name):
     print(f'根目录 {root_path} 下所有视频处理完成!')
 
 if __name__ == "__main__":
-    for root_path in ["../sh_test2/videos"]:
+    for root_path in ["/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/videos"]:
         video_name = '0'
         process_videos(root_path, video_name)
     print('所有根目录处理完成!')

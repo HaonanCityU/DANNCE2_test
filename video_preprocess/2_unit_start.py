@@ -46,7 +46,7 @@ def process_csv_files(current_dir,video_name,n):
             print(f'已处理文件: {file_name}，结果保存至: {output_file_path}')
 
 if __name__ == '__main__':
-    dir = "../sh_test2/videos"
+    dir = "/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/videos"
     video_name = "0"
-    n = 0  # 从第几行开始读取数据
+    n = 300  # 从第几行开始读取数据
     process_csv_files(dir, video_name, n)

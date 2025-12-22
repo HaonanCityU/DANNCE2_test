@@ -1,7 +1,6 @@
 import cv2
 import os
 import numpy as np
-from tqdm import tqdm
 
 def create_multi_view(video_paths):
     """
@@ -180,14 +179,9 @@ def save_multi_view(video_paths, output_path="multi_view_output.mp4"):
         print("未找到可用的视频流")
         return
 
-    # 显示视频信息
-    print("正在加载视频信息...")
     fps = caps[0].get(cv2.CAP_PROP_FPS) or 30
     frame_counts = [int(cap.get(cv2.CAP_PROP_FRAME_COUNT)) for cap in caps]
     total_frames = min(frame_counts) if frame_counts else 0
-    
-    for i, (path, frame_count) in enumerate(zip(video_paths, frame_counts)):
-        print(f"  Camera{i+1}: {frame_count} 帧, {os.path.basename(path)}")
 
     # 读取第一帧以确定尺寸
     frames = []
@@ -201,10 +195,6 @@ def save_multi_view(video_paths, output_path="multi_view_output.mp4"):
     min_height = min([f.shape[0] for f in frames])
     min_width = min([f.shape[1] for f in frames])
     combined_size = (min_width * 3, min_height * 2)  # (width, height)
-    
-    # 重置所有视频到开始位置（因为上面已经读取了第一帧）
-    for cap in caps:
-        cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
 
     fourcc = cv2.VideoWriter_fourcc(*"mp4v")
     writer = cv2.VideoWriter(output_path, fourcc, fps, combined_size)
@@ -215,42 +205,31 @@ def save_multi_view(video_paths, output_path="multi_view_output.mp4"):
         return
 
     print(f"开始合成，多摄像头分屏输出 -> {output_path}")
-    print(f"总帧数: {total_frames}, FPS: {fps:.2f}, 输出尺寸: {combined_size}")
-    
-    # 使用 tqdm 显示进度条
-    with tqdm(total=total_frames, desc="合成进度", unit="帧") as pbar:
-        for frame_idx in range(total_frames):
-            frames = []
-            valid = True
-            for i, cap in enumerate(caps):
-                ret, frame = cap.read()
-                if not ret:
-                    valid = False
-                    current_pos = int(cap.get(cv2.CAP_PROP_POS_FRAMES))
-                    total_frames_cap = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-                    print(f"\n读取 Camera{i+1} 失败，提前结束。")
-                    print(f"  当前帧位置: {current_pos}/{total_frames_cap}")
-                    print(f"  视频路径: {video_paths[i]}")
-                    break
-                frame = cv2.resize(frame, (min_width, min_height))
-                cv2.putText(frame, f"Camera{i+1}", (10, 30),
-                            cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-                frames.append(frame)
-
-            if not valid:
+    for _ in range(total_frames):
+        frames = []
+        valid = True
+        for i, cap in enumerate(caps):
+            ret, frame = cap.read()
+            if not ret:
+                valid = False
+                print(f"读取 Camera{i+1} 失败，提前结束。")
                 break
+            frame = cv2.resize(frame, (min_width, min_height))
+            cv2.putText(frame, f"Camera{i+1}", (10, 30),
+                        cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            frames.append(frame)
 
-            while len(frames) < 6:
-                frames.append(np.zeros((min_height, min_width, 3), dtype=np.uint8))
+        if not valid:
+            break
 
-            row1 = np.hstack([frames[0], frames[1], frames[2]])
-            row2 = np.hstack([frames[3], frames[4], frames[5]])
-            combined = np.vstack([row1, row2])
+        while len(frames) < 6:
+            frames.append(np.zeros((min_height, min_width, 3), dtype=np.uint8))
 
-            writer.write(combined)
-            
-            # 更新进度条
-            pbar.update(1)
+        row1 = np.hstack([frames[0], frames[1], frames[2]])
+        row2 = np.hstack([frames[3], frames[4], frames[5]])
+        combined = np.vstack([row1, row2])
+
+        writer.write(combined)
 
     writer.release()
     for cap in caps:

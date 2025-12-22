@@ -121,12 +121,12 @@ def process_cameras(frames_root, output_root, start_frame, end_frame, fps=60, ou
 
 def main():
     # 配置参数
-    FRAMES_ROOT = "../sh_test2/videos/frames/test2_8000_12000"
-    OUTPUT_ROOT = "../sh_test2/videos"
-    START_FRAME = 0
-    END_FRAME = 12000
+    FRAMES_ROOT = "/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/videos/frames/test_all"
+    OUTPUT_ROOT = "/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/videos"
+    START_FRAME = 3593
+    END_FRAME = 7972
     FPS = 60
-    output_name = "sync2.mp4"
+    output_name = "calibration.mp4"
     
     # 打印配置信息
     print("===== 图片转视频工具 =====")
