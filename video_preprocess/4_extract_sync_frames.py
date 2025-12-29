@@ -254,12 +254,12 @@ if __name__ == "__main__":
     # ===================== 直接在这里定义参数 =====================
     sync_csv_path = "/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/videos/synchronized_frames_with_offset_0.csv"  # 同步CSV文件路径
     video_root = "/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/videos"  # 原视频根目录（包含Camera1/Camera2等文件夹）
-    start_row = None  # 开始行数（CSV表头下第一行为1，根据需求修改）
-    end_row = None  # 结束行数（包含该行，10000帧就设为10000，根据需求修改）
+    start_row = 3600  # 开始行数（CSV表头下第一行为1，根据需求修改）
+    end_row = 6000  # 结束行数（包含该行，10000帧就设为10000，根据需求修改）
     if start_row is None and end_row is None:
-        output_root = f"/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/videos/frames/test_all"
+        output_root = f"/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/frames/test_all"
     else:
-        output_root = f"/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/videos/frames/test_{start_row}_{end_row}"  # 抽帧输出根目录（自动创建CameraX子文件夹）
+        output_root = f"/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/frames/test_{start_row}_{end_row}"  # 抽帧输出根目录（自动创建CameraX子文件夹）
 
     video_name = "0"
     # ==============================================================

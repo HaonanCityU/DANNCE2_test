@@ -123,10 +123,10 @@ def main():
     # 配置参数
     FRAMES_ROOT = "/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/videos/frames/test_all"
     OUTPUT_ROOT = "/home/haonan/proj/dannce-release_dev2/demo/sh_exp1/rat1/videos"
-    START_FRAME = 3593
-    END_FRAME = 7972
+    START_FRAME = 8832
+    END_FRAME = 99720
     FPS = 60
-    output_name = "calibration.mp4"
+    output_name = "sync.mp4"
     
     # 打印配置信息
     print("===== 图片转视频工具 =====")
