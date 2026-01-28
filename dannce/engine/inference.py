@@ -719,71 +719,67 @@ def infer_dannce(
                     pbar.set_postfix({"速度": "{:.2f} 批次/秒".format(fps)})
                 end_time = time.time()
 
-        if (i - start_ind) % 1000 == 0 and i != start_ind:
-            logging.debug("Saving checkpoint at {}th batch".format(i))
+            if (i - start_ind) % 1000 == 0 and i != start_ind:
+                logging.debug("Saving checkpoint at {}th batch".format(i))
+                if params["expval"]:
+                    savedata_expval(
+                        params["dannce_predict_dir"] + "save_data_AVG.mat",
+                        params,
+                        write=True,
+                        data=save_data,
+                        tcoord=False,
+                        num_markers=n_chn,
+                        pmax=True,
+                    )
+                else:
+                    savedata_tomat(
+                        params["dannce_predict_dir"] + "save_data_MAX.mat",
+                        params,
+                        params["vmin"],
+                        params["vmax"],
+                        params["nvox"],
+                        write=True,
+                        data=save_data,
+                        num_markers=n_chn,
+                        tcoord=False,
+                        addCOM=com_dict,
+                    )
+
+            ims = generator.__getitem__(i)
+            pred = model.predict(ims[0])
+
             if params["expval"]:
-                p_n = savedata_expval(
-                    params["dannce_predict_dir"] + "save_data_AVG.mat",
-                    params,
-                    write=True,
-                    data=save_data,
-                    tcoord=False,
-                    num_markers=n_chn,
-                    pmax=True,
-                )
+                probmap = pred[1]
+                pred = pred[0]
+                for j in range(pred.shape[0]):
+                    pred_max = probmap[j]
+                    sampleID = partition["valid_sampleIDs"][i * pred.shape[0] + j]
+                    save_data[idx * pred.shape[0] + j] = {
+                        "pred_max": pred_max,
+                        "pred_coord": pred[j],
+                        "sampleID": sampleID,
+                    }
             else:
-                p_n = savedata_tomat(
-                    params["dannce_predict_dir"] + "save_data_MAX.mat",
-                    params,
-                    params["vmin"],
-                    params["vmax"],
-                    params["nvox"],
-                    write=True,
-                    data=save_data,
-                    num_markers=n_chn,
-                    tcoord=False,
-                    addCOM=com_dict,
-                )
+                for j in range(pred.shape[0]):
+                    preds = torch.as_tensor(pred[j], dtype=torch.float32)
+                    pred_max = preds.max(0).values.max(0).values.max(0).values
+                    pred_total = preds.sum((0, 1, 2))
+                    (xcoord, ycoord, zcoord) = processing.plot_markers_3d_torch(preds)
+                    coord = torch.stack([xcoord, ycoord, zcoord])
+                    pred_log = pred_max.log() - pred_total.log()
+                    sampleID = partition["valid_sampleIDs"][i * pred.shape[0] + j]
 
-        ims = generator.__getitem__(i)
-        pred = model.predict(ims[0])
+                    save_data[idx * pred.shape[0] + j] = {
+                        "pred_max": pred_max.cpu().numpy(),
+                        "pred_coord": coord.cpu().numpy(),
+                        "true_coord_nogrid": ims[1][j],
+                        "logmax": pred_log.cpu().numpy(),
+                        "sampleID": sampleID,
+                    }
 
-        if params["expval"]:
-            probmap = pred[1]
-            pred = pred[0]
-            for j in range(pred.shape[0]):
-                pred_max = probmap[j]
-                sampleID = partition["valid_sampleIDs"][i * pred.shape[0] + j]
-                save_data[idx * pred.shape[0] + j] = {
-                    "pred_max": pred_max,
-                    "pred_coord": pred[j],
-                    "sampleID": sampleID,
-                }
-        else:
-            for j in range(pred.shape[0]):
-                preds = torch.as_tensor(pred[j], dtype=torch.float32)
-                pred_max = preds.max(0).values.max(0).values.max(0).values
-                pred_total = preds.sum((0, 1, 2))
-                (
-                    xcoord,
-                    ycoord,
-                    zcoord,
-                ) = processing.plot_markers_3d_torch(preds)
-                coord = torch.stack([xcoord, ycoord, zcoord])
-                pred_log = pred_max.log() - pred_total.log()
-                sampleID = partition["valid_sampleIDs"][i * pred.shape[0] + j]
-
-                save_data[idx * pred.shape[0] + j] = {
-                    "pred_max": pred_max.cpu().numpy(),
-                    "pred_coord": coord.cpu().numpy(),
-                    "true_coord_nogrid": ims[1][j],
-                    "logmax": pred_log.cpu().numpy(),
-                    "sampleID": sampleID,
-                }
-        
-        # 更新进度条（每个batch处理完后更新）
-        if pbar is not None:
-            pbar.update(1)
+            # 更新进度条（每个batch处理完后更新）
+            if pbar is not None:
+                pbar.update(1)
     finally:
         if pbar is not None:
             pbar.close()

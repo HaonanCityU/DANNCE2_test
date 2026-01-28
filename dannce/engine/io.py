@@ -15,8 +15,15 @@ def load_label3d_data(path: Text, key: Text):
     Returns:
         TYPE: Data from field
     """
+    # First try scipy.io.loadmat (for v7 and earlier MATLAB files)
     try: 
-        d = sio.loadmat(path)[key]
+        mat_file = sio.loadmat(path)
+        if key not in mat_file:
+            available_keys = [k for k in mat_file.keys() if not k.startswith('__')]
+            raise KeyError(
+                f"Key '{key}' not found in {path}. Available keys: {available_keys}"
+            )
+        d = mat_file[key]
         dataset = [f[0] for f in d]
 
         # Data are loaded in this annoying structure where the array
@@ -30,9 +37,35 @@ def load_label3d_data(path: Text, key: Text):
             for key in d.dtype.names:
                 d_[key] = d[key][0, 0]
             data.append(d_)
-    except:
-        d = mat73.loadmat(path)[key]
-        data = [f[0] for f in d]
+    except KeyError:
+        # Re-raise KeyError with better message (already handled above)
+        raise
+    except Exception as e:
+        # If scipy.io.loadmat fails (e.g., file is v7.3 format), try mat73
+        try:
+            mat_file = mat73.loadmat(path)
+            if key not in mat_file:
+                available_keys = [k for k in mat_file.keys() if not k.startswith('__')]
+                raise KeyError(
+                    f"Key '{key}' not found in {path} (v7.3 format). Available keys: {available_keys}"
+                )
+            d = mat_file[key]
+            data = [f[0] for f in d]
+        except TypeError as te:
+            # mat73 raises TypeError if file is not v7.3 format
+            raise TypeError(
+                f"Failed to load {path}. File is not MATLAB v7.3 format, and scipy.io.loadmat also failed. "
+                f"Original error: {str(e)}. mat73 error: {str(te)}"
+            ) from te
+        except KeyError:
+            # Re-raise KeyError from mat73
+            raise
+        except Exception as e2:
+            # If mat73 also fails for other reasons, raise with context
+            raise RuntimeError(
+                f"Failed to load {path} with both scipy.io.loadmat and mat73. "
+                f"scipy error: {str(e)}. mat73 error: {str(e2)}"
+            ) from e2
     return data
 
 
@@ -177,24 +210,67 @@ def load_camnames(path: Text) -> Union[List, None]:
     Returns:
         Union[List, None]: List of cameranames
     """
+    def _to_py_str(x) -> str:
+        """Robustly convert scipy/mat73-loaded MATLAB strings to Python str."""
+        if x is None:
+            return ""
+        if isinstance(x, str):
+            return x
+        if isinstance(x, (bytes, bytearray)):
+            try:
+                return x.decode("utf-8")
+            except Exception:
+                return x.decode(errors="ignore")
+        if isinstance(x, np.ndarray):
+            # Unwrap scalar arrays
+            if x.size == 1:
+                try:
+                    return _to_py_str(x.item())
+                except Exception:
+                    pass
+            # MATLAB char arrays often come in as (1, N) arrays of single characters
+            if x.dtype.kind in {"U", "S"}:
+                # If it's an array of single characters, join them
+                flat = x.reshape(-1)
+                if flat.size > 1 and all(isinstance(c, (str, bytes, np.str_, np.bytes_)) for c in flat):
+                    try:
+                        return "".join([c.decode("utf-8") if isinstance(c, (bytes, bytearray, np.bytes_)) else str(c) for c in flat]).strip()
+                    except Exception:
+                        return "".join([str(c) for c in flat]).strip()
+                # Otherwise, best-effort stringify
+                try:
+                    return str(x)
+                except Exception:
+                    return ""
+            # Object arrays (cell arrays) – try first element
+            if x.dtype == object and x.size >= 1:
+                try:
+                    return _to_py_str(x.flat[0])
+                except Exception:
+                    return ""
+        # Fallback
+        return str(x)
+
     try:
         label_3d_file = sio.loadmat(path)
         if "camnames" in label_3d_file:
-            names = label_3d_file["camnames"][:]
-            if len(names) != len(label_3d_file["labelData"]):
-                camnames = [name[0] for name in names[0]]
-            else:
-                camnames = [name[0][0] for name in names]
+            names = label_3d_file["camnames"]
+            # Flatten common MATLAB shapes: (1, N), (N, 1), or (N,)
+            flat = np.asarray(names).reshape(-1)
+            camnames = [_to_py_str(n).strip() for n in flat]
+            camnames = [c for c in camnames if c != ""]
         else:
             camnames = None
-    except:
+    except Exception:
         label_3d_file = mat73.loadmat(path)
         if "camnames" in label_3d_file:
-            names = label_3d_file["camnames"][:]
-            if len(names) != len(label_3d_file["labelData"]):
-                camnames = [name[0] for name in names[0]]
+            names = label_3d_file["camnames"]
+            # mat73 typically yields Python lists/strings already, but be defensive.
+            if isinstance(names, list):
+                camnames = [_to_py_str(n).strip() for n in names]
             else:
-                camnames = names
+                camnames = [_to_py_str(n).strip() for n in np.asarray(names).reshape(-1)]
+            camnames = [c for c in camnames if c != ""]
         else:
             camnames = None
     

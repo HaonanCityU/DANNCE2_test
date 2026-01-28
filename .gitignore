@@ -1,2 +1,6 @@
 /demo/
 /analysis/
+*.pyc
+__pycache__/
+*.log
+/Label3D/

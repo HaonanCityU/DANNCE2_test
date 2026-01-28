@@ -12,7 +12,7 @@ batch_size: 4
 epochs: 500
 
 # either 'AVG' or 'MAX'
-net_type: MAX
+net_type: AVG
 
 # Options:
 # 'new': initializes and trains a network from scratch
