@@ -93,17 +93,78 @@ def load_com(path: Text) -> Dict:
     Returns:
         Dict: Dictionary with com data
     """
+    def _maybe_get(root, *keys):
+        for k in keys:
+            if isinstance(root, dict) and k in root:
+                return root[k]
+        return None
+
+    def _extract_struct_field(x, field: str):
+        """
+        Support both:
+        - scipy.io.loadmat struct arrays (np.ndarray with dtype.names)
+        - mat73 dicts (plain dict)
+        """
+        if isinstance(x, dict):
+            return x.get(field, None)
+        # scipy struct: typically shape (1,1) ndarray with dtype.names
+        if hasattr(x, "dtype") and getattr(x.dtype, "names", None) and field in x.dtype.names:
+            try:
+                return x[field]
+            except Exception:
+                return None
+        return None
+
+    # Load mat (v7.x via scipy; v7.3 via mat73)
     try:
-        d = sio.loadmat(path)["com"]
-    except:
-        d = mat73.loadmat(path)["com"]
+        root = sio.loadmat(path)
+    except Exception:
+        root = mat73.loadmat(path)
+
+    # Common layouts:
+    # 1) root["com"] is a struct/dict with fields com3d, sampleID
+    # 2) root has top-level keys com3d, sampleID (no "com" wrapper)
+    # 3) root has top-level keys com (numeric Nx3 or Nx3xK) and sampleID
+    com_obj = _maybe_get(root, "com", "COM", "comData", "comdata")
+
+    com3d = None
+    sampleID = None
+
+    if com_obj is not None:
+        com3d = _extract_struct_field(com_obj, "com3d")
+        sampleID = _extract_struct_field(com_obj, "sampleID")
+        # scipy struct often needs [0,0] unwrapping
+        if isinstance(com3d, np.ndarray) and com3d.shape == (1, 1):
+            com3d = com3d[0, 0]
+        if isinstance(sampleID, np.ndarray) and sampleID.shape == (1, 1):
+            sampleID = sampleID[0, 0]
+        # If "com" is a numeric array (common for com3d*.mat outputs in this repo),
+        # treat it as com3d.
+        if com3d is None and isinstance(com_obj, np.ndarray) and com_obj.dtype.names is None:
+            com3d = com_obj
+
+    if com3d is None:
+        com3d = _maybe_get(root, "com3d", "COM3D", "com_3d", "COM_3D")
+    if sampleID is None:
+        sampleID = _maybe_get(root, "sampleID", "sampleId", "SampleID", "SAMPLEID")
+
+    if com3d is None or sampleID is None:
+        available = sorted(list(root.keys())) if isinstance(root, dict) else []
+        raise KeyError(
+            f"COM .mat must contain either a top-level 'com' struct with fields "
+            f"'com3d' and 'sampleID', or top-level keys 'com3d' and 'sampleID'. "
+            f"Got keys: {available}"
+        )
 
     data = {}
-    ### edited by LJJ 20230923
-    data["com3d"] = d["com3d"]
-    data["sampleID"] = d["sampleID"].astype(int)
-    data["sampleID"] = data["sampleID"].reshape(1,len(data["sampleID"]))
-    ### edited by LJJ 20230923
+    data["com3d"] = com3d
+    # sampleID can come in as (N,), (1,N), (N,1), or even object-wrapped arrays
+    sid = np.asarray(sampleID)
+    # Unwrap common scipy "cell-like" object arrays: shape (1, N) with dtype=object
+    if sid.dtype == object and sid.size == 1:
+        sid = np.asarray(sid.item())
+    sid = np.asarray(sid).astype(int).reshape(-1)
+    data["sampleID"] = sid.reshape(1, -1)
     return data
 
 

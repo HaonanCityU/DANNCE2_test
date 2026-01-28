@@ -14,6 +14,11 @@ import torch
 import matplotlib
 from dannce.engine.processing import savedata_tomat, savedata_expval
 import logging
+try:
+    from tqdm import tqdm
+    TQDM_AVAILABLE = True
+except ImportError:
+    TQDM_AVAILABLE = False
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -22,7 +27,7 @@ FILE_PATH = "dannce.engine.inference"
 
 
 def print_checkpoint(
-    n_frame: int, start_ind: int, end_time: float, sample_save: int = 100
+    n_frame: int, start_ind: int, end_time: float, sample_save: int = 100, pbar=None
 ) -> float:
     """Print checkpoint messages indicating frame and fps for inference.
 
@@ -31,6 +36,7 @@ def print_checkpoint(
         start_ind (int): Start index
         end_time (float): Timing reference
         sample_save (int, optional): Number of samples to use in fps estimation.
+        pbar: Optional progress bar object (tqdm).
 
     No Longer Returned:
         float: New timing reference.
@@ -38,8 +44,12 @@ def print_checkpoint(
     prepend_log_msg = FILE_PATH + ".print_checkpoint "
     logging.info(prepend_log_msg + "Predicting on sample %d" % (n_frame))# flush=True)
     if (n_frame - start_ind) % sample_save == 0 and n_frame != start_ind:
+        elapsed = time.time() - end_time
+        fps = sample_save / elapsed if elapsed > 0 else 0
         logging.info(prepend_log_msg + str(n_frame))
-        logging.info(prepend_log_msg + "{} samples took {} seconds".format(sample_save, time.time() - end_time))
+        logging.info(prepend_log_msg + "{} samples took {:.2f} seconds ({:.2f} fps)".format(sample_save, elapsed, fps))
+        if pbar is not None:
+            pbar.set_postfix({"fps": "{:.2f}".format(fps)})
         end_time = time.time()
     return end_time
 
@@ -578,69 +588,88 @@ def infer_com(
         cameras (Dict): Camera dictionary.
         sample_save (int, optional): Number of samples to use in fps estimation.
     """
+    prepend_log_msg = FILE_PATH + ".infer_com "
+    total_frames = end_ind - start_ind
     end_time = time.time()
-    for n_frame in range(start_ind, end_ind):
-        end_time = print_checkpoint(
-            n_frame, start_ind, end_time, sample_save=sample_save
-        )
-        pred_batch = predict_batch(model, generator, n_frame, params)
-        n_batches = pred_batch.shape[0]
+    
+    # 创建进度条
+    if TQDM_AVAILABLE:
+        pbar = tqdm(total=total_frames, desc="COM预测进度", unit="帧", ncols=100)
+    else:
+        pbar = None
+        logging.info(prepend_log_msg + "开始预测，共 {} 帧".format(total_frames))
+    
+    try:
+        for n_frame in range(start_ind, end_ind):
+            end_time = print_checkpoint(
+                n_frame, start_ind, end_time, sample_save=sample_save, pbar=pbar
+            )
+            pred_batch = predict_batch(model, generator, n_frame, params)
+            n_batches = pred_batch.shape[0]
 
-        for n_batch in range(n_batches):
-            # By selecting -1 for the last axis, we get the COM index for a
-            # normal COM network, and also the COM index for a multi_mode COM network,
-            # as in multimode the COM label is put at the end
-            if params["mirror"] and params["n_instances"] == 1:
-                # For mirror we need to reshape pred so that the cameras are in front, so
-                # it works with the downstream code
-                pred = pred_batch[n_batch, 0]
-                pred = np.transpose(pred, (2, 0, 1))
-            elif params["mirror"]:
-                raise Exception(
-                    "mirror mode with multiple animal instances not currently supported."
-                )
-            elif params["n_instances"] > 1 and params["n_channels_out"] > 1:
-                pred = pred_batch[n_batch, ...]
-            else:
-                pred = pred_batch[n_batch, :, :, :, -1]
-            sample_id = partition["valid_sampleIDs"][n_frame * n_batches + n_batch]
-            save_data[sample_id] = {}
-            save_data[sample_id]["triangulation"] = {}
-            n_cams = pred.shape[0]
+            for n_batch in range(n_batches):
+                # By selecting -1 for the last axis, we get the COM index for a
+                # normal COM network, and also the COM index for a multi_mode COM network,
+                # as in multimode the COM label is put at the end
+                if params["mirror"] and params["n_instances"] == 1:
+                    # For mirror we need to reshape pred so that the cameras are in front, so
+                    # it works with the downstream code
+                    pred = pred_batch[n_batch, 0]
+                    pred = np.transpose(pred, (2, 0, 1))
+                elif params["mirror"]:
+                    raise Exception(
+                        "mirror mode with multiple animal instances not currently supported."
+                    )
+                elif params["n_instances"] > 1 and params["n_channels_out"] > 1:
+                    pred = pred_batch[n_batch, ...]
+                else:
+                    pred = pred_batch[n_batch, :, :, :, -1]
+                sample_id = partition["valid_sampleIDs"][n_frame * n_batches + n_batch]
+                save_data[sample_id] = {}
+                save_data[sample_id]["triangulation"] = {}
+                n_cams = pred.shape[0]
 
-            for n_cam in range(n_cams):
-                args = [
-                    pred,
-                    pred_batch,
-                    n_cam,
-                    sample_id,
-                    n_frame,
-                    n_batch,
-                    params,
-                    save_data,
-                    cameras,
-                    generator,
-                ]
+                for n_cam in range(n_cams):
+                    args = [
+                        pred,
+                        pred_batch,
+                        n_cam,
+                        sample_id,
+                        n_frame,
+                        n_batch,
+                        params,
+                        save_data,
+                        cameras,
+                        generator,
+                    ]
+                    if params["n_instances"] == 1:
+                        save_data = extract_single_instance(*args)
+                    elif params["n_channels_out"] == 1:
+                        save_data = extract_multi_instance_single_channel(*args)
+                    elif params["n_channels_out"] > 1:
+                        save_data = extract_multi_instance_multi_channel(*args)
+
+                # Handle triangulation for single or multi instance
                 if params["n_instances"] == 1:
-                    save_data = extract_single_instance(*args)
+                    save_data = triangulate_single_instance(
+                        n_cams, sample_id, params, camera_mats, save_data
+                    )
                 elif params["n_channels_out"] == 1:
-                    save_data = extract_multi_instance_single_channel(*args)
+                    save_data = triangulate_multi_instance_single_channel(
+                        n_cams, sample_id, params, camera_mats, cameras, save_data
+                    )
                 elif params["n_channels_out"] > 1:
-                    save_data = extract_multi_instance_multi_channel(*args)
-
-            # Handle triangulation for single or multi instance
-            if params["n_instances"] == 1:
-                save_data = triangulate_single_instance(
-                    n_cams, sample_id, params, camera_mats, save_data
-                )
-            elif params["n_channels_out"] == 1:
-                save_data = triangulate_multi_instance_single_channel(
-                    n_cams, sample_id, params, camera_mats, cameras, save_data
-                )
-            elif params["n_channels_out"] > 1:
-                save_data = triangulate_multi_instance_multi_channel(
-                    n_cams, sample_id, params, camera_mats, save_data
-                )
+                    save_data = triangulate_multi_instance_multi_channel(
+                        n_cams, sample_id, params, camera_mats, save_data
+                    )
+            
+            # 更新进度条（每个frame处理完后更新）
+            if pbar is not None:
+                pbar.update(1)
+    finally:
+        if pbar is not None:
+            pbar.close()
+    
     return save_data
 
 
@@ -669,12 +698,26 @@ def infer_dannce(
     save_data = {}
     start_ind = params["start_batch"]
     end_ind = params["maxbatch"]
-    for idx, i in enumerate(range(start_ind, end_ind)):
-        logging.debug("Predicting on batch {}".format(i))#, flush=True)
-        if (i - start_ind) % 10 == 0 and i != start_ind:
-            logging.debug(i)
-            logging.debug("10 batches took {} seconds".format(time.time() - end_time))
-            end_time = time.time()
+    total_batches = end_ind - start_ind
+    
+    # 创建进度条
+    if TQDM_AVAILABLE:
+        pbar = tqdm(total=total_batches, desc="DANNCE预测进度", unit="批次", ncols=100)
+    else:
+        pbar = None
+        logging.info(prepend_log_msg + "开始预测，共 {} 批次".format(total_batches))
+    
+    try:
+        for idx, i in enumerate(range(start_ind, end_ind)):
+            logging.debug("Predicting on batch {}".format(i))#, flush=True)
+            if (i - start_ind) % 10 == 0 and i != start_ind:
+                elapsed = time.time() - end_time
+                fps = 10 / elapsed if elapsed > 0 else 0
+                logging.debug(i)
+                logging.debug("10 batches took {:.2f} seconds ({:.2f} batches/sec)".format(elapsed, fps))
+                if pbar is not None:
+                    pbar.set_postfix({"速度": "{:.2f} 批次/秒".format(fps)})
+                end_time = time.time()
 
         if (i - start_ind) % 1000 == 0 and i != start_ind:
             logging.debug("Saving checkpoint at {}th batch".format(i))
@@ -737,4 +780,12 @@ def infer_dannce(
                     "logmax": pred_log.cpu().numpy(),
                     "sampleID": sampleID,
                 }
+        
+        # 更新进度条（每个batch处理完后更新）
+        if pbar is not None:
+            pbar.update(1)
+    finally:
+        if pbar is not None:
+            pbar.close()
+    
     return save_data

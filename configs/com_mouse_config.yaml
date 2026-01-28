@@ -28,7 +28,7 @@ num_validation_per_exp: 2
 #com_debug: Camera5
 
 # How many frames to you want to predict over? Set to 'max' for all video frames.
-max_num_samples: 20000
+max_num_samples: 3000
 
 com_finetune_weights: ./COM/weights/
 

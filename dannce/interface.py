@@ -1634,11 +1634,29 @@ def setup_dannce_predict(params):
     # duplicated in order to match n_views, if possible.
     params["n_views"] = int(params["n_views"])
 
-    # While we can use experiment files for DANNCE training,
-    # for prediction we use the base data files present in the main config
-    # Grab the input file for prediction
-    params["label3d_file"] = processing.grab_predict_label3d_file()
-    params["base_exp_folder"] = os.path.dirname(params["label3d_file"])
+    # Prediction input selection:
+    # If an `exp` block is provided (common for project-style runs), respect it.
+    # Otherwise fall back to auto-detecting the first *dannce.mat in the cwd.
+    if params.get("exp") is not None and len(params["exp"]) > 0:
+        exp0 = params["exp"][0]
+        if "label3d_file" in exp0 and exp0["label3d_file"] is not None:
+            params["label3d_file"] = exp0["label3d_file"]
+        if "com_file" in exp0 and exp0["com_file"] is not None:
+            params["com_file"] = exp0["com_file"]
+        if "camnames" in exp0 and exp0["camnames"] is not None:
+            params["camnames"] = exp0["camnames"]
+        params["base_exp_folder"] = os.path.dirname(params["label3d_file"])
+        logging.info(
+            prepend_log_msg
+            + "Using exp[0] label3d_file: {}".format(params["label3d_file"])
+        )
+        logging.info(
+            prepend_log_msg
+            + "Using exp[0] com_file: {}".format(params.get("com_file", None))
+        )
+    else:
+        params["label3d_file"] = processing.grab_predict_label3d_file()
+        params["base_exp_folder"] = os.path.dirname(params["label3d_file"])
 
     # default to slow numpy backend if there is no predict_mode in config file. I.e. legacy support
     params["predict_mode"] = (
@@ -1828,8 +1846,10 @@ def do_COM_load(exp: Dict, expdict: Dict, e, params: Dict, training=True):
     elif "com_file" in expdict and expdict["com_file"] is not None:
         exp["com_file"] = expdict["com_file"]
         if ".mat" in exp["com_file"]:
-            c3dfile = sio.loadmat(exp["com_file"])
-            com3d_dict_ = check_COM_load(c3dfile, "com", params["medfilt_window"])
+            # Use unified loader to support both MATLAB v7.2 and v7.3 (.mat HDF5),
+            # and to be tolerant to common key layouts.
+            c3dfile = io.load_com(exp["com_file"])
+            com3d_dict_ = check_COM_load(c3dfile, "com3d", params["medfilt_window"])
         elif ".pickle" in exp["com_file"]:
             datadict_, com3d_dict_ = serve_data_DANNCE.prepare_COM(
                 exp["com_file"],
