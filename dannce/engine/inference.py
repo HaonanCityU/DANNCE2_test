@@ -746,7 +746,26 @@ def infer_dannce(
                     )
 
             ims = generator.__getitem__(i)
-            pred = model.predict(ims[0])
+            try:
+                pred = model.predict(ims[0])
+            except Exception as e:
+                import traceback
+                inp = ims[0]
+                inp_shape = getattr(inp, "shape", str(type(inp)))
+                model_in_shapes = None
+                if hasattr(model, "inputs") and model.inputs:
+                    shapes = []
+                    for k in model.inputs:
+                        s = k.shape
+                        shapes.append(s.as_list() if hasattr(s, "as_list") else list(s))
+                    model_in_shapes = shapes
+                logging.error(
+                    "model.predict failed. generator input shape: %s, model input shape(s): %s",
+                    inp_shape,
+                    model_in_shapes,
+                )
+                logging.error(traceback.format_exc())
+                raise
 
             if params["expval"]:
                 probmap = pred[1]

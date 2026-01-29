@@ -214,7 +214,7 @@ if __name__ == '__main__':
     # 格式：{摄像头编号: 同步帧号}
     # 例如：如果Camera1的第1000帧、Camera2的第1050帧、Camera3的第980帧等是同步的
     sync_points = {
-        1: 306,  # Camera1的第1000帧
+        1: 315,  # Camera1的第1000帧
         2: 298,  # Camera2的第1050帧（与Camera1的第1000帧同步）
         3: 287,   # Camera3的第980帧（与Camera1的第1000帧同步）
         4: 292,  # Camera4的第1100帧（与Camera1的第1000帧同步）

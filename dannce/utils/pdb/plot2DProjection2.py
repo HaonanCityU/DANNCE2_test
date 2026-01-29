@@ -6,8 +6,11 @@ To load the correct video file, the input mocap data structure filename must con
 number and recording day number as 'mocap-s{subject#}-d{day#}.mat'
 
 Usage:
-    python plot2DProjection.py [path_to_label3d_dannce.mat (str)] [ path_to_save_data_AVG.mat (str)] [path_to_video_directory (str)]
-                               [path_to_skeleton.mat (str)] [path_to_save_video (str)] [start_ sample(int)] [max_samples (int)]
+    python plot2DProjection2.py [path_to_label3d_dannce.mat] [path_to_save_data_AVG.mat] [path_to_video_file]
+                               [path_to_skeleton.mat] [path_to_save_video] [start_sample (int)] [max_samples (int)]
+    Optional: [fps (int)] [com3d_file] [cam_index (int)]
+    Use "none" or "-" for com3d_file to skip COM plotting when passing cam_index.
+    cam_index: 0-based (0=Camera1, 1=Camera2, ...). Must match the video. Default: 0.
 """
 
 import numpy as np
@@ -34,14 +37,28 @@ start_sample = int(sys.argv[6])
 max_samples = int(sys.argv[7])
 
 if len(sys.argv) > 8:
-  fps_setting = sys.argv[8]
+  fps_setting = int(sys.argv[8])
+else:
+  fps_setting = 30
 
 if len(sys.argv) > 9:
-  com3d_file = sys.argv[9]
-  print("Com3d file specified. COM will be plotted")
+  _arg9 = sys.argv[9].strip().lower()
+  if _arg9 in ("none", "-", ""):
+    com3d_file = None
+    print("Com3d file not specified. COM will not be plotted")
+  else:
+    com3d_file = sys.argv[9]
+    print("Com3d file specified. COM will be plotted")
 else:
-  print("Com3d file not specified. COM will not be plotted")
   com3d_file = None
+  print("Com3d file not specified. COM will not be plotted")
+
+if len(sys.argv) > 10:
+  cam_index = int(sys.argv[10])
+  print("Using cam_index = {} (Camera{}).".format(cam_index, cam_index + 1))
+else:
+  cam_index = 0
+  print("Using default cam_index = 0 (Camera1). Pass 10th arg for Camera2, etc.")
 
 COLOR_DICT = [
         (1.0000,    0,              0,    0.5000),
@@ -82,6 +99,7 @@ def get_data(dannceMat_filepath: str, preditcions_filepath: str, skeleton_path: 
   """
   if dannceMat_filepath == None or preditcions_filepath == None or skeleton_path == None:
     print("One or more file paths is missing. Please provide all file paths.")
+    raise ValueError("Missing required file paths")
   elif os.path.exists(dannceMat_filepath) and os.path.exists(preditcions_filepath) and os.path.exists(skeleton_path) :
     cam_names = dio.load_camnames(dannceMat_filepath)
     sync = dio.load_sync(dannceMat_filepath)
@@ -104,6 +122,10 @@ def get_data(dannceMat_filepath: str, preditcions_filepath: str, skeleton_path: 
     return cam_names, sync, params, skeleton, predictions, com_3d
   else:
     print("Enter valid os path for dannceMat, predictions and skeleton files")
+    print(f"  dannceMat_filepath exists: {os.path.exists(dannceMat_filepath)} - {dannceMat_filepath}")
+    print(f"  preditcions_filepath exists: {os.path.exists(preditcions_filepath)} - {preditcions_filepath}")
+    print(f"  skeleton_path exists: {os.path.exists(skeleton_path)} - {skeleton_path}")
+    raise FileNotFoundError("One or more required files do not exist. Please check the file paths above.")
 
 def get_camParams(params, skeleton, exclude_joints):
   """
@@ -223,6 +245,7 @@ def plot_projected_points(predictions,
                           start_sample = 0, 
                           max_samples = 1000, 
                           fps = 30,
+                          cam_index = 0,
                           ):
   """
     # Plots the projected points and saves them to the locations specified in video_save_path
@@ -244,7 +267,11 @@ def plot_projected_points(predictions,
                   Default: 0
     max_samples: Max number of frames to read from video
                   Default: 1000
+    cam_index: 0-based camera index (0=Camera1, 1=Camera2, ...). Must match videofle_path.
   """
+  n_cams = len(imagePoints_agg)
+  if cam_index < 0 or cam_index >= n_cams:
+    raise ValueError("cam_index must be in [0, {}). Got {}.".format(n_cams, cam_index))
   movie_reader = imageio.get_reader(videofle_path)
 
   metadata = dict(title='dannce_visualization', artist='Matplotlib')
@@ -255,23 +282,42 @@ def plot_projected_points(predictions,
   if not os.path.exists(os.path.dirname(video_save_path)):
     os.makedirs(os.path.dirname(video_save_path))
 
+  # Flatten data_frame and data_sampleID to handle both (N,) and (1,N) shapes
+  data_frame_flat = np.squeeze(sync[0]["data_frame"]).flatten()
+  data_sampleID_flat = np.squeeze(sync[0]["data_sampleID"]).flatten()
+  
   with writer.saving(fig, video_save_path, dpi=300):
 
     for i in range(start_sample, start_sample + max_samples):
-
+      # revised by haonan 20260128
       # frame should be taken from sync[0]["data_frame"] from an index where data_sampleID from sync[0] matches sampleID at i-th index from predictions
       # using np.where for this gives a nested numpy array containing a single element(the index), so use squeeze     
-      fr = sync[0]["data_frame"][(np.where(sync[0]["data_sampleID"] == predictions["sampleID"][0][i]))[0].squeeze()]
-      frame = movie_reader.get_data(fr[0])
+      matching_indices = np.where(data_sampleID_flat == predictions["sampleID"][0][i])[0]
+      if len(matching_indices) == 0:
+        print(f"Warning: No matching frame found for sampleID {predictions['sampleID'][0][i]} at index {i}. Skipping.")
+        continue
+      # Take the first match if multiple matches exist
+      frame_idx = int(matching_indices[0])
+      if frame_idx >= len(data_frame_flat):
+        print(f"Warning: Frame index {frame_idx} is out of bounds (max: {len(data_frame_flat)-1}). Skipping.")
+        continue
+      fr = data_frame_flat[frame_idx]
+      
+      # Handle both scalar and array cases
+      if np.isscalar(fr):
+        frame_num = int(fr)
+      else:
+        frame_num = int(fr[0] if len(fr) > 0 else fr)
+      
+      frame = movie_reader.get_data(frame_num)
       print("Sample: ", i)
     
       axes.imshow(frame)      
       
-      # Only plot the first camera's skeleton (ncam=0)
-      ncam = 0
-      imagePoints = imagePoints_agg[ncam][i]
+      # Use selected camera's projections (cam_index: 0=Camera1, 1=Camera2, ...)
+      imagePoints = imagePoints_agg[cam_index][i]
       if com_2d_agg != None:
-        com = com_2d_agg[ncam][i]
+        com = com_2d_agg[cam_index][i]
         axes.scatter(com[:,0], com[:,1], marker='.', color='red', linewidths=1)
       
       for mm in range(len(links)):
@@ -300,6 +346,7 @@ def driver(dannceMat_filepath : str,
            start_sample = 0, 
            max_samples = 1000,
            fps=30,
+           cam_index=0,
            ):
   print("Com3d in drive = ", com3d_filepath)
   cam_names, sync, params, skeleton, predictions, com_3d = get_data(dannceMat_filepath=dannceMat_filepath, 
@@ -327,11 +374,13 @@ def driver(dannceMat_filepath : str,
                         video_save_path,
                         start_sample = start_sample,
                         max_samples = max_samples,
-                        fps=fps)
+                        fps=fps,
+                        cam_index=cam_index)
 
 driver(dannceMat_filepath, preditcions_filepath, videofle_path, skeleton_path, com3d_file,
         exclude_joints = [], 
         video_save_path = video_save_path, 
         start_sample = start_sample, 
         max_samples = max_samples,
-        fps=fps_setting)
+        fps=fps_setting,
+        cam_index=cam_index)
