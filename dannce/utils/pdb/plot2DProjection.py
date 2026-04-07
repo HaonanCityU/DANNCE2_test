@@ -15,6 +15,12 @@ import scipy.io as sio
 import os
 import sys
 import imageio
+import time
+try:
+  from tqdm import tqdm
+  _TQDM_AVAILABLE = True
+except Exception:
+  _TQDM_AVAILABLE = False
 
 import dannce.engine.ops as dops
 import dannce.engine.io as dio
@@ -35,6 +41,8 @@ max_samples = int(sys.argv[7])
 
 if len(sys.argv) > 8:
   fps_setting = sys.argv[8]
+else:
+  fps_setting = 30
 
 if len(sys.argv) > 9:
   com3d_file = sys.argv[9]
@@ -42,6 +50,15 @@ if len(sys.argv) > 9:
 else:
   print("Com3d file not specified. COM will not be plotted")
   com3d_file = None
+
+# Optional progress printing frequency (frames). Example: 1 prints every frame.
+# Usage append: [progress_every (int)]
+progress_every = 100
+if len(sys.argv) > 10:
+  try:
+    progress_every = int(sys.argv[10])
+  except Exception:
+    progress_every = 100
 
 COLOR_DICT = [
         (1.0000,    0,              0,    0.5000),
@@ -96,7 +113,21 @@ def get_data(dannceMat_filepath: str, preditcions_filepath: str, skeleton_path: 
 
     if com3d_filepath is not None and os.path.exists(com3d_filepath) :
       # com_3d = sio.loadmat(os.path.join(preditcions_filepath, 'com3d_used.mat'))['com']
-      com_3d = sio.loadmat(com3d_filepath)['com']
+      com_mat = sio.loadmat(com3d_filepath)
+      com_mat = {k: v for k, v in com_mat.items() if k and k[0] != "_"}
+      com_3d = com_mat.get("com", None)
+      # Align COM rows to the predictions by sampleID when available.
+      # Otherwise, fall back to raw com array (may mismatch and raise later).
+      if com_3d is not None and "sampleID" in com_mat and "sampleID" in predictions:
+        sid_com = np.asarray(com_mat["sampleID"]).reshape(-1).astype(int)
+        sid_pred = np.asarray(predictions["sampleID"]).reshape(-1).astype(int)
+        _, ic, ip = np.intersect1d(sid_com, sid_pred, return_indices=True)
+        if len(ip) != len(sid_pred):
+          print(
+              "Warning: COM sampleID does not fully match predictions sampleID. "
+              f"matched={len(ip)} pred={len(sid_pred)}. Using matched subset."
+          )
+        com_3d = np.asarray(com_3d)[ic, :]
     else:
       print ("No filepath specified for com_3d. Returning None.")
       com_3d = None
@@ -255,20 +286,62 @@ def plot_projected_points(predictions,
   if not os.path.exists(os.path.dirname(video_save_path)):
     os.makedirs(os.path.dirname(video_save_path))
 
-  with writer.saving(fig, video_save_path, dpi=300):
+  # If the provided video is a *chunk* file like ".../291106.mp4", then frames in
+  # sync/data_frame are global indices, while the video reader expects local
+  # indices within this chunk. We auto-detect and subtract the chunk start.
+  chunk_start = 0
+  try:
+    bn = os.path.basename(videofle_path)
+    chunk_start = int(os.path.splitext(bn)[0])
+  except Exception:
+    chunk_start = 0
 
-    for i in range(start_sample, start_sample + max_samples):
+  with writer.saving(fig, video_save_path, dpi=300):
+    t0 = time.time()
+    frame_iter = range(start_sample, start_sample + max_samples)
+    if _TQDM_AVAILABLE:
+      frame_iter = tqdm(frame_iter, total=max_samples, desc="render", unit="frame")
+
+    for i in frame_iter:
+      # Fallback progress printing if tqdm isn't available
+      if (not _TQDM_AVAILABLE) and progress_every and progress_every > 0:
+        done = i - start_sample
+        if done % progress_every == 0:
+          elapsed = time.time() - t0
+          rate = (done / elapsed) if elapsed > 0 else 0.0
+          print(f"[plot2DProjection] {done}/{max_samples} frames, {rate:.2f} fps")
 
       # frame should be taken from sync[0]["data_frame"] from an index where data_sampleID from sync[0] matches sampleID at i-th index from predictions
       # using np.where for this gives a nested numpy array containing a single element(the index), so use squeeze     
-      fr = sync[0]["data_frame"][(np.where(sync[0]["data_sampleID"] == predictions["sampleID"][0][i]))[0].squeeze()]
+      df_all = np.asarray(sync[0]["data_frame"]).reshape(-1)
+      sid_all = np.asarray(sync[0]["data_sampleID"]).reshape(-1)
+      pred_sid = np.asarray(predictions["sampleID"]).reshape(-1)
+      fr = df_all[(np.where(sid_all == pred_sid[i]))[0].squeeze()]
       # Handle both scalar and array cases
       if np.isscalar(fr):
         frame_num = int(fr)
       else:
         frame_num = int(fr[0])
-      frame = movie_reader.get_data(frame_num)
-      print("Sample: ", i)
+
+      # Convert global frame index to local chunk index if needed.
+      local_frame_num = frame_num - chunk_start
+      if local_frame_num < 0:
+        raise ValueError(
+          f"Computed local frame index < 0 (global={frame_num}, chunk_start={chunk_start}). "
+          f"Check that videofile_path points to the correct chunk for these predictions."
+        )
+
+      try:
+        frame = movie_reader.get_data(local_frame_num)
+      except (IndexError, StopIteration):
+        # Reached end of this chunk video; stop gracefully.
+        if _TQDM_AVAILABLE:
+          frame_iter.close()
+        print(
+          f"[plot2DProjection] Reached end of video at local_frame={local_frame_num} "
+          f"(global={frame_num}, chunk_start={chunk_start}). Stopping."
+        )
+        break
     
       axes.imshow(frame)      
       

@@ -45,9 +45,22 @@ def prepare_data(
     #         labels[i]["data_2d"] = np.zeros((nFrames, 2 * nKeypoints))
     if prediction:
         labels = load_sync(params["label3d_file"])
-        for l in labels: ## edited by LJJ 20250929
-            l["data_frame"] = l["data_frame"][params["start_sample"]:params["max_num_samples"]]
-            l["data_sampleID"] = l["data_sampleID"][params["start_sample"]:params["max_num_samples"]]
+        # Allow configs to use max_num_samples: "max" (common in YAML).
+        # For slicing, Python needs an int or None.
+        start = int(params.get("start_sample", 0) or 0)
+        end = params.get("max_num_samples", None)
+        # Interpret max_num_samples during prediction as:
+        # - "max"/None -> no upper bound
+        # - int -> number of samples to take (count), not an absolute end index
+        if isinstance(end, str) and end.lower() == "max":
+            end = None
+        if isinstance(end, (int, np.integer)):
+            end = start + int(end)
+        for l in labels:  ## edited by LJJ 20250929
+            # sync fields can be stored as (N,), (N,1), or (1,N). Flatten first so
+            # slicing by start/end always works as expected.
+            l["data_frame"] = np.asarray(l["data_frame"]).reshape(-1)[start:end]
+            l["data_sampleID"] = np.asarray(l["data_sampleID"]).reshape(-1)[start:end]
         nFrames = np.max(labels[0]["data_frame"].shape)
         nKeypoints = params["n_channels_out"]
         if "new_n_channels_out" in params.keys():
@@ -74,12 +87,11 @@ def prepare_data(
             "network set to run in mirror mode, but cannot find mirror (m) field in camera params"
         )
 
-    samples = np.squeeze(labels[0]["data_sampleID"])
+    # Keep sample IDs as a 1D array so downstream indexing and dict keys work
+    # for both single-sample and multi-sample label files.
+    samples = np.ravel(np.asarray(labels[0]["data_sampleID"]))
 
-    if labels[0]["data_sampleID"].shape == (1, 1):
-        # Then the squeezed value is just a number, so we add to to a list so
-        # that is can be iterated over downstream
-        samples = [samples]
+    if samples.size == 1:
         warnings.warn("Note: only 1 sample in label file")
 
     # Collect data labels and matched frames info. We will keep the 2d labels
@@ -92,7 +104,8 @@ def prepare_data(
     ddict = {}
 
     for i, label in enumerate(labels):
-        framedict[params["camnames"][i]] = np.squeeze(label["data_frame"])
+        # Keep frame data indexable for both single-frame and multi-frame labels.
+        framedict[params["camnames"][i]] = np.atleast_1d(np.squeeze(label["data_frame"]))
         data = label["data_2d"]
 
         # reshape data_2d so that it is shape (time points, 2, 20)

@@ -123,7 +123,10 @@ if __name__ == "__main__":
 
         assert len(inds) == len(pred["sampleID"])
 
-        df = mframes["data_frame"][inds]
+        # mframes["data_frame"] can be (N,), (N,1), or (1,N) depending on how the
+        # dannce.mat was generated. Convert to 1D before indexing.
+        df_all = np.asarray(mframes["data_frame"]).reshape(-1)
+        df = df_all[inds]
 
         cameras[cnames[i]]["frame"] = df
 

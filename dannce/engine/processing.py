@@ -162,9 +162,29 @@ def infer_params(params, dannce_net, prediction):
     logging.basicConfig(filename=params["log_dest"], level=params["log_level"], 
                         format='%(asctime)s %(levelname)s:%(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
+    # Multi-experiment configs: infer viddir / label file from exp[0] when set only under exp:
+    if params.get("exp") is not None and len(params["exp"]) > 0:
+        exp0 = params["exp"][0]
+        if "viddir" in exp0 and exp0["viddir"] is not None:
+            params["viddir"] = exp0["viddir"]
+            logging.info(
+                "infer_params: Using viddir from exp[0]: {}".format(params["viddir"])
+            )
+
     # Grab the camnames from *dannce.mat if not in config
     if params["camnames"] is None:
-        f = grab_predict_label3d_file()
+        f = None
+        if params.get("exp") is not None and len(params["exp"]) > 0:
+            exp0 = params["exp"][0]
+            if "label3d_file" in exp0 and exp0["label3d_file"] is not None:
+                f = exp0["label3d_file"]
+                logging.info(
+                    "infer_params: Loading camnames from exp[0] label3d_file: {}".format(
+                        f
+                    )
+                )
+        if f is None:
+            f = grab_predict_label3d_file()
         params["camnames"] = io.load_camnames(f)
         if params["camnames"] is None:
             raise Exception("No camnames in config or in *dannce.mat")
@@ -486,32 +506,70 @@ def make_data_splits(samples, params, results_dir, num_experiments):
 
         all_inds = np.arange(len(samples))
 
-        # extract random inds from each set for validation
+        # Extract random inds from each set for validation.
+        #
+        # Legacy mode: num_validation_per_exp (int) = fixed number per experiment.
+        # New mode: num_validation_frac (float in (0,1]) = fraction per experiment,
+        # optionally clamped by num_validation_min / num_validation_max.
         v = params["num_validation_per_exp"]
+        v_frac = params.get("num_validation_frac", None)
+        v_min = params.get("num_validation_min", None)
+        v_max = params.get("num_validation_max", None)
+
+        def _compute_v_for_exp(n: int) -> int:
+            """How many validation samples to draw for an experiment with n samples."""
+            if n <= 0:
+                return 0
+            if v_frac is None:
+                return int(v) if v is not None else 0
+            # fraction-based
+            frac = float(v_frac)
+            if frac < 0:
+                raise ValueError("num_validation_frac must be >= 0")
+            vv = int(np.round(frac * n))
+            if v_min is not None:
+                vv = max(vv, int(v_min))
+            if v_max is not None:
+                vv = min(vv, int(v_max))
+            # cannot exceed n (choice replace=False)
+            vv = min(vv, n)
+            return int(vv)
         valid_inds = []
-        if params["valid_exp"] is not None and params["num_validation_per_exp"] > 0:
+        # Determine whether we should do validation at all
+        _do_val = False
+        if v_frac is not None:
+            _do_val = True
+        elif params["num_validation_per_exp"] is not None and params["num_validation_per_exp"] > 0:
+            _do_val = True
+
+        if params["valid_exp"] is not None and _do_val:
             all_valid_inds = []
             for e in params["valid_exp"]:
                 tinds = [
                     i for i in range(len(samples)) if int(samples[i].split("_")[0]) == e
                 ]
+                vv = _compute_v_for_exp(len(tinds))
+                if vv == 0:
+                    continue
                 all_valid_inds = all_valid_inds + tinds
                 valid_inds = valid_inds + list(
-                    np.random.choice(tinds, (v,), replace=False)
+                    np.random.choice(tinds, (vv,), replace=False)
                 )
                 valid_inds = list(np.sort(valid_inds))
 
             train_inds = list(
                 set(all_inds) - set(all_valid_inds)
             )  # [i for i in all_inds if i not in all_valid_inds]
-        elif params["num_validation_per_exp"] > 0:  # if 0, do not perform validation
+        elif _do_val:  # if 0, do not perform validation
             for e in range(num_experiments):
                 tinds = [
                     i for i in range(len(samples)) if int(samples[i].split("_")[0]) == e
                 ]
-                valid_inds = valid_inds + list(
-                    np.random.choice(tinds, (v,), replace=False)
-                )
+                vv = _compute_v_for_exp(len(tinds))
+                if vv > 0:
+                    valid_inds = valid_inds + list(
+                        np.random.choice(tinds, (vv,), replace=False)
+                    )
                 valid_inds = list(np.sort(valid_inds))
 
             train_inds = [i for i in all_inds if i not in valid_inds]
@@ -908,9 +966,9 @@ def inherit_config(child, parent, keys):
     for key in keys:
         if key not in child.keys():
             child[key] = parent[key]
-            # Leaving this print statement as is, since params are not built at this point
-            print(
-                "{} not found in io.yaml file, falling back to main config".format(key)
+            logging.debug(
+                FILE_PATH + ".inherit_config "
+                + "{} not found in io.yaml, using main config value".format(key)
             )
 
     return child

@@ -14,7 +14,12 @@ from tensorflow.keras import backend as K
 from tensorflow.keras.models import load_model, Model
 from tensorflow.keras.layers import GlobalMaxPooling3D
 from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.callbacks import ModelCheckpoint, CSVLogger, TensorBoard
+from tensorflow.keras.callbacks import (
+    ModelCheckpoint,
+    CSVLogger,
+    TensorBoard,
+    ReduceLROnPlateau,
+)
 import dannce.callbacks as cb
 import dannce.engine.serve_data_DANNCE as serve_data_DANNCE
 import dannce.engine.generator as generator
@@ -56,7 +61,6 @@ def check_unrecognized_params(params: Dict):
         in_com = key in _param_defaults_com
         in_dannce = key in _param_defaults_dannce
         in_shared = key in _param_defaults_shared
-        print (in_com, in_dannce, in_shared)
         if not (in_com or in_dannce or in_shared):
             invalid_keys.append(key)
 
@@ -241,8 +245,37 @@ def setup_com_predict(params: Dict):
     params["multi_mode"] = (params["n_channels_out"] > 1) & (params["n_instances"] == 1)
     params["n_channels_out"] = params["n_channels_out"] + int(params["multi_mode"])
 
-    # Grab the input file for prediction
-    params["label3d_file"] = processing.grab_predict_label3d_file()
+    # Prediction mat: prefer io.yaml exp[0].label3d_file (same as setup_dannce_predict).
+    # Otherwise grab_predict_label3d_file() picks first *dannce.mat in cwd — often wrong
+    # when both mouse_dannce.mat (short) and mouse_fullsync_dannce.mat exist.
+    if params.get("exp") is not None and len(params["exp"]) > 0:
+        exp0 = params["exp"][0]
+        if "label3d_file" in exp0 and exp0["label3d_file"] is not None:
+            params["label3d_file"] = exp0["label3d_file"]
+            params["base_exp_folder"] = os.path.dirname(params["label3d_file"])
+            logging.info(
+                prepend_log_msg + "Using exp[0] label3d_file: {}".format(
+                    params["label3d_file"]
+                )
+            )
+        else:
+            params["label3d_file"] = processing.grab_predict_label3d_file()
+            params["base_exp_folder"] = os.path.dirname(params["label3d_file"])
+            logging.info(
+                prepend_log_msg
+                + "Using label3d_file from *dannce.mat scan: {}".format(
+                    params["label3d_file"]
+                )
+            )
+    else:
+        params["label3d_file"] = processing.grab_predict_label3d_file()
+        params["base_exp_folder"] = os.path.dirname(params["label3d_file"])
+        logging.info(
+            prepend_log_msg
+            + "Using label3d_file from *dannce.mat scan: {}".format(
+                params["label3d_file"]
+            )
+        )
 
     logging.info(prepend_log_msg+"Using camnames: {}".format(params["camnames"]))
 
@@ -494,7 +527,14 @@ def com_train(params: Dict):
 
     # Create checkpoint and logging callbacks
     kkey = "weights.hdf5"
-    mon = "val_loss" if params["num_validation_per_exp"] > 0 else "loss"
+    # Validation can be specified either as a fixed count (num_validation_per_exp)
+    # or as a fraction (num_validation_frac). Treat None as 0.
+    n_val = params.get("num_validation_per_exp", 0)
+    frac_val = params.get("num_validation_frac", None)
+    has_val = (frac_val is not None and float(frac_val) > 0) or (
+        n_val is not None and int(n_val) > 0
+    )
+    mon = "val_loss" if has_val else "loss"
 
     # Create checkpoint and logging callbacks
     model_checkpoint = ModelCheckpoint(
@@ -1121,8 +1161,10 @@ def dannce_train(params: Dict):
         "random": randflag,
         "n_rand_views": params["n_rand_views"],
     }
+    # Must match train batch divisibility for MirroredStrategy (e.g. global batch % num_gpus == 0).
+    # A fixed batch_size=4 breaks with 3 GPUs (4/3 → per-replica batch 0 on one device, cuDNN crash).
     shared_args_valid = {
-        "batch_size": 4,
+        "batch_size": params["batch_size"],
         "rotation": False,
         "augment_hue": False,
         "augment_brightness": False,
@@ -1310,7 +1352,14 @@ def dannce_train(params: Dict):
 
     # Create checkpoint and logging callbacks
     kkey = "weights.hdf5"
-    mon = "val_loss" if params["num_validation_per_exp"] > 0 else "loss"
+    # Validation can be specified either as a fixed count (num_validation_per_exp)
+    # or as a fraction (num_validation_frac). Treat None as 0.
+    n_val = params.get("num_validation_per_exp", 0)
+    frac_val = params.get("num_validation_frac", None)
+    has_val = (frac_val is not None and float(frac_val) > 0) or (
+        n_val is not None and int(n_val) > 0
+    )
+    mon = "val_loss" if has_val else "loss"
 
     model_checkpoint = ModelCheckpoint(
         os.path.join(dannce_train_dir, kkey),
@@ -1331,6 +1380,18 @@ def dannce_train(params: Dict):
         tboard,
         cb.saveCheckPoint(params["dannce_train_dir"], params["epochs"]),
     ]
+
+    # Optional: automatically reduce LR when validation plateaus
+    if params.get("reduce_lr_on_plateau", False):
+        callbacks.append(
+            ReduceLROnPlateau(
+                monitor=params.get("reduce_lr_monitor", mon),
+                patience=int(params.get("reduce_lr_patience", 10)),
+                factor=float(params.get("reduce_lr_factor", 0.5)),
+                min_lr=float(params.get("reduce_lr_min_lr", 1e-6)),
+                verbose=1,
+            )
+        )
 
     if (
         params["expval"]

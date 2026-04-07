@@ -42,7 +42,8 @@ def print_checkpoint(
         float: New timing reference.
     """
     prepend_log_msg = FILE_PATH + ".print_checkpoint "
-    logging.info(prepend_log_msg + "Predicting on sample %d" % (n_frame))# flush=True)
+    # Per-frame INFO would write ~5e5 lines for full-video COM and bottleneck CPU/disk.
+    logging.debug(prepend_log_msg + "Predicting on sample %d" % (n_frame))
     if (n_frame - start_ind) % sample_save == 0 and n_frame != start_ind:
         elapsed = time.time() - end_time
         fps = sample_save / elapsed if elapsed > 0 else 0
@@ -746,26 +747,10 @@ def infer_dannce(
                     )
 
             ims = generator.__getitem__(i)
-            try:
-                pred = model.predict(ims[0])
-            except Exception as e:
-                import traceback
-                inp = ims[0]
-                inp_shape = getattr(inp, "shape", str(type(inp)))
-                model_in_shapes = None
-                if hasattr(model, "inputs") and model.inputs:
-                    shapes = []
-                    for k in model.inputs:
-                        s = k.shape
-                        shapes.append(s.as_list() if hasattr(s, "as_list") else list(s))
-                    model_in_shapes = shapes
-                logging.error(
-                    "model.predict failed. generator input shape: %s, model input shape(s): %s",
-                    inp_shape,
-                    model_in_shapes,
-                )
-                logging.error(traceback.format_exc())
-                raise
+            # Using predict_on_batch avoids creating a new predict Function/iterator
+            # each loop iteration, which can lead to high overhead and GPU memory
+            # growth in long runs.
+            pred = model.predict_on_batch(ims[0])
 
             if params["expval"]:
                 probmap = pred[1]
@@ -795,6 +780,10 @@ def infer_dannce(
                         "logmax": pred_log.cpu().numpy(),
                         "sampleID": sampleID,
                     }
+
+            # Proactively release large temporaries between batches
+            del ims
+            del pred
 
             # 更新进度条（每个batch处理完后更新）
             if pbar is not None:

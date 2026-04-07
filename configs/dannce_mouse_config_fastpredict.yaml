@@ -1,0 +1,28 @@
+# Fast-predict variant of dannce_mouse_config.yaml
+# Goal: increase throughput for full-video dannce-predict.
+#
+# Notes:
+# - batch_size is global; with multi-GPU TF it is split across GPUs.
+# - Lower nvox reduces compute/memory (may reduce accuracy).
+
+io_config: io_predict.yaml
+
+new_n_channels_out: 22
+
+# Try higher batch size for faster predict. If OOM, reduce to 6, then 3.
+batch_size: 12
+
+# DANNCE settings
+net_type: AVG
+
+# Volume/grid
+# IMPORTANT: nvox must match the trained model input (your model expects 112).
+vol_size: 180
+nvox: 112
+
+# Predict over all frames
+max_num_samples: 'max'
+
+# Logging
+log_level: INFO
+

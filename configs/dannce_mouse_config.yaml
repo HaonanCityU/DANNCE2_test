@@ -1,18 +1,27 @@
 # File name of io.yaml file, which should exist in the directory from which you
 # call dannce functions
-io_config: io.yaml
+io_config: io_predict.yaml
 
 # New number of network output channels.
 new_n_channels_out: 22
 
-# Batch size for training and prediction
-batch_size: 1
+# Global batch size for training. With MirroredStrategy (multi-GPU), TF splits this
+# across GPUs; it must be >= num GPUs and ideally divisible by it (e.g. 3 GPUs → 3,6,9…).
+# Too small → cuDNN batch 0; too large → OOM on 112³ volumes (try 3 = 1/GPU before lowering nvox).
+batch_size: 9
 
 # DANNCE training option. Sets the number of epochs during training (default 1200)
-epochs: 500
+epochs: 200
 
 # either 'AVG' or 'MAX'
 net_type: AVG
+
+# Reduce LR when val_loss plateaus (Keras ReduceLROnPlateau)
+reduce_lr_on_plateau: true
+reduce_lr_monitor: val_loss
+reduce_lr_patience: 10
+reduce_lr_factor: 0.5
+reduce_lr_min_lr: 1e-3
 
 # Options:
 # 'new': initializes and trains a network from scratch
@@ -21,7 +30,11 @@ net_type: AVG
 train_mode: finetune
 
 # How many samples from each animal do you want to (randomly) set aside for a validation metric?
-num_validation_per_exp: 30
+# num_validation_per_exp: null
+# revise by ZHN
+num_validation_frac: 0.15   # 例如 15%
+num_validation_min: 10      # 可选：至少 10 帧
+num_validation_max: 20 
 
 # Size of 3D volume (in mm) anchored on animal
 vol_size: 180
@@ -30,10 +43,10 @@ vol_size: 180
 nvox: 112
 
 # max. number of batches to evaluate during prediction. set to 'max' to evaluate over all data/video frames
-max_num_samples: 1000
+max_num_samples: 'max'
 
 # By default, will load in the first hdf5 file at this location for fine-tuning. If training from scratch, set to None
-dannce_finetune_weights: ./DANNCE/weights/weights.rat.MAX/
-
+# dannce_finetune_weights: ./DANNCE/weights/weights.rat.MAX/
+dannce_finetune_weights: /home/haonan/proj/dannce-release_dev2/demo/multi_sum/DANNCE/weights
 log_level: DEBUG
 # log_dest: ../logs/dannce-04-15-22.log

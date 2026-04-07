@@ -182,8 +182,8 @@ def regenerate_dannce_mat(
     print(f"\nGenerating sync data from videos in: {viddir}")
     sync_data = generate_sync_data(viddir, camnames, fps, num_landmarks)
     
-    # 获取总帧数
-    num_frames = len(sync_data[0]["data_frame"])
+    # 获取总帧数（data_frame 为 (1,N)，不能用 len()）
+    num_frames = int(np.max(np.asarray(sync_data[0]["data_frame"]).shape))
     print(f"\nTotal frames: {num_frames}")
     
     # 创建新的labelData（占位符）

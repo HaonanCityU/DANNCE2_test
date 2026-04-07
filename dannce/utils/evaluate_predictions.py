@@ -216,6 +216,148 @@ def match_samples(gt_3d, gt_sampleID, gt_data_frame, pred_3d, pred_sampleID):
     
     return gt_matched, pred_matched, common_ids
 
+
+def match_samples_by_data_frame(
+    gt_3d,
+    gt_sampleID,
+    gt_data_frame,
+    pred_3d,
+    pred_sampleID,
+    sync_file,
+):
+    """
+    Match ground truth and predictions by global frame index (data_frame).
+
+    Use-case:
+      - GT comes from a sparse labeled file (mouse_dannce.mat) whose sampleID can be irregular timestamps.
+      - Predictions come from full-video inference (save_data_AVG.mat / predictions.mat) whose sampleID
+        often follows sync sampleID (e.g. 1, 34, 67, ...).
+      - In that case, matching by sampleID yields zero overlap, but matching by data_frame is valid:
+          pred_sampleID --(sync_file: sync sampleID->data_frame)--> pred_frame
+          gt_data_frame -------------------------------------------> gt_frame
+          match pred_frame with gt_frame
+
+    Args:
+        gt_3d: (N_gt, 3, K)
+        gt_sampleID: (N_gt,)
+        gt_data_frame: (N_gt,)
+        pred_3d: (N_pred, 3, K)
+        pred_sampleID: (N_pred,)
+        sync_file: fullsync dannce.mat containing sync (same timeline as predictions)
+
+    Returns:
+        gt_matched, pred_matched, matched_frames
+    """
+    print("\nMatching samples based on data_frame (via sync)...")
+    if sync_file is None:
+        raise ValueError("sync_file is required for match_samples_by_data_frame")
+
+    # Flatten and cast
+    gt_frames = np.asarray(gt_data_frame).reshape(-1).astype(int)
+    pred_sid = np.asarray(pred_sampleID).reshape(-1).astype(int)
+
+    # Load sync mapping (use camera 0; all cams share sampleID timeline)
+    sync0 = dio.load_sync(sync_file)[0]
+    sync_sid = np.asarray(sync0["data_sampleID"]).reshape(-1).astype(int)
+    sync_df = np.asarray(sync0["data_frame"]).reshape(-1).astype(int)
+
+    # Map prediction sampleIDs -> global frame indices using intersect
+    common_sid, sync_idx, pred_idx = np.intersect1d(sync_sid, pred_sid, return_indices=True)
+    print("Pred samples:", pred_sid.size)
+    print("Sync sampleIDs:", sync_sid.size)
+    print("Matched pred sampleIDs in sync:", common_sid.size)
+    if common_sid.size == 0:
+        raise ValueError("No prediction sampleIDs found in sync_file sampleIDs.")
+
+    pred_frames = sync_df[sync_idx]  # aligned with pred_idx
+
+    # Now match by frame number
+    common_frames, gt_i, pred_f_i = np.intersect1d(gt_frames, pred_frames, return_indices=True)
+    print("GT labeled frames:", gt_frames.size)
+    print("Pred frames (mapped):", pred_frames.size)
+    print("Matched frames:", common_frames.size)
+    if common_frames.size == 0:
+        raise ValueError("No matching frames found between GT data_frame and prediction frames.")
+
+    # Subset arrays
+    gt_matched = gt_3d[gt_i]
+    pred_matched = pred_3d[pred_idx[pred_f_i]]
+
+    print("GT matched shape:", gt_matched.shape)
+    print("Pred matched shape:", pred_matched.shape)
+    return gt_matched, pred_matched, common_frames
+
+
+def match_samples_by_data_frame(
+    gt_3d,
+    gt_sampleID,
+    gt_data_frame,
+    pred_3d,
+    pred_sampleID,
+    sync_file,
+):
+    """
+    Match ground truth and predictions by global frame index (data_frame).
+
+    Use-case:
+      - GT comes from a sparse labeled file (mouse_dannce.mat) whose sampleID can be irregular timestamps.
+      - Predictions come from full-video inference (save_data_AVG.mat / predictions.mat) whose sampleID
+        often follows sync sampleID (e.g. 1, 34, 67, ...).
+      - In that case, matching by sampleID yields zero overlap, but matching by data_frame is valid:
+          pred_sampleID --(sync_file: sync sampleID->data_frame)--> pred_frame
+          gt_data_frame -------------------------------------------> gt_frame
+          match pred_frame with gt_frame
+
+    Args:
+        gt_3d: (N_gt, 3, K)
+        gt_sampleID: (N_gt,)
+        gt_data_frame: (N_gt,)
+        pred_3d: (N_pred, 3, K)
+        pred_sampleID: (N_pred,)
+        sync_file: fullsync dannce.mat containing sync (same timeline as predictions)
+
+    Returns:
+        gt_matched, pred_matched, matched_frames
+    """
+    print("\nMatching samples based on data_frame (via sync)...")
+    if sync_file is None:
+        raise ValueError("sync_file is required for match_samples_by_data_frame")
+
+    # Flatten and cast
+    gt_frames = np.asarray(gt_data_frame).reshape(-1).astype(int)
+    pred_sid = np.asarray(pred_sampleID).reshape(-1).astype(int)
+
+    # Load sync mapping (use camera 0; all cams share sampleID timeline)
+    sync0 = dio.load_sync(sync_file)[0]
+    sync_sid = np.asarray(sync0["data_sampleID"]).reshape(-1).astype(int)
+    sync_df = np.asarray(sync0["data_frame"]).reshape(-1).astype(int)
+
+    # Map prediction sampleIDs -> global frame indices using intersect
+    common_sid, sync_idx, pred_idx = np.intersect1d(sync_sid, pred_sid, return_indices=True)
+    print("Pred samples:", pred_sid.size)
+    print("Sync sampleIDs:", sync_sid.size)
+    print("Matched pred sampleIDs in sync:", common_sid.size)
+    if common_sid.size == 0:
+        raise ValueError("No prediction sampleIDs found in sync_file sampleIDs.")
+
+    pred_frames = sync_df[sync_idx]  # aligned with pred_idx
+
+    # Now match by frame number
+    common_frames, gt_i, pred_f_i = np.intersect1d(gt_frames, pred_frames, return_indices=True)
+    print("GT labeled frames:", gt_frames.size)
+    print("Pred frames (mapped):", pred_frames.size)
+    print("Matched frames:", common_frames.size)
+    if common_frames.size == 0:
+        raise ValueError("No matching frames found between GT data_frame and prediction frames.")
+
+    # Subset arrays
+    gt_matched = gt_3d[gt_i]
+    pred_matched = pred_3d[pred_idx[pred_f_i]]
+
+    print("GT matched shape:", gt_matched.shape)
+    print("Pred matched shape:", pred_matched.shape)
+    return gt_matched, pred_matched, common_frames
+
 def plot_evaluation_results(errors, joint_names, output_dir):
     """Generate comprehensive evaluation plots."""
     

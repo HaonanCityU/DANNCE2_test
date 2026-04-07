@@ -208,7 +208,25 @@ class LoadVideoFrame:
         prepend_log_msg = FILE_PATH + ".LoadVideoFrame.load_vid_frame "
 
         chunks = self._N_VIDEO_FRAMES[camname]
-        cur_video_id = np.nonzero([c <= ind for c in chunks])[0][-1]
+        if len(chunks) == 0:
+            raise ValueError(
+                f"No video chunks found for camera {camname}. "
+                f"Please check video file configuration."
+            )
+        
+        # Find the appropriate video chunk for this frame index
+        matching_chunks = np.nonzero([c <= ind for c in chunks])[0]
+        if len(matching_chunks) == 0:
+            # If ind is less than all chunks, use the first chunk
+            # This can happen if frame indices start from 0 but chunks start from a higher value
+            logging.warning(
+                prepend_log_msg + 
+                f"Frame index {ind} is less than all chunk start frames {chunks} "
+                f"for camera {camname}. Using first chunk."
+            )
+            cur_video_id = 0
+        else:
+            cur_video_id = matching_chunks[-1]
         cur_first_frame = chunks[cur_video_id]
         fname = str(cur_first_frame) + extension
         frame_num = int(ind - cur_first_frame)

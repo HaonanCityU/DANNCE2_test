@@ -21,6 +21,13 @@ _param_defaults_shared = {
     "epochs": None,
     "vid_dir_flag": None,
     "num_validation_per_exp": None,
+    # Optional: fraction-based validation split (per experiment).
+    # If set (e.g. 0.1), overrides num_validation_per_exp and draws
+    # round(frac * n_samples_in_exp) validation samples per experiment.
+    "num_validation_frac": None,
+    # Optional clamps for fraction-based split.
+    "num_validation_min": None,
+    "num_validation_max": None,
     "num_train_per_exp": None,
     "chunks": None,
     "lockfirst": None,
@@ -54,6 +61,12 @@ _param_defaults_dannce = {
     "metric": ["euclidean_distance_3D"],
     "sigma": 10,
     "lr": 1e-3,
+    # Optional LR scheduler: ReduceLROnPlateau
+    "reduce_lr_on_plateau": False,
+    "reduce_lr_monitor": "val_loss",
+    "reduce_lr_patience": 10,
+    "reduce_lr_factor": 0.5,
+    "reduce_lr_min_lr": 1e-6,
     "n_layers_locked": 2,
     "interp": "nearest",
     "depth": False,
